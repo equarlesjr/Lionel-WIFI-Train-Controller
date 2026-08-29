@@ -1,0 +1,6 @@
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/specs/picolibc.specs"
+-fno-rtti

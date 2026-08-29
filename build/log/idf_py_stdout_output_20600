@@ -1,0 +1,152 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\Lionel-WIFI-Train-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM3'
+[0;32mI (124) esp_image: segment 1: paddr=00042e4c vaddr=3fc98000 sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b95a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xde4
+load:0x403cb700,len:0x2f58
+entry 0x403c8904
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Aug 29 2026 13:57:11[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.3[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=32e24h (208420) map[0m
+[0;32mI (124) esp_image: segment 1: paddr=00042e4c vaddr=3fc98000 size=05244h ( 21060) load[0m
+[0;32mI (129) esp_image: segment 2: paddr=00048098 vaddr=40374000 size=07f80h ( 32640) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=965c4h (615876) map[0m
+[0;32mI (250) esp_image: segment 4: paddr=000e65ec vaddr=4037bf80 size=0c024h ( 49188) load[0m
+[0;32mI (262) esp_image: segment 5: paddr=000f2618 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (271) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (271) boot: Disabling RNG early entropy source...[0m
+[0;32mI (281) cpu_start: Multicore app[0m
+[0;32mI (289) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (290) cpu_start: Pro cpu start user code[0m
+[0;32mI (290) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (292) app_init: Application information:[0m
+[0;32mI (296) app_init: Project name:     Lionel-WIFI-Train-Controller[0m
+[0;32mI (301) app_init: App version:      1[0m
+[0;32mI (305) app_init: Compile time:     Aug 29 2026 14:11:40[0m
+[0;32mI (310) app_init: ELF file SHA256:  d20965505...[0m
+[0;32mI (314) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (318) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (322) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (326) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (330) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (336) heap_init: At 3FCA14C0 len 00048250 (288 KiB): RAM[0m
+[0;32mI (341) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (346) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (351) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (358) spi_flash: detected chip: gd[0m
+[0;32mI (360) spi_flash: flash io: dio[0m
+[0;33mW (363) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (376) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (382) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (389) main_task: Started on CPU0[0m
+[0;32mI (389) main_task: Calling app_main()[0m
+[0;32mI (409) example_connect: Start example_connect.[0m
+[0;32mI (409) pp: pp rom version: e7ae62f[0m
+[0;32mI (409) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (429) wifi:wifi driver task: 3fcee854, prio:23, stack:6656, core=0[0m
+[0;32mI (439) wifi:wifi firmware version: e12a754[0m
+[0;32mI (439) wifi:wifi certification version: v7.0[0m
+[0;32mI (439) wifi:config NVS flash: enabled[0m
+[0;32mI (439) wifi:config nano formatting: disabled[0m
+[0;32mI (439) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (449) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (449) wifi:Init management short buffer num: 32[0m
+[0;32mI (449) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (459) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (459) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (469) wifi:Init static rx buffer num: 10[0m
+[0;32mI (469) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (469) wifi_init: rx ba win: 6[0m
+[0;32mI (479) wifi_init: accept mbox: 6[0m
+[0;32mI (479) wifi_init: tcpip mbox: 32[0m
+[0;32mI (479) wifi_init: udp mbox: 6[0m
+[0;32mI (479) wifi_init: tcp mbox: 6[0m
+[0;32mI (489) wifi_init: tcp tx win: 5760[0m
+[0;32mI (489) wifi_init: tcp rx win: 5760[0m
+[0;32mI (489) wifi_init: tcp mss: 1440[0m
+[0;32mI (499) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (499) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (509) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (549) wifi:mode : sta (f0:9e:9e:20:cd:dc)[0m
+[0;32mI (549) wifi:enable tsf[0m
+[0;32mI (549) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (549) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (559) example_connect: Waiting for IP(s)[0m
+[0;32mI (3039) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3039) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3039) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3049) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3109) wifi:connected with harmonicminor, aid = 5, channel 11, BW20, bssid = 7e:45:58:2a:d0:79[0m
+[0;32mI (3109) wifi:security: WPA2-PSK, phy: bgn, rssi: -50, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (3119) wifi:pm start, type: 1[0m
+
+[0;32mI (3119) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3129) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (3129) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3159) wifi:<ba-add>idx:0 (ifx:0, 7e:45:58:2a:d0:79), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5269) esp_netif_handlers: example_netif_sta ip: 192.168.7.121, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (5269) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.7.121[0m
+[0;32mI (5269) example_common: Connected to example_netif_sta[0m
+[0;32mI (5279) example_common: - IPv4 address: 192.168.7.121,[0m
+[0;32mI (5279) train_pwm: PWM init on GPIO2, 10000 Hz, 10-bit, duty 0%[0m
+[0;32mI (5289) speed_led: Speed LED init on GPIO1 (XIAO D0)[0m
+[0;32mI (5289) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (5299) train_control: Train control initialized: mode=off, percent=0[0m
+[0;32mI (5299) example: Starting server on port: '80'[0m
+[0;32mI (5309) example: Registering URI handlers[0m
+[0;32mI (5309) train_http: Registering train control URI handlers[0m
+[0;32mI (6519) speed_led: System ready (3-flash signal complete)[0m
+[0;32mI (414439) train_http: Serving train control page for /hello[0m
+[0;32mI (430269) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (475289) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (520429) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (565559) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (610689) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (670879) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3689949) train_pwm: PWM duty set to 65% (raw=664)[0m
+[0;32mI (3689949) train_control: Mode set to 1 (65%)[0m
+[0;32mI (3692909) train_pwm: PWM duty set to 70% (raw=716)[0m
+[0;32mI (3692909) train_control: Mode set to 2 (70%)[0m
+[0;32mI (3693929) train_pwm: PWM duty set to 75% (raw=767)[0m
+[0;32mI (3693929) train_control: Mode set to 3 (75%)[0m
+[0;32mI (3694359) train_pwm: PWM duty set to 80% (raw=818)[0m
+[0;32mI (3694359) train_control: Mode set to 4 (80%)[0m
+[0;32mI (3694859) train_pwm: PWM duty set to 85% (raw=869)[0m
+[0;32mI (3694859) train_control: Mode set to 5 (85%)[0m
+[0;32mI (3695369) train_pwm: PWM duty set to 90% (raw=920)[0m
+[0;32mI (3695369) train_control: Mode set to 6 (90%)[0m
+[0;32mI (3706109) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (3706109) train_control: Mode set to off (0%)[0m
+[0;32mI (3711129) train_pwm: PWM duty set to 70% (raw=716)[0m
+[0;32mI (3711129) train_control: Mode set to 2 (70%)[0m
+[0;32mI (3712559) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (3712559) train_control: Mode set to off (0%)[0m
+[0;32mI (3715729) train_pwm: PWM duty set to 65% (raw=664)[0m
+[0;32mI (3715729) train_control: Mode set to 1 (65%)[0m
+[0;32mI (3717979) train_pwm: PWM duty set to 70% (raw=716)[0m
+[0;32mI (3717979) train_control: Mode set to 2 (70%)[0m
+[0;32mI (3718899) train_pwm: PWM duty set to 75% (raw=767)[0m
+[0;32mI (3718899) train_control: Mode set to 3 (75%)[0m
+[0;32mI (3719409) train_pwm: PWM duty set to 80% (raw=818)[0m
+[0;32mI (3719419) train_control: Mode set to 4 (80%)[0m
+[0;32mI (3719929) train_pwm: PWM duty set to 85% (raw=869)[0m
+[0;32mI (3719929) train_control: Mode set to 5 (85%)[0m
+[0;32mI (3720329) train_pwm: PWM duty set to 90% (raw=920)[0m
+[0;32mI (3720339) train_control: Mode set to 6 (90%)[0m

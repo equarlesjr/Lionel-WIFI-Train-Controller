@@ -1,70 +1,66 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C5 | ESP32-C6 | ESP32-C61 | ESP32-H2 | ESP32-P4 | ESP32-S2 | ESP32-S3 | Linux |
-| ----------------- | ----- | -------- | -------- | -------- | -------- | --------- | -------- | -------- | -------- | -------- | ----- |
+# Lionel Wi-Fi Train Controller
 
-# Simple HTTPD Server Example
+Hello — I built this for people who have older Lionel train sets and want an easy way to run them wirelessly. The firmware runs on an ESP32-S3, starts a web server on your home Wi-Fi, and lets you set train speed from a browser. I hope you enjoy it.
 
-The Example consists of HTTPD server demo with demonstration of URI handling :
-    1. URI \hello for GET command returns "Hello World!" message
-    2. URI \echo for POST command echoes back the POSTed message
-    3. URI \sse for GET command sends a message to client every second
+This project is currently set up for a **Seeed XIAO ESP32-S3**. Open the board’s IP address in a phone or laptop browser and you get a throttle page: **OFF** plus speeds **1–6**.
 
-## User Callback
+## What it does
 
-The example includes a simple user callback that can be used to get the SSL context (connection information) when the server is being initialized. To enable the user callback, set `CONFIG_EXAMPLE_ENABLE_HTTPS_USER_CALLBACK` to `y` in the project configuration menu.
+- Joins your Wi-Fi network and serves a simple control page at `http://<board-ip>/`
+- Maps each throttle button to a PWM duty cycle that drives the track (or your motor driver)
+- Starts at **0% PWM** on boot so the train does not take off when power is applied
+- Blinks a status LED faster as the commanded speed increases, and flashes three times when the web server is ready
 
-## Server-Sent Events (SSE)
+Speed levels in firmware (percentages are labeled as provisional and easy to retune in `main/train_control.h`):
 
-The example also includes a simple SSE handler (having endpoint \sse), which sends a message to the client every second. To enable SSE, set `CONFIG_EXAMPLE_ENABLE_SSE_HANDLER` to `y` in the project configuration menu.
+| Button | PWM |
+|--------|-----|
+| OFF    | 0%  |
+| 1      | 65% |
+| 2      | 70% |
+| 3      | 75% |
+| 4      | 80% |
+| 5      | 85% |
+| 6      | 90% (maximum) |
 
-## How to use example
+## Hardware
 
-### Hardware Required
+| Function        | XIAO pin | GPIO |
+|-----------------|----------|------|
+| PWM output      | D1       | 2    |
+| Speed/status LED| D0       | 1    |
 
-* A development board with ESP32/ESP32-S2/ESP32-C3 SoC (e.g., ESP32-DevKitC, ESP-WROVER-KIT, etc.)
-* A USB cable for power supply and programming
+PWM is 10 kHz, 10-bit LEDC. Wire GPIO 2 through an appropriate driver/amp for your layout — do not hang a transformer or track load directly on the ESP32 pin.
 
-### Configure the project
+## How to use it
 
-```
-idf.py menuconfig
-```
-* Open the project configuration menu (`idf.py menuconfig`) to configure Wi-Fi or Ethernet. See "Establishing Wi-Fi or Ethernet Connection" section in [examples/protocols/README.md](../../README.md) for more details.
+1. Set your Wi-Fi SSID and password in `idf.py menuconfig` under **Example Connection Configuration**.
+2. Build and flash for ESP32-S3:
 
-### Build and Flash
+   ```
+   idf.py -p PORT flash monitor
+   ```
 
-Build the project and flash it to the board, then run monitor tool to view serial output:
+3. Watch the serial log for the IPv4 address, then open that address in a browser.
+4. Use the throttle buttons. The page also polls `/status` so the highlighted speed stays in sync if you reload.
 
-```
-idf.py -p PORT flash monitor
-```
+When the LED flashes three times, the server is up.
 
-(Replace PORT with the name of the serial port to use.)
+## HTTP API
 
-(To exit the serial monitor, type ``Ctrl-]``.)
+The page is enough for day-to-day use. These endpoints are what it calls:
 
-See the Getting Started Guide for full steps to configure and use ESP-IDF to build projects.
+| Path | Description |
+|------|-------------|
+| `GET /` | Control page |
+| `GET /speed?mode=off` or `1`–`6` | Set speed; JSON `{ "mode", "percent" }` |
+| `GET /status` | Current mode and percent |
+| `GET /train.jpg` | Embedded header image |
 
-### Test the example :
-        * run the test script : "python scripts/client.py \<IP\> \<port\> \<MSG\>"
-            * the provided test script first does a GET \hello and displays the response
-            * the script does a POST to \echo with the user input \<MSG\> and displays the response
-        * or use curl (assuming IP is 192.168.43.130):
-            1. "curl 192.168.43.130:80/hello"  - tests the GET "\hello" handler
-            2. "curl -X POST --data-binary @anyfile 192.168.43.130:80/echo > tmpfile"
-                * "anyfile" is the file being sent as request body and "tmpfile" is where the body of the response is saved
-                * since the server echoes back the request body, the two files should be same, as can be confirmed using : "cmp anyfile tmpfile"
-            3. "curl -X PUT -d "0" 192.168.43.130:80/ctrl" - disable /hello and /echo handlers
-            4. "curl -X PUT -d "1" 192.168.43.130:80/ctrl" -  enable /hello and /echo handlers
+## Project layout
 
-## Example Output
-```
-I (9580) example_connect: - IPv4 address: 192.168.194.219
-I (9580) example_connect: - IPv6 address: fe80:0000:0000:0000:266f:28ff:fe80:2c74, type: ESP_IP6_ADDR_IS_LINK_LOCAL
-I (9590) example: Starting server on port: '80'
-I (9600) example: Registering URI handlers
-I (66450) example: Found header => Host: 192.168.194.219
-I (66460) example: Request headers lost
-```
-
-## Troubleshooting
-* If the server log shows "httpd_parse: parse_block: request URI/header too long", especially when handling POST requests, then you probably need to increase HTTPD_MAX_REQ_HDR_LEN, which you can find in the project configuration menu (`idf.py menuconfig`): Component config -> HTTP Server -> Max HTTP Request Header Length
+- `main/train_http.c` — web UI and URI handlers
+- `main/train_control.c` — speed modes
+- `main/train_pwm.c` — LEDC PWM
+- `main/speed_led.c` — status LED
+- `images/lionel-trains.jpg` — image served on the page
