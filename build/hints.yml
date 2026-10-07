@@ -601,6 +601,10 @@
     hint: "The cryptoauthlib mbedTLS wrapper (atca_mbedtls_wrap.h) is no longer used to integrate a secure element. Enable CONFIG_MBEDTLS_SECURE_ELEMENT_DRIVER_ENABLED, install `esp-cryptoauthlib` using 'idf.py add-dependency espressif/esp-cryptoauthlib', and provide the key via esp_key_config_t (ESP_KEY_SOURCE_PSA). Please refer to the migration guide for more information."
 
 -
+    re: "fatal error: esp_adc_cal.h: No such file or directory"
+    hint: "``esp_adc_cal`` component is no longer supported. New adc calibration driver is in ``esp_adc``. Legacy adc calibration driver has been moved into ``esp_adc`` component. To use legacy ``esp_adc_cal`` driver APIs, you should add ``esp_adc`` component to the list of component requirements in CMakeLists.txt. For more information run 'idf.py docs -sp migration-guides/release-5.x/peripherals.html'."
+
+-
     re: "error: implicit declaration of function '(esp_dma_capable_malloc|esp_dma_capable_calloc)'"
     hint: "Use the heap_caps_malloc() or heap_caps_calloc() functions from the esp_heap_caps.h with the MALLOC_CAP_DMA flag to allocate memory that is capable of being used for DMA operations."
 

@@ -65,6 +65,15 @@ static const char TRAIN_INDEX_HTML[] =
     "text-transform:uppercase;color:var(--blue);font-weight:bold;"
     "font-family:Arial,Helvetica,sans-serif;"
     "}"
+    ".source{"
+    "margin:0 0 12px;padding:8px 12px;text-align:center;"
+    "font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;"
+    "font-weight:bold;color:var(--blue);"
+    "background:#fff;border:2px solid var(--blue);border-radius:999px;"
+    "font-family:Arial,Helvetica,sans-serif;"
+    "}"
+    ".source.source-off{color:#5c6672;border-color:#8a9199;}"
+    ".source.source-knob{color:var(--red);border-color:var(--red);}"
     ".buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}"
     "button{"
     "padding:22px 8px;font-size:1.15rem;font-weight:bold;cursor:pointer;"
@@ -82,6 +91,7 @@ static const char TRAIN_INDEX_HTML[] =
     "color:#fff;border-color:#8b1428;"
     "box-shadow:0 3px 0 #6f1020,inset 0 0 0 2px var(--gold);"
     "}"
+    "button:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;transform:none;}"
     ".status{"
     "margin:18px 0 0;padding:12px 14px;text-align:center;"
     "font-size:1.15rem;font-weight:bold;"
@@ -110,6 +120,7 @@ static const char TRAIN_INDEX_HTML[] =
     "</figure>"
     "<section class=\"controls\">"
     "<p class=\"controls-label\">Throttle</p>"
+    "<p id=\"source\" class=\"source\">Control: --</p>"
     "<div class=\"buttons\">"
     "<button type=\"button\" data-mode=\"off\">OFF</button>"
     "<button type=\"button\" data-mode=\"1\">1</button>"
@@ -126,29 +137,39 @@ static const char TRAIN_INDEX_HTML[] =
     "<script>"
     "const buttons=document.querySelectorAll('button[data-mode]');"
     "const statusEl=document.getElementById('status');"
+    "const sourceEl=document.getElementById('source');"
     "function modeLabel(mode){return mode==='off'?'OFF':mode;}"
-    "function setSelected(mode){"
+    "function sourceLabel(src){"
+    "if(src==='web')return 'WEB';"
+    "if(src==='knob')return 'KNOB';"
+    "return 'OFF';"
+    "}"
+    "function applyStatus(j){"
+    "const src=j.control_source||'off';"
+    "sourceEl.textContent='Control: '+sourceLabel(src);"
+    "sourceEl.className='source source-'+src;"
+    "const locked=src!=='web';"
     "buttons.forEach(function(b){"
-    "b.classList.toggle('selected',b.dataset.mode===mode);"
+    "b.disabled=locked;"
+    "b.classList.toggle('selected',b.dataset.mode===j.mode);"
     "});"
-    "statusEl.textContent='Train speed: '+modeLabel(mode);"
+    "statusEl.textContent='Train speed: '+modeLabel(j.mode);"
     "}"
     "async function refreshStatus(){"
     "const r=await fetch('/status');"
     "if(!r.ok){return;}"
-    "const j=await r.json();"
-    "setSelected(j.mode);"
+    "applyStatus(await r.json());"
     "}"
     "buttons.forEach(function(b){"
     "b.addEventListener('click',async function(){"
-    "const mode=b.dataset.mode;"
-    "const r=await fetch('/speed?mode='+encodeURIComponent(mode));"
-    "if(!r.ok){alert('Failed to set speed');return;}"
-    "const j=await r.json();"
-    "setSelected(j.mode);"
+    "if(b.disabled){return;}"
+    "const r=await fetch('/speed?mode='+encodeURIComponent(b.dataset.mode));"
+    "if(!r.ok){await refreshStatus();return;}"
+    "applyStatus(await r.json());"
     "});"
     "});"
     "refreshStatus();"
+    "setInterval(refreshStatus,400);"
     "</script>"
     "</body>"
     "</html>";
@@ -177,6 +198,29 @@ static esp_err_t train_favicon_get_handler(httpd_req_t *req)
     return ESP_OK;
 }
 
+static int format_status_json(char *buf, size_t buflen)
+{
+    train_control_status_t status;
+    train_control_get_status(&status);
+    return snprintf(buf, buflen,
+                    "{\"control_source\":\"%s\",\"mode\":\"%s\",\"percent\":%u}",
+                    status.source_name, status.mode, (unsigned)status.percent);
+}
+
+static esp_err_t send_status_json(httpd_req_t *req)
+{
+    char response[96];
+    int len = format_status_json(response, sizeof(response));
+    if (len < 0 || len >= (int)sizeof(response)) {
+        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Response error");
+        return ESP_FAIL;
+    }
+
+    httpd_resp_set_type(req, "application/json");
+    httpd_resp_set_hdr(req, "Cache-Control", "no-store");
+    return httpd_resp_send(req, response, len);
+}
+
 static esp_err_t train_speed_get_handler(httpd_req_t *req)
 {
     char query[32];
@@ -198,41 +242,22 @@ static esp_err_t train_speed_get_handler(httpd_req_t *req)
         return ESP_FAIL;
     }
 
-    if (train_control_set_mode(mode) != ESP_OK) {
+    esp_err_t err = train_control_set_mode(mode);
+    if (err == ESP_ERR_INVALID_STATE) {
+        httpd_resp_send_err(req, HTTPD_403_FORBIDDEN, "Control source is not WEB");
+        return ESP_FAIL;
+    }
+    if (err != ESP_OK) {
         httpd_resp_send_err(req, HTTPD_400_BAD_REQUEST, "Invalid mode");
         return ESP_FAIL;
     }
 
-    char response[64];
-    int len = snprintf(response, sizeof(response),
-                       "{\"mode\":\"%s\",\"percent\":%u}",
-                       train_control_get_mode(),
-                       (unsigned)train_control_get_percent());
-    if (len < 0 || len >= (int)sizeof(response)) {
-        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Response error");
-        return ESP_FAIL;
-    }
-
-    httpd_resp_set_type(req, "application/json");
-    httpd_resp_set_hdr(req, "Cache-Control", "no-store");
-    return httpd_resp_send(req, response, len);
+    return send_status_json(req);
 }
 
 static esp_err_t train_status_get_handler(httpd_req_t *req)
 {
-    char response[64];
-    int len = snprintf(response, sizeof(response),
-                       "{\"mode\":\"%s\",\"percent\":%u}",
-                       train_control_get_mode(),
-                       (unsigned)train_control_get_percent());
-    if (len < 0 || len >= (int)sizeof(response)) {
-        httpd_resp_send_err(req, HTTPD_500_INTERNAL_SERVER_ERROR, "Response error");
-        return ESP_FAIL;
-    }
-
-    httpd_resp_set_type(req, "application/json");
-    httpd_resp_set_hdr(req, "Cache-Control", "no-store");
-    return httpd_resp_send(req, response, len);
+    return send_status_json(req);
 }
 
 static const httpd_uri_t train_index = {

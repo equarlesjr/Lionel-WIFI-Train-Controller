@@ -33,6 +33,7 @@
 #include "speed_led.h"
 #include "train_control.h"
 #include "train_http.h"
+#include "manual_control.h"
 #endif  // !CONFIG_IDF_TARGET_LINUX
 
 #define EXAMPLE_HTTP_QUERY_KEY_MAX_LEN  (64)
@@ -516,6 +517,7 @@ void app_main(void)
     train_pwm_init();
     speed_led_init();
     train_control_init();
+    manual_control_init();
 #endif
 
     /* Register event handlers to stop the server when Wi-Fi or Ethernet is disconnected,
