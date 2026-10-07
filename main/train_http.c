@@ -1,10 +1,13 @@
 #include "train_http.h"
 
+#include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #include "esp_log.h"
 #include "train_control.h"
+#include "wifi.h"
 
 static const char *TAG = "train_http";
 
@@ -104,6 +107,7 @@ static const char TRAIN_INDEX_HTML[] =
     "border-top:2px solid rgba(30,74,122,.15);"
     "font-family:Arial,Helvetica,sans-serif;"
     "}"
+    ".footer a{color:var(--blue);text-decoration:none;}"
     "</style>"
     "</head>"
     "<body>"
@@ -132,7 +136,7 @@ static const char TRAIN_INDEX_HTML[] =
     "</div>"
     "<p id=\"status\" class=\"status\">Train speed: --</p>"
     "</section>"
-    "<footer class=\"footer\">Lionel O Gauge &middot; Wi-Fi Throttle</footer>"
+    "<footer class=\"footer\">Lionel O Gauge &middot; Wi-Fi Throttle &middot; <a href=\"/wifi\">Wi-Fi setup</a></footer>"
     "</div>"
     "<script>"
     "const buttons=document.querySelectorAll('button[data-mode]');"
@@ -174,8 +178,18 @@ static const char TRAIN_INDEX_HTML[] =
     "</body>"
     "</html>";
 
+static esp_err_t wifi_page_get_handler(httpd_req_t *req);
+
 static esp_err_t train_index_get_handler(httpd_req_t *req)
 {
+    /* Captive-portal browsers open /. Serving the throttle page here
+     * during setup looks like "site can't be reached" after JS/image load.
+     */
+    if (wifi_is_provisioning()) {
+        ESP_LOGI(TAG, "Provisioning: serving Wi-Fi setup for %s", req->uri);
+        return wifi_page_get_handler(req);
+    }
+
     ESP_LOGI(TAG, "Serving train control page for %s", req->uri);
     httpd_resp_set_type(req, "text/html");
     httpd_resp_set_hdr(req, "Cache-Control", "no-store");
@@ -296,13 +310,277 @@ static const httpd_uri_t train_status = {
     .handler = train_status_get_handler,
 };
 
+extern const uint8_t wifi_setup_html_start[] asm("_binary_wifi_setup_html_start");
+extern const uint8_t wifi_setup_html_end[] asm("_binary_wifi_setup_html_end");
+
+static esp_err_t http_send_json(httpd_req_t *req, const char *status, const char *json)
+{
+    if (status != NULL) {
+        httpd_resp_set_status(req, status);
+    }
+    httpd_resp_set_type(req, "application/json");
+    httpd_resp_set_hdr(req, "Cache-Control", "no-store");
+    return httpd_resp_send(req, json, HTTPD_RESP_USE_STRLEN);
+}
+
+static esp_err_t http_send_json_error(httpd_req_t *req, const char *status, const char *message)
+{
+    char json[128];
+    snprintf(json, sizeof(json), "{\"error\":\"%s\"}", message);
+    return http_send_json(req, status, json);
+}
+
+static void json_escape(const char *in, char *out, size_t out_len)
+{
+    size_t o = 0;
+    for (size_t i = 0; in && in[i] && o + 2 < out_len; i++) {
+        if (in[i] == '"' || in[i] == '\\') {
+            if (o + 3 >= out_len) {
+                break;
+            }
+            out[o++] = '\\';
+        }
+        out[o++] = in[i];
+    }
+    if (out_len > 0) {
+        out[o] = '\0';
+    }
+}
+
+static bool json_get_string(const char *json, const char *key, char *out, size_t out_len)
+{
+    char pat[48];
+    snprintf(pat, sizeof(pat), "\"%s\":\"", key);
+    const char *p = strstr(json, pat);
+    if (!p) {
+        out[0] = '\0';
+        return false;
+    }
+    p += strlen(pat);
+    size_t i = 0;
+    while (*p && *p != '"' && i + 1 < out_len) {
+        if (*p == '\\' && p[1]) {
+            p++;
+        }
+        out[i++] = *p++;
+    }
+    out[i] = '\0';
+    return true;
+}
+
+static const char *wifi_state_str(wifi_state_t state)
+{
+    switch (state) {
+    case WIFI_STATE_PROVISIONING:
+        return "provisioning";
+    case WIFI_STATE_CONNECTING:
+        return "connecting";
+    case WIFI_STATE_CONNECTED:
+        return "connected";
+    default:
+        return "idle";
+    }
+}
+
+static esp_err_t format_wifi_json(char *buf, size_t buf_size)
+{
+    wifi_status_t st;
+    if (wifi_get_status(&st) != ESP_OK) {
+        snprintf(buf, buf_size, "{\"error\":\"Failed to read Wi-Fi status\"}");
+        return ESP_FAIL;
+    }
+
+    char ap_ssid[WIFI_SSID_MAX * 2 + 1];
+    char sta_ssid[WIFI_SSID_MAX * 2 + 1];
+    json_escape(st.ap_ssid, ap_ssid, sizeof(ap_ssid));
+    json_escape(st.sta_ssid, sta_ssid, sizeof(sta_ssid));
+    snprintf(buf, buf_size,
+             "{\"state\":\"%s\",\"provisioning\":%s,\"sta_connected\":%s,"
+             "\"ap_ssid\":\"%s\",\"sta_ssid\":\"%s\",\"ip\":\"%s\"}",
+             wifi_state_str(st.state),
+             st.provisioning ? "true" : "false",
+             st.sta_connected ? "true" : "false",
+             ap_ssid, sta_ssid, st.ip);
+    return ESP_OK;
+}
+
+static esp_err_t recv_body(httpd_req_t *req, char *buf, size_t buf_size)
+{
+    if (req->content_len <= 0 || (size_t)req->content_len >= buf_size) {
+        return ESP_ERR_INVALID_SIZE;
+    }
+    int remaining = req->content_len;
+    int off = 0;
+    while (remaining > 0) {
+        int n = httpd_req_recv(req, buf + off, remaining);
+        if (n <= 0) {
+            return ESP_FAIL;
+        }
+        off += n;
+        remaining -= n;
+    }
+    buf[off] = '\0';
+    return ESP_OK;
+}
+
+static esp_err_t wifi_page_get_handler(httpd_req_t *req)
+{
+    ESP_LOGI(TAG, "Serving Wi-Fi setup for %s", req->uri);
+    httpd_resp_set_type(req, "text/html; charset=utf-8");
+    httpd_resp_set_hdr(req, "Cache-Control", "no-cache");
+    return httpd_resp_send(req, (const char *)wifi_setup_html_start,
+                           wifi_setup_html_end - wifi_setup_html_start);
+}
+
+static const httpd_uri_t wifi_page = {
+    .uri = "/wifi",
+    .method = HTTP_GET,
+    .handler = wifi_page_get_handler,
+};
+
+static esp_err_t wifi_status_get_handler(httpd_req_t *req)
+{
+    char json[256];
+    if (format_wifi_json(json, sizeof(json)) != ESP_OK) {
+        return http_send_json_error(req, "500 Internal Server Error", "Failed to read Wi-Fi status");
+    }
+    return http_send_json(req, NULL, json);
+}
+
+static const httpd_uri_t wifi_status = {
+    .uri = "/wifi/status",
+    .method = HTTP_GET,
+    .handler = wifi_status_get_handler,
+};
+
+static esp_err_t wifi_scan_get_handler(httpd_req_t *req)
+{
+    wifi_scan_ap_t *aps = calloc(WIFI_SCAN_MAX, sizeof(*aps));
+    char *json = malloc(2048);
+    if (!aps || !json) {
+        free(aps);
+        free(json);
+        return http_send_json_error(req, "500 Internal Server Error", "Out of memory");
+    }
+
+    ESP_LOGI(TAG, "Wi-Fi scan requested");
+    size_t count = 0;
+    esp_err_t err = wifi_scan(aps, WIFI_SCAN_MAX, &count);
+    if (err != ESP_OK) {
+        free(aps);
+        free(json);
+        return http_send_json_error(req, "500 Internal Server Error", "Wi-Fi scan failed");
+    }
+
+    int off = snprintf(json, 2048, "{\"aps\":[");
+    for (size_t i = 0; i < count && off > 0 && off < 2048; i++) {
+        char ssid[WIFI_SSID_MAX * 2 + 1];
+        json_escape(aps[i].ssid, ssid, sizeof(ssid));
+        int n = snprintf(json + off, (size_t)(2048 - off),
+                         "%s{\"ssid\":\"%s\",\"rssi\":%d,\"open\":%s}",
+                         (i == 0) ? "" : ",", ssid, (int)aps[i].rssi,
+                         aps[i].open ? "true" : "false");
+        if (n < 0 || n >= 2048 - off) {
+            free(aps);
+            free(json);
+            return http_send_json_error(req, "500 Internal Server Error", "Failed to format scan result");
+        }
+        off += n;
+    }
+    if (off + 3 > 2048) {
+        free(aps);
+        free(json);
+        return http_send_json_error(req, "500 Internal Server Error", "Failed to format scan result");
+    }
+    json[off++] = ']';
+    json[off++] = '}';
+    json[off] = '\0';
+    err = http_send_json(req, NULL, json);
+    free(aps);
+    free(json);
+    return err;
+}
+
+static const httpd_uri_t wifi_scan_uri = {
+    .uri = "/wifi/scan",
+    .method = HTTP_GET,
+    .handler = wifi_scan_get_handler,
+};
+
+static esp_err_t wifi_connect_post_handler(httpd_req_t *req)
+{
+    char body[256];
+    if (recv_body(req, body, sizeof(body)) != ESP_OK) {
+        return http_send_json_error(req, "400 Bad Request", "Invalid Wi-Fi request");
+    }
+
+    char ssid[WIFI_SSID_MAX + 1] = {0};
+    char password[WIFI_PASS_MAX + 1] = {0};
+    json_get_string(body, "ssid", ssid, sizeof(ssid));
+    json_get_string(body, "password", password, sizeof(password));
+    if (ssid[0] == '\0') {
+        return http_send_json(req, "400 Bad Request", "{\"error\":\"ssid is required\"}");
+    }
+
+    if (wifi_save_and_connect(ssid, password) != ESP_OK) {
+        return http_send_json_error(req, "500 Internal Server Error", "Failed to save Wi-Fi credentials");
+    }
+    /* Reply first so the phone sees acknowledgement before we start joining. */
+    esp_err_t err = http_send_json(req, NULL, "{\"ok\":true}");
+    (void)wifi_connect_saved();
+    return err;
+}
+
+static const httpd_uri_t wifi_connect = {
+    .uri = "/wifi/connect",
+    .method = HTTP_POST,
+    .handler = wifi_connect_post_handler,
+};
+
+static esp_err_t wifi_forget_post_handler(httpd_req_t *req)
+{
+    char dummy[8];
+    if (req->content_len > 0) {
+        (void)recv_body(req, dummy, sizeof(dummy));
+    }
+    if (wifi_forget() != ESP_OK) {
+        return http_send_json_error(req, "500 Internal Server Error", "Failed to forget Wi-Fi");
+    }
+    return http_send_json(req, NULL, "{\"ok\":true}");
+}
+
+static const httpd_uri_t wifi_forget_uri = {
+    .uri = "/wifi/forget",
+    .method = HTTP_POST,
+    .handler = wifi_forget_post_handler,
+};
+
+static esp_err_t http_404_error_handler(httpd_req_t *req, httpd_err_code_t err)
+{
+    (void)err;
+    if (wifi_is_provisioning()) {
+        httpd_resp_set_status(req, "302 Found");
+        httpd_resp_set_hdr(req, "Location", "http://192.168.4.1/wifi");
+        httpd_resp_send(req, NULL, 0);
+        return ESP_OK;
+    }
+    httpd_resp_send_err(req, HTTPD_404_NOT_FOUND, "Not found");
+    return ESP_FAIL;
+}
+
 void train_http_register_uri_handlers(httpd_handle_t server)
 {
     ESP_LOGI(TAG, "Registering train control URI handlers");
+    ESP_ERROR_CHECK(httpd_register_err_handler(server, HTTPD_404_NOT_FOUND, http_404_error_handler));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_index));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_index_compat));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_image));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_speed));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_status));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_favicon));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &wifi_page));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &wifi_status));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &wifi_scan_uri));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &wifi_connect));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &wifi_forget_uri));
 }

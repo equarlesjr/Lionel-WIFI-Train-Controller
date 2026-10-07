@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Train Wi-Fi setup</title>
+  <style>
+    :root {
+      --bg: #eef1f4;
+      --card: #ffffff;
+      --ink: #15202b;
+      --muted: #5b6773;
+      --line: #d7dde3;
+      --ok: #0f7a4a;
+      --ok-bg: #e5f6ed;
+      --warn: #9a6700;
+      --warn-bg: #fff4d6;
+      --bad: #b42318;
+      --accent: #1e4a7a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    header, main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem;
+    }
+    h1 { margin: 0; font-size: 1.6rem; }
+    .sub { color: var(--muted); margin-top: 0.35rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.1rem 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 1px 2px rgba(21, 32, 43, 0.06);
+    }
+    label { display: block; font-weight: 650; margin: 0.7rem 0 0.3rem; }
+    input {
+      width: 100%;
+      font-size: 1rem;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    button {
+      font-size: 1rem;
+      font-weight: 650;
+      border: 0;
+      border-radius: 10px;
+      padding: 0.7rem 1rem;
+      margin: 0.4rem 0.4rem 0 0;
+      cursor: pointer;
+      background: var(--accent);
+      color: #fff;
+    }
+    button.secondary { background: #5b6773; }
+    button.danger { background: var(--bad); }
+    .ap {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--line);
+      cursor: pointer;
+    }
+    .ap:last-child { border-bottom: 0; }
+    .ssid { font-weight: 650; }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .msg { margin-top: 0.75rem; font-weight: 650; }
+    a { color: var(--accent); font-weight: 650; }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: var(--ok-bg);
+      color: var(--ok);
+    }
+    .warn { background: var(--warn-bg); color: var(--warn); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wi-Fi setup</h1>
+    <p class="sub">Join this train controller to a network, then open the <a href="/">throttle</a>.</p>
+  </header>
+  <main>
+    <section class="card">
+      <p id="state">Checking radio…</p>
+    </section>
+    <section class="card">
+      <h2 style="margin:0 0 0.5rem;font-size:1rem;">Nearby networks</h2>
+      <div id="aps">Scanning…</div>
+      <button class="secondary" type="button" onclick="scan()">Scan again</button>
+    </section>
+    <section class="card">
+      <form onsubmit="connect(event)">
+        <label for="ssid">Network name</label>
+        <input id="ssid" name="ssid" maxlength="32" autocomplete="off" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" maxlength="64" placeholder="Leave blank if open">
+        <p>
+          <button type="submit">Connect</button>
+          <button class="danger" type="button" onclick="forget()">Forget network</button>
+        </p>
+        <p class="msg" id="msg"></p>
+      </form>
+    </section>
+  </main>
+  <script>
+    function escapeHtml(s) {
+      return String(s || "").replace(/[&<>"']/g, (c) => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[c]));
+    }
+
+    async function refreshState() {
+      const res = await fetch("/wifi/status", { cache: "no-store" });
+      const w = await res.json();
+      const badge = w.sta_connected ? '<span class="badge">On LAN</span>' :
+                    w.state === "connecting" ? '<span class="badge warn">Joining…</span>' :
+                    '<span class="badge warn">Setup AP</span>';
+      document.getElementById("state").innerHTML =
+        `${badge} AP <strong>${escapeHtml(w.ap_ssid)}</strong>` +
+        (w.sta_ssid ? ` · saved <strong>${escapeHtml(w.sta_ssid)}</strong>` : "") +
+        (w.ip ? ` · ${escapeHtml(w.ip)}` : "");
+    }
+
+    async function scan() {
+      document.getElementById("aps").textContent = "Scanning…";
+      try {
+        const res = await fetch("/wifi/scan", { cache: "no-store" });
+        const data = await res.json();
+        const aps = data.aps || [];
+        if (!aps.length) {
+          document.getElementById("aps").textContent = "No networks found.";
+          return;
+        }
+        document.getElementById("aps").innerHTML = aps.map((ap) =>
+          `<div class="ap" onclick="pick('${encodeURIComponent(ap.ssid)}')">
+             <span class="ssid">${escapeHtml(ap.ssid)}</span>
+             <span class="meta">${ap.rssi} dBm${ap.open ? " · open" : ""}</span>
+           </div>`
+        ).join("");
+      } catch (e) {
+        document.getElementById("aps").textContent = "Scan failed: " + e.message;
+      }
+    }
+
+    function pick(encoded) {
+      document.getElementById("ssid").value = decodeURIComponent(encoded);
+      document.getElementById("password").focus();
+    }
+
+    async function connect(event) {
+      event.preventDefault();
+      const ssid = document.getElementById("ssid").value.trim();
+      const password = document.getElementById("password").value;
+      document.getElementById("msg").textContent =
+        "Password saved. Joining " + ssid + "…";
+      try {
+        const res = await fetch("/wifi/connect", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ssid, password })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          document.getElementById("msg").textContent = data.error || "Connect failed";
+          return;
+        }
+        document.getElementById("msg").textContent =
+          "Got it. Joining " + ssid + "… this page stays up until the train has an IP.";
+      } catch (e) {
+        document.getElementById("msg").textContent =
+          "Saved, but this page lost the setup AP. Reconnect to " + ssid + " if needed.";
+      }
+      waitForJoin(ssid);
+    }
+
+    async function forget() {
+      document.getElementById("msg").textContent = "Clearing saved network…";
+      await fetch("/wifi/forget", { method: "POST" });
+      document.getElementById("msg").textContent = "Setup AP is back. Rejoin Train-xxxx if needed.";
+      refreshState();
+    }
+
+    function waitForJoin(ssid) {
+      let n = 0;
+      const t = setInterval(async () => {
+        n += 1;
+        try {
+          const res = await fetch("/wifi/status", { cache: "no-store" });
+          const w = await res.json();
+          await refreshState();
+          if (w.sta_connected && w.ip) {
+            document.getElementById("msg").innerHTML =
+              "Joined <strong>" + escapeHtml(ssid) + "</strong>. Train address is " +
+              "<a href=\"http://" + escapeHtml(w.ip) + "/\">http://" + escapeHtml(w.ip) + "/</a>. " +
+              "Reconnect your phone to " + escapeHtml(ssid) +
+              ", then open that link. Setup AP closes in a few seconds.";
+            clearInterval(t);
+          }
+        } catch (e) {
+          document.getElementById("msg").textContent =
+            "Setup AP dropped. Reconnect your phone to " + ssid +
+            " and open the train’s new address (see the serial log for STA IP).";
+          clearInterval(t);
+        }
+        if (n > 40) clearInterval(t);
+      }, 500);
+    }
+
+    refreshState().catch(() => {});
+    scan().catch(() => {});
+    setInterval(() => refreshState().catch(() => {}), 2000);
+  </script>
+</body>
+</html>

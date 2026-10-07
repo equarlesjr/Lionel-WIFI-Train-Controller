@@ -997,115 +997,6 @@ CONFIG_EXAMPLE_BASIC_AUTH_PASSWORD="ESP32Webserver"
 # end of Example Configuration
 
 #
-# Ethernet Configuration
-#
-# default:
-CONFIG_ENV_GPIO_RANGE_MIN=0
-# default:
-CONFIG_ENV_GPIO_RANGE_MAX=48
-# default:
-CONFIG_ENV_GPIO_IN_RANGE_MAX=48
-# default:
-CONFIG_ENV_GPIO_OUT_RANGE_MAX=48
-# default:
-CONFIG_ETHERNET_INIT_OVERRIDE_DISABLE=y
-# default:
-CONFIG_ETHERNET_SOC_EMAC_SUPPORTED=0
-# default:
-CONFIG_ETHERNET_SOC_EMAC_SUPPORT_1000M=0
-# default:
-CONFIG_ETHERNET_SPI_USE_DM9051=0
-# default:
-CONFIG_ETHERNET_SPI_USE_KSZ8851SNL=0
-# default:
-CONFIG_ETHERNET_SPI_USE_W5500=0
-# default:
-CONFIG_ETHERNET_SPI_USE_W6100=0
-# default:
-CONFIG_ETHERNET_SPI_USE_CH390=0
-# default:
-CONFIG_ETHERNET_SPI_USE_ENC28J60=0
-# default:
-CONFIG_ETHERNET_SPI_USE_LAN865X=0
-# default:
-CONFIG_ETHERNET_PHY_USE_IP101=0
-# default:
-CONFIG_ETHERNET_PHY_USE_LAN87XX=0
-# default:
-CONFIG_ETHERNET_PHY_USE_LAN867X=0
-# default:
-CONFIG_ETHERNET_PHY_USE_DP83848=0
-# default:
-CONFIG_ETHERNET_PHY_USE_KSZ80XX=0
-# default:
-CONFIG_ETHERNET_PHY_USE_RTL8201=0
-# default:
-CONFIG_ETHERNET_PHY_USE_VSC8541=0
-# default:
-CONFIG_ETHERNET_PHY_USE_YT8531=0
-# default:
-CONFIG_ETHERNET_DEFAULT_EVENT_HANDLER=y
-# end of Ethernet Configuration
-
-#
-# Example Connection Configuration
-#
-# default:
-CONFIG_EXAMPLE_CONNECT_WIFI=y
-# default:
-# CONFIG_EXAMPLE_WIFI_SSID_PWD_FROM_STDIN is not set
-# default:
-CONFIG_EXAMPLE_PROVIDE_WIFI_CONSOLE_CMD=y
-CONFIG_EXAMPLE_WIFI_SSID="harmonicminor"
-CONFIG_EXAMPLE_WIFI_PASSWORD="let4al&@bl3"
-# default:
-CONFIG_EXAMPLE_WIFI_CONN_MAX_RETRY=6
-# default:
-# CONFIG_EXAMPLE_WIFI_SCAN_METHOD_FAST is not set
-# default:
-CONFIG_EXAMPLE_WIFI_SCAN_METHOD_ALL_CHANNEL=y
-
-#
-# WiFi Scan threshold
-#
-# default:
-CONFIG_EXAMPLE_WIFI_SCAN_RSSI_THRESHOLD=-127
-# default:
-CONFIG_EXAMPLE_WIFI_AUTH_OPEN=y
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WEP is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA2_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA_WPA2_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA2_ENTERPRISE is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA3_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA2_WPA3_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WAPI_PSK is not set
-# end of WiFi Scan threshold
-
-# default:
-CONFIG_EXAMPLE_WIFI_CONNECT_AP_BY_SIGNAL=y
-# default:
-# CONFIG_EXAMPLE_WIFI_CONNECT_AP_BY_SECURITY is not set
-# default:
-# CONFIG_EXAMPLE_CONNECT_ETHERNET is not set
-# default:
-CONFIG_EXAMPLE_DISABLE_ETHERNET_CONFIG=y
-# default:
-# CONFIG_EXAMPLE_CONNECT_PPP is not set
-# default:
-CONFIG_EXAMPLE_CONNECT_IPV4=y
-# CONFIG_EXAMPLE_CONNECT_IPV6 is not set
-# end of Example Connection Configuration
-
-#
 # Compiler options
 #
 # default:
@@ -1195,13 +1086,6 @@ CONFIG_COMPILER_CXX_GLIBCXX_CONSTEXPR_NO_CHANGE=y
 #
 # If a component configuration is missing, please add it to the main component's requirements
 #
-
-#
-# Console Library
-#
-# default:
-# CONFIG_CONSOLE_SORTED_HELP is not set
-# end of Console Library
 
 #
 # eFuse Bit Manager
@@ -3178,23 +3062,6 @@ CONFIG_MBEDTLS_PKCS1_V21=y
 # default:
 # CONFIG_NVS_FLASH_VERIFY_ERASE is not set
 # end of NVS
-
-#
-# OpenThread
-#
-# default:
-# CONFIG_OPENTHREAD_ENABLED is not set
-
-#
-# OpenThread Spinel
-#
-# default:
-# CONFIG_OPENTHREAD_SPINEL_ONLY is not set
-# end of OpenThread Spinel
-
-# default:
-# CONFIG_OPENTHREAD_DEBUG is not set
-# end of OpenThread
 
 #
 # PThreads

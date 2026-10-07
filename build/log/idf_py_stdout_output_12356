@@ -1,0 +1,256 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\Lionel-WIFI-Train-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM3'
+[0;32mI (127) esp_image: segment 1: paddr=00046188 vaddr=3fc98000 sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b97a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xde4
+load:0x403cb700,len:0x2f58
+entry 0x403c8904
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct  6 2026 22:07:47[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=36160h (221536) map[0m
+[0;32mI (127) esp_image: segment 1: paddr=00046188 vaddr=3fc98000 size=052f4h ( 21236) load[0m
+[0;32mI (132) esp_image: segment 2: paddr=0004b484 vaddr=40374000 size=04b94h ( 19348) load[0m
+[0;32mI (137) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=9a03ch (630844) map[0m
+[0;32mI (253) esp_image: segment 4: paddr=000ea064 vaddr=40378b94 size=0f430h ( 62512) load[0m
+[0;32mI (268) esp_image: segment 5: paddr=000f949c vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (277) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (277) boot: Disabling RNG early entropy source...[0m
+[0;32mI (287) cpu_start: Multicore app[0m
+[0;32mI (296) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (297) cpu_start: Pro cpu start user code[0m
+[0;32mI (297) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (298) app_init: Application information:[0m
+[0;32mI (302) app_init: Project name:     Lionel-WIFI-Train-Controller[0m
+[0;32mI (307) app_init: App version:      0a660e0-dirty[0m
+[0;32mI (312) app_init: Compile time:     Oct  6 2026 21:46:43[0m
+[0;32mI (317) app_init: ELF file SHA256:  c3ef1c785...[0m
+[0;32mI (321) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (325) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (329) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (333) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (337) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (343) heap_init: At 3FCA1670 len 000480A0 (288 KiB): RAM[0m
+[0;32mI (348) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (354) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (359) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (365) spi_flash: detected chip: gd[0m
+[0;32mI (367) spi_flash: flash io: dio[0m
+[0;33mW (370) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (383) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (389) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (396) main_task: Started on CPU0[0m
+[0;32mI (396) main_task: Calling app_main()[0m
+[0;32mI (416) pp: pp rom version: e7ae62f[0m
+[0;32mI (416) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (426) wifi:wifi driver task: 3fcee7a4, prio:23, stack:6656, core=0[0m
+[0;32mI (426) wifi:wifi firmware version: e12a754[0m
+[0;32mI (426) wifi:wifi certification version: v7.0[0m
+[0;32mI (426) wifi:config NVS flash: enabled[0m
+[0;32mI (426) wifi:config nano formatting: disabled[0m
+[0;32mI (436) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (436) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (436) wifi:Init management short buffer num: 32[0m
+[0;32mI (446) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (446) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (456) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (456) wifi:Init static rx buffer num: 10[0m
+[0;32mI (466) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (466) wifi_init: rx ba win: 6[0m
+[0;32mI (466) wifi_init: accept mbox: 6[0m
+[0;32mI (466) wifi_init: tcpip mbox: 32[0m
+[0;32mI (476) wifi_init: udp mbox: 6[0m
+[0;32mI (476) wifi_init: tcp mbox: 6[0m
+[0;32mI (476) wifi_init: tcp tx win: 5760[0m
+[0;32mI (486) wifi_init: tcp rx win: 5760[0m
+[0;32mI (486) wifi_init: tcp mss: 1440[0m
+[0;32mI (486) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (496) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (566) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (606) wifi:mode : sta (28:84:85:bb:77:50) + softAP (28:84:85:bb:77:51)[0m
+[0;32mI (606) wifi:enable tsf[0m
+[0;32mI (606) wifi:Total power save buffer number: 16[0m
+[0;32mI (606) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (606) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (616) wifi: setup AP "Train-7750"  password "trainsetup"  open http://192.168.4.1/wifi[0m
+[0;32mI (616) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (626) wifi_button: Forget Wi-Fi: hold D8/GPIO7 to GND for 4000 ms[0m
+[0;32mI (636) train_pwm: PWM init on GPIO2, 10000 Hz, 10-bit, duty 0%[0m
+[0;32mI (646) speed_led: Speed LED init on GPIO1 (XIAO D0)[0m
+[0;32mI (646) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (646) train_control: Train control initialized: source=off, mode=off, percent=0[0m
+[0;32mI (656) manual_control: Potentiometer ADC on GPIO4[0m
+[0;32mI (816) manual_control: Manual control ready; selector=OFF, adc_ok=1[0m
+[0;32mI (816) manual_control: Probe pins: WEB=GPIO5 KNOB=GPIO6 POT=GPIO4 (0=closed to GND on switch)[0m
+[0;32mI (816) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (826) example: Starting server on port: '80'[0m
+[0;32mI (836) example: Registering URI handlers[0m
+[0;32mI (836) train_http: Registering train control URI handlers[0m
+[0;32mI (1326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (1826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (2036) speed_led: System ready (3-flash signal complete)[0m
+[0;32mI (2326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (2826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (3326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (3826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (4326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (4826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (5326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (5826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (6326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (6826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (7326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (7826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (8326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (8826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (9326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (9826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (10326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (10826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (11326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (11826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (12326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (12826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (13326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (13826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (14326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (14826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (15326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (15826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (16326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (16826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (17326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (17826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (18326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (18826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (19326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (19826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (20326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (20826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (21326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (21826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (22326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (22826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (23326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (23826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (24326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (24826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (25326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (25826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (26326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (26826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (27326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (27826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (28326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (28826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (29326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (29826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (30326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (30826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (31326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (31826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (32326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (32826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (33326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (33826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (34326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (34826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (35326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (35826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (36326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (36826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (37326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (37826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (38326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (38826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (39326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (39826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (40326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (40826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (41326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (41826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (42326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (42826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (43326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (43766) wifi_button: GPIO7 held 4000 ms — forget Wi-Fi[0m
+[0;33mW (43766) wifi: forgetting saved network[0m
+[0;32mI (43766) wifi:Total power save buffer number: 16[0m
+[0;32mI (43766) wifi: setup AP "Train-7750"  password "trainsetup"  open http://192.168.4.1/wifi[0m
+[0;32mI (43766) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (43826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (44326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (44826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (45326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (45826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (46326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (46826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (47326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (47826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (48326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (48826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (49326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (49826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (50326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (50826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (51326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (51826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (52326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (52826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (53326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (53826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (54326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (54826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (55326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (55826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (56326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (56826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (57326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (57826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (58326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (58826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (59326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (59826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (60326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (60826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (61326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (61826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (62326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (62826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (63326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (63826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (64326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (64826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (65326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (65826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (66326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (66826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (67326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (67826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (68326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (68826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (69326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (69826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (70326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (70826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (71326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (71826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (72326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (72826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (73326) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m
+[0;32mI (73826) manual_control: SWITCH GPIO5/WEB=1 GPIO6/KNOB=1 instant=OFF settled=OFF | POT adc=ok raw=0 smooth=0 pct=0% maps_to=off armed=0[0m

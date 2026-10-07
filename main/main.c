@@ -14,8 +14,10 @@
 #include <nvs_flash.h>
 #include <sys/param.h>
 #include "esp_netif.h"
+#if CONFIG_IDF_TARGET_LINUX
 #include "protocol_examples_common.h"
 #include "protocol_examples_utils.h"
+#endif
 #include "esp_tls_crypto.h"
 #include <esp_http_server.h>
 #include "esp_event.h"
@@ -34,6 +36,8 @@
 #include "train_control.h"
 #include "train_http.h"
 #include "manual_control.h"
+#include "wifi.h"
+#include "wifi_button.h"
 #endif  // !CONFIG_IDF_TARGET_LINUX
 
 #define EXAMPLE_HTTP_QUERY_KEY_MAX_LEN  (64)
@@ -220,22 +224,16 @@ static esp_err_t hello_get_handler(httpd_req_t *req)
         ESP_RETURN_ON_FALSE(buf, ESP_ERR_NO_MEM, TAG, "buffer alloc failed");
         if (httpd_req_get_url_query_str(req, buf, buf_len) == ESP_OK) {
             ESP_LOGI(TAG, "Found URL query => %s", buf);
-            char param[EXAMPLE_HTTP_QUERY_KEY_MAX_LEN], dec_param[EXAMPLE_HTTP_QUERY_KEY_MAX_LEN] = {0};
+            char param[EXAMPLE_HTTP_QUERY_KEY_MAX_LEN];
             /* Get value of expected key from query string */
             if (httpd_query_key_value(buf, "query1", param, sizeof(param)) == ESP_OK) {
                 ESP_LOGI(TAG, "Found URL query parameter => query1=%s", param);
-                example_uri_decode(dec_param, param, strnlen(param, EXAMPLE_HTTP_QUERY_KEY_MAX_LEN));
-                ESP_LOGI(TAG, "Decoded query parameter => %s", dec_param);
             }
             if (httpd_query_key_value(buf, "query3", param, sizeof(param)) == ESP_OK) {
                 ESP_LOGI(TAG, "Found URL query parameter => query3=%s", param);
-                example_uri_decode(dec_param, param, strnlen(param, EXAMPLE_HTTP_QUERY_KEY_MAX_LEN));
-                ESP_LOGI(TAG, "Decoded query parameter => %s", dec_param);
             }
             if (httpd_query_key_value(buf, "query2", param, sizeof(param)) == ESP_OK) {
                 ESP_LOGI(TAG, "Found URL query parameter => query2=%s", param);
-                example_uri_decode(dec_param, param, strnlen(param, EXAMPLE_HTTP_QUERY_KEY_MAX_LEN));
-                ESP_LOGI(TAG, "Decoded query parameter => %s", dec_param);
             }
         }
         free(buf);
@@ -445,6 +443,7 @@ static httpd_handle_t start_webserver(void)
 #endif // !CONFIG_IDF_TARGET_LINUX
     config.lru_purge_enable = true;
     config.max_uri_handlers = 16;
+    config.stack_size = 8192;
 
     // Start the httpd server
     ESP_LOGI(TAG, "Starting server on port: '%d'", config.server_port);
@@ -467,38 +466,6 @@ static httpd_handle_t start_webserver(void)
     return NULL;
 }
 
-#if !CONFIG_IDF_TARGET_LINUX
-static esp_err_t stop_webserver(httpd_handle_t server)
-{
-    // Stop the httpd server
-    return httpd_stop(server);
-}
-
-static void disconnect_handler(void* arg, esp_event_base_t event_base,
-                               int32_t event_id, void* event_data)
-{
-    httpd_handle_t* server = (httpd_handle_t*) arg;
-    if (*server) {
-        ESP_LOGI(TAG, "Stopping webserver");
-        if (stop_webserver(*server) == ESP_OK) {
-            *server = NULL;
-        } else {
-            ESP_LOGE(TAG, "Failed to stop http server");
-        }
-    }
-}
-
-static void connect_handler(void* arg, esp_event_base_t event_base,
-                            int32_t event_id, void* event_data)
-{
-    httpd_handle_t* server = (httpd_handle_t*) arg;
-    if (*server == NULL) {
-        ESP_LOGI(TAG, "Starting webserver");
-        *server = start_webserver();
-    }
-}
-#endif // !CONFIG_IDF_TARGET_LINUX
-
 void app_main(void)
 {
     static httpd_handle_t server = NULL;
@@ -507,32 +474,19 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
 
-    /* This helper function configures Wi-Fi or Ethernet, as selected in menuconfig.
-     * Read "Establishing Wi-Fi or Ethernet Connection" section in
-     * examples/protocols/README.md for more information about this function.
-     */
+#if CONFIG_IDF_TARGET_LINUX
     ESP_ERROR_CHECK(example_connect());
-
-#if !CONFIG_IDF_TARGET_LINUX
+#else
+    /* SoftAP setup or join the network saved in NVS. HTTP stays up on the AP
+     * even before a station IP exists.
+     */
+    ESP_ERROR_CHECK(wifi_init());
+    wifi_button_init();
     train_pwm_init();
     speed_led_init();
     train_control_init();
     manual_control_init();
 #endif
-
-    /* Register event handlers to stop the server when Wi-Fi or Ethernet is disconnected,
-     * and re-start it upon connection.
-     */
-#if !CONFIG_IDF_TARGET_LINUX
-#ifdef CONFIG_EXAMPLE_CONNECT_WIFI
-    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &connect_handler, &server));
-    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, WIFI_EVENT_STA_DISCONNECTED, &disconnect_handler, &server));
-#endif // CONFIG_EXAMPLE_CONNECT_WIFI
-#ifdef CONFIG_EXAMPLE_CONNECT_ETHERNET
-    ESP_ERROR_CHECK(esp_event_handler_register(IP_EVENT, IP_EVENT_ETH_GOT_IP, &connect_handler, &server));
-    ESP_ERROR_CHECK(esp_event_handler_register(ETH_EVENT, ETHERNET_EVENT_DISCONNECTED, &disconnect_handler, &server));
-#endif // CONFIG_EXAMPLE_CONNECT_ETHERNET
-#endif // !CONFIG_IDF_TARGET_LINUX
 
     /* Start the server for the first time */
     server = start_webserver();

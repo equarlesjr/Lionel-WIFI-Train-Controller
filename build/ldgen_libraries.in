@@ -136,13 +136,7 @@ $<TARGET_FILE:idf::esp_hal_ledc>
 $<TARGET_FILE:idf::esp_driver_ledc>
 $<TARGET_FILE:__idf_esp_hal_ledc>
 $<TARGET_FILE:idf::esp_adc>
-$<TARGET_FILE:idf::console>
-$<TARGET_FILE:idf::espressif__ethernet_init>
-$<TARGET_FILE:__idf_esp_eth>
-$<TARGET_FILE:idf::protocol_examples_common>
-$<TARGET_FILE:__idf_console>
-$<TARGET_FILE:__idf_espressif__ethernet_init>
 $<TARGET_FILE:idf::main>
+$<TARGET_FILE:__idf_esp_eth>
 $<TARGET_FILE:__idf_esp_driver_ledc>
 $<TARGET_FILE:__idf_esp_adc>
-$<TARGET_FILE:__idf_protocol_examples_common>

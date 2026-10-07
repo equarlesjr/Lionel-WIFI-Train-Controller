@@ -19,7 +19,9 @@ static const char *TAG = "manual_control";
 #define MANUAL_ADC_RAW_MAX        (4095)
 #define MANUAL_TASK_STACK         (4096)
 #define MANUAL_TASK_PRIORITY      (5)
+#if 0 /* switch/pot console probe */
 #define MANUAL_DEBUG_LOG_MS       (500)
+#endif
 
 static const char *const KNOB_MODES[] = {"off", "1", "2", "3", "4", "5", "6"};
 
@@ -39,10 +41,12 @@ static int s_pending_knob = 1;
 static int s_pending_count;
 static train_control_source_t s_applied_source = TRAIN_SOURCE_OFF;
 static bool s_adc_fail_logged;
+#if 0 /* switch/pot console probe */
 static int s_last_logged_web = -1;
 static int s_last_logged_knob = -1;
 static int s_last_logged_pct = -1;
 static TickType_t s_last_status_log;
+#endif
 
 static void reset_smoother(void)
 {
@@ -136,6 +140,7 @@ static int apply_hysteresis(unsigned pct, int current)
     return (pct < leave) ? candidate : current;
 }
 
+#if 0 /* switch/pot console probe */
 static const char *source_to_label(train_control_source_t source)
 {
     switch (source) {
@@ -162,6 +167,7 @@ static const char *pins_to_label(int web_level, int knob_level)
     }
     return "INVALID";
 }
+#endif
 
 static train_control_source_t source_from_pins(int web_level, int knob_level)
 {
@@ -177,6 +183,7 @@ static train_control_source_t source_from_pins(int web_level, int knob_level)
     return TRAIN_SOURCE_OFF;
 }
 
+#if 0 /* switch/pot console probe */
 static void log_hw_status(int web_level, int knob_level, int adc_raw, int adc_smooth,
                           unsigned pct, bool adc_ok, int mapped_level)
 {
@@ -191,6 +198,7 @@ static void log_hw_status(int web_level, int knob_level, int adc_raw, int adc_sm
              KNOB_MODES[mapped_level],
              (int)s_knob_armed);
 }
+#endif
 
 static train_control_source_t debounce_source(int web_level, int knob_level)
 {
@@ -223,7 +231,7 @@ static void force_knob_off(void)
 static void apply_source(train_control_source_t source)
 {
     if (source != s_applied_source) {
-        ESP_LOGI(TAG, "Selector -> %s", source_to_label(source));
+        /* ESP_LOGI(TAG, "Selector -> %s", source_to_label(source)); */
         s_knob_armed = false;
         s_knob_level = 0;
         reset_smoother();
@@ -277,7 +285,7 @@ static void apply_knob_from_reading(unsigned pct)
         (void)train_control_apply_knob_mode("off");
         if (s_knob_level == 0) {
             s_knob_armed = true;
-            ESP_LOGI(TAG, "Knob zero acknowledged; manual throttle armed");
+            /* ESP_LOGI(TAG, "Knob zero acknowledged; manual throttle armed"); */
         }
         return;
     }
@@ -285,6 +293,7 @@ static void apply_knob_from_reading(unsigned pct)
     (void)train_control_apply_knob_mode(KNOB_MODES[s_knob_level]);
 }
 
+#if 0 /* switch/pot console probe */
 static void maybe_log_hw(int web_level, int knob_level, int adc_raw, int adc_smooth,
                          unsigned pct, bool adc_ok)
 {
@@ -309,6 +318,7 @@ static void maybe_log_hw(int web_level, int knob_level, int adc_raw, int adc_smo
     }
     s_last_status_log = now;
 }
+#endif
 
 static void manual_control_task(void *arg)
 {
@@ -334,7 +344,7 @@ static void manual_control_task(void *arg)
             }
         }
 
-        maybe_log_hw(web_level, knob_level, adc_raw, adc_smooth, pct, adc_ok);
+        /* maybe_log_hw(web_level, knob_level, adc_raw, adc_smooth, pct, adc_ok); */
         vTaskDelay(pdMS_TO_TICKS(MANUAL_SAMPLE_MS));
     }
 }
@@ -384,7 +394,7 @@ static bool init_adc(void)
     }
 
     s_adc_channel = channel;
-    ESP_LOGI(TAG, "Potentiometer ADC on GPIO%d", MANUAL_POT_GPIO);
+    /* ESP_LOGI(TAG, "Potentiometer ADC on GPIO%d", MANUAL_POT_GPIO); */
     return true;
 }
 
@@ -419,11 +429,11 @@ void manual_control_init(void)
 
     train_control_set_source(source);
     s_applied_source = source;
-    ESP_LOGI(TAG, "Manual control ready; selector=%s, adc_ok=%d",
+    /* ESP_LOGI(TAG, "Manual control ready; selector=%s, adc_ok=%d",
              source_to_label(source), (int)s_adc_ok);
     ESP_LOGI(TAG,
              "Probe pins: WEB=GPIO%d KNOB=GPIO%d POT=GPIO%d (0=closed to GND on switch)",
-             MANUAL_WEB_GPIO, MANUAL_KNOB_GPIO, MANUAL_POT_GPIO);
+             MANUAL_WEB_GPIO, MANUAL_KNOB_GPIO, MANUAL_POT_GPIO); */
 
     xTaskCreate(manual_control_task, "manual_ctrl", MANUAL_TASK_STACK, NULL,
                 MANUAL_TASK_PRIORITY, NULL);
