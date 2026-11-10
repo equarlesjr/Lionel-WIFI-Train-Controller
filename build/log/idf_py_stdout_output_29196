@@ -1,0 +1,564 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\Lionel-WIFI-Train-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM4'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b11e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (72) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (79) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (87) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (94) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (143) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (270) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (271) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (327) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (335) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (342) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (348) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (358) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (363) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (368) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (373) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (380) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (386) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (392) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (398) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (409) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (426) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (437) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (451) main_task: Started on CPU0[0m
+[0;32mI (461) main_task: Calling app_main()[0m
+[0;32mI (461) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (461) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (471) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (481) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (481) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (491) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (531) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (541) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (551) BMP280: BMP280 configured successfully.[0m
+[0;32mI (561) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (561) example_connect: Start example_connect.[0m
+[0;32mI (571) pp: pp rom version: e7ae62f[0m
+[0;32mI (571) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (591) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (591) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (591) wifi:wifi certification version: v7.0[0m
+[0;32mI (591) wifi:config NVS flash: enabled[0m
+[0;32mI (591) wifi:config nano formating: disabled[0m
+[0;32mI (601) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (601) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (611) wifi:Init management short buffer num: 32[0m
+[0;32mI (611) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (621) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (621) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (621) wifi:Init static rx buffer num: 10[0m
+[0;32mI (631) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (631) wifi_init: rx ba win: 6[0m
+[0;32mI (641) wifi_init: accept mbox: 6[0m
+[0;32mI (641) wifi_init: tcpip mbox: 32[0m
+[0;32mI (641) wifi_init: udp mbox: 6[0m
+[0;32mI (651) wifi_init: tcp mbox: 6[0m
+[0;32mI (651) wifi_init: tcp tx win: 5760[0m
+[0;32mI (661) wifi_init: tcp rx win: 5760[0m
+[0;32mI (661) wifi_init: tcp mss: 1440[0m
+[0;32mI (661) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (671) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (671) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (721) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (721) wifi:enable tsf[0m
+[0;32mI (721) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (721) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (731) example_connect: Waiting for IP(s)[0m
+[0;32mI (3611) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3611) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3621) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3661) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3771) wifi:connected with harmonicminor, aid = 12, channel 11, BW20, bssid = 7e:45:58:2a:d0:79[0m
+[0;32mI (3771) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (3771) wifi:pm start, type: 1[0m
+
+[0;32mI (3781) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3791) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (3801) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3861) wifi:<ba-add>idx:0 (ifx:0, 7e:45:58:2a:d0:79), tid:0, ssn:0, winSize:64[0m
+[0;32mI (4801) esp_netif_handlers: example_netif_sta ip: 192.168.7.243, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (4801) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.7.243[0m
+[0;32mI (5471) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:f29e:9eff:fe21:db10, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (5471) example_common: Connected to example_netif_sta[0m
+[0;32mI (5481) example_common: - IPv4 address: 192.168.7.243,[0m
+[0;32mI (5481) example_common: - IPv6 address: fe80:0000:0000:0000:f29e:9eff:fe21:db10, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (5491) MQTT_SENSORS: Initializing SNTP...[0m
+[0;32mI (5501) MQTT_SENSORS: Waiting for NTP sync... (1/10)[0m
+[0;32mI (7501) MQTT_SENSORS: Waiting for NTP sync... (2/10)[0m
+[0;32mI (7901) wifi:<ba-add>idx:1 (ifx:0, 7e:45:58:2a:d0:79), tid:1, ssn:0, winSize:64[0m
+[0;32mI (7961) MQTT_SENSORS: Time synchronized: 1791399567[0m
+[0;32mI (9501) MQTT_SENSORS: Time synchronized: Wed Oct  7 18:59:29 2026
+[0m
+[0;32mI (9501) BMP280: BMP280: Temp: 28.54°C (83.37°F), Pressure: 985.06 hPa, Sea-Level Pressure: 1023.29 hPa[0m
+[0;32mI (9551) SHT31: SHT31 Temperature: 27.21°C (80.98°F), Humidity: 53.39%[0m
+[0;32mI (9551) MQTT_SENSORS: Starting MQTT Client![0m
+[0;32mI (9551) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;32mI (9561) MQTT_SENSORS: Getting Shadow State![0m
+[0;32mI (9601) BMP280: BMP280: Temp: 28.55°C (83.39°F), Pressure: 985.10 hPa, Sea-Level Pressure: 1023.33 hPa[0m
+[0;32mI (9651) SHT31: SHT31 Temperature: 27.21°C (80.98°F), Humidity: 53.44%[0m
+[0;33mW (20951) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (20951) transport_base: Failed to open a new connection[0m
+[0;31mE (20951) mqtt_client: Error transport connect[0m
+[0;32mI (20951) MQTT_SENSORS: ℹ️ Other MQTT event: 0[0m
+[0;33mW (20961) MQTT_SENSORS: ⚠️ MQTT Disconnected![0m
+[0;32mI (20961) MQTT_SENSORS: 📢 Requested Shadow State: $aws/things/F09E9E21DB10/shadow/get, Return Code: 55846[0m
+[0;32mI (20981) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"83.39","humidity":"53.44","pressure":"1023.33","received_at":1791399580}[0m
+[0;32mI (20991) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=83.39, Humidity=53.44, Pressure=1023.33[0m
+[0;32mI (21001) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"83.39","humidity":"53.44","pressure":"1023.33"}}}}[0m
+[0;32mI (21021) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=39841)[0m
+[0;32mI (21031) main_task: Returned from app_main()[0m
+[0;32mI (29291) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (35961) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;33mW (50351) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (50351) transport_base: Failed to open a new connection[0m
+[0;31mE (50351) mqtt_client: Error transport connect[0m
+[0;32mI (50351) MQTT_SENSORS: ℹ️ Other MQTT event: 0[0m
+[0;33mW (50361) MQTT_SENSORS: ⚠️ MQTT Disconnected![0m
+[0;32mI (65361) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;33mW (79931) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (79931) transport_base: Failed to open a new connection[0m
+[0;31mE (79931) mqtt_client: Error transport connect[0m
+[0;32mI (79931) MQTT_SENSORS: ℹ️ Other MQTT event: 0[0m
+[0;33mW (79941) MQTT_SENSORS: ⚠️ MQTT Disconnected![0m
+[0;32mI (3611) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3611) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3621) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3641) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3761) wifi:connected with harmonicminor, aid = 12, channel 11, BW20, bssid = 7e:45:58:2a:d0:79[0m
+[0;32mI (3761) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (3761) wifi:pm start, type: 1[0m
+
+[0;32mI (3771) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3771) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (3831) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (3931) wifi:<ba-add>idx:0 (ifx:0, 7e:45:58:2a:d0:79), tid:0, ssn:0, winSize:64[0m
+[0;32mI (5471) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:f29e:9eff:fe21:db10, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6281) esp_netif_handlers: example_netif_sta ip: 192.168.7.243, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (6281) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.7.243[0m
+[0;32mI (6291) example_common: Connected to example_netif_sta[0m
+[0;32mI (6291) example_common: - IPv4 address: 192.168.7.243,[0m
+[0;32mI (6301) example_common: - IPv6 address: fe80:0000:0000:0000:f29e:9eff:fe21:db10, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (6311) MQTT_SENSORS: Initializing SNTP...[0m
+[0;32mI (6311) MQTT_SENSORS: Waiting for NTP sync... (1/10)[0m
+[0;32mI (8321) MQTT_SENSORS: Waiting for NTP sync... (2/10)[0m
+[0;32mI (9061) wifi:<ba-add>idx:1 (ifx:0, 7e:45:58:2a:d0:79), tid:1, ssn:0, winSize:64[0m
+[0;32mI (9171) MQTT_SENSORS: Time synchronized: 1791399654[0m
+[0;32mI (10321) MQTT_SENSORS: Time synchronized: Wed Oct  7 19:00:55 2026
+[0m
+[0;32mI (10321) BMP280: BMP280: Temp: 28.79°C (83.82°F), Pressure: 985.10 hPa, Sea-Level Pressure: 1023.33 hPa[0m
+[0;32mI (10371) SHT31: SHT31 Temperature: 27.41°C (81.33°F), Humidity: 52.16%[0m
+[0;32mI (10371) MQTT_SENSORS: Starting MQTT Client![0m
+[0;32mI (10371) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;32mI (10381) MQTT_SENSORS: Getting Shadow State![0m
+[0;32mI (10421) BMP280: BMP280: Temp: 28.71°C (83.68°F), Pressure: 985.14 hPa, Sea-Level Pressure: 1023.37 hPa[0m
+[0;32mI (10471) SHT31: SHT31 Temperature: 27.42°C (81.35°F), Humidity: 52.17%[0m
+[0;32mI (19391) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;33mW (20571) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (20571) transport_base: Failed to open a new connection[0m
+[0;31mE (20571) mqtt_client: Error transport connect[0m
+[0;32mI (20571) MQTT_SENSORS: ℹ️ Other MQTT event: 0[0m
+[0;33mW (20581) MQTT_SENSORS: ⚠️ MQTT Disconnected![0m
+[0;32mI (20581) MQTT_SENSORS: 📢 Requested Shadow State: $aws/things/F09E9E21DB10/shadow/get, Return Code: 55921[0m
+[0;32mI (20601) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"83.68","humidity":"52.17","pressure":"1023.37","received_at":1791399665}[0m
+[0;32mI (20611) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=83.68, Humidity=52.17, Pressure=1023.37[0m
+[0;32mI (20621) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"83.68","humidity":"52.17","pressure":"1023.37"}}}}[0m
+[0;32mI (20641) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=55217)[0m
+[0;32mI (20641) main_task: Returned from app_main()[0m
+[0;32mI (34441) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (35581) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;33mW (46781) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (46781) transport_base: Failed to open a new connection[0m
+[0;31mE (46781) mqtt_client: Error transport connect[0m
+[0;32mI (46781) MQTT_SENSORS: ℹ️ Other MQTT event: 0[0m
+[0;33mW (46791) MQTT_SENSORS: ⚠️ MQTT Disconnected![0m
+[0;32mI (49471) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (61791) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;32mI (64511) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;33mW (78801) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (78801) transport_base: Failed to open a new connection[0m
+[0;31mE (78801) mqtt_client: Error transport connect[0m
+[0;32mI (78801) MQTT_SENSORS: ℹ️ Other MQTT event: 0[0m
+[0;33mW (78811) MQTT_SENSORS: ⚠️ MQTT Disconnected![0m
+[0;32mI (79571) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (93811) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;33mW (106861) esp-tls: Failed to open new connection in specified timeout[0m
+[0;31mE (106861) transport_base: Failed to open a new connection[0m
+[0;31mE (106861) mqtt_client: Error transport connect[0m
+[0;32mI (106861) MQTT_SENSORS: ℹ️ Other MQTT event: 0[0m
+[0;33mW (106871) MQTT_SENSORS: ⚠️ MQTT Disconnected![0m
+[0;32mI (121871) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;32mI (131351) MQTT_SENSORS: ✅ MQTT Connected![0m
+[0;32mI (131351) MQTT_SENSORS: 📌 Subscribed to LED Control Topic: device/F09E9E21DB10/led_control[0m
+[0;32mI (131351) MQTT_SENSORS: 📌 Subscribed to device/F09E9E21DB10/sensor-request[0m
+[0;32mI (131361) MQTT_SENSORS: 📌 Subscribed to device/F09E9E21DB10/commands[0m
+[0;32mI (131371) MQTT_SENSORS: 📌 Subscribed to AWS IoT Shadow Delta Updates: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta[0m
+[0;32mI (131381) MQTT_SENSORS: 📌 Subscribed to Shadow Get Accepted: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/get/accepted[0m
+[0;32mI (131391) MQTT_SENSORS: 📌 Subscribed to Shadow Update Accepted: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted[0m
+[0;32mI (131401) MQTT_SENSORS: 📌 Subscribed to Shadow Update Rejected: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/rejected[0m
+[0;32mI (131421) MQTT_SENSORS: 📢 Requested Shadow State: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/get, Return Code: 23857[0m
+[0;32mI (131571) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (131711) MQTT: 📢 Message Published! msg_id=23857[0m
+[0;32mI (131781) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (131791) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (131791) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (131791) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (131801) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (131801) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (154771) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (184781) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (214841) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (263561) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "off"}'[0m
+[0;32mI (263561) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "off"}[0m
+[0;32mI (263571) BMP280: BMP280: Temp: 29.31°C (84.76°F), Pressure: 984.96 hPa, Sea-Level Pressure: 1023.18 hPa[0m
+[0;32mI (263631) SHT31: SHT31 Temperature: 28.00°C (82.39°F), Humidity: 51.04%[0m
+[0;32mI (263631) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.39","humidity":"51.04","pressure":"1023.18","received_at":1791399908}[0m
+[0;32mI (263641) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF[0m
+[0;32mI (263651) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.39, Humidity=51.04, Pressure=1023.18[0m
+[0;32mI (263661) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"82.39","humidity":"51.04","pressure":"1023.18"}}}}[0m
+[0;32mI (263671) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=6647)[0m
+[0;32mI (263681) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791399908},"led_2":{"timestamp":1791399908}}},"version":810,"timestamp":1791399908}'[0m
+[0;32mI (263711) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (263721) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":810,"timestamp":1791399908,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399908},"led_2":{"timestamp":1791399908}}}'[0m
+[0;32mI (263741) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (263751) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (263751) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":810,"timestamp":1791399908,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399908},"led_2":{"timestamp":1791399908}}}[0m
+[0;32mI (263771) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (263781) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.39, Humidity=51.04, Pressure=1023.18[0m
+[0;32mI (263791) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"82.39","humidity":"51.04","pressure":"1023.18"}}}}[0m
+[0;32mI (263811) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=16388)[0m
+[0;32mI (264161) MQTT: 📢 Message Published! msg_id=9875[0m
+[0;32mI (271661) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "off"}'[0m
+[0;32mI (271661) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "off"}[0m
+[0;32mI (271671) BMP280: BMP280: Temp: 29.21°C (84.58°F), Pressure: 984.74 hPa, Sea-Level Pressure: 1022.95 hPa[0m
+[0;32mI (271731) SHT31: SHT31 Temperature: 28.01°C (82.42°F), Humidity: 51.06%[0m
+[0;32mI (271731) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.42","humidity":"51.06","pressure":"1022.95","received_at":1791399916}[0m
+[0;32mI (271741) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF[0m
+[0;32mI (271751) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.42, Humidity=51.06, Pressure=1022.95[0m
+[0;32mI (271761) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"82.42","humidity":"51.06","pressure":"1022.95"}}}}[0m
+[0;32mI (271771) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=10722)[0m
+[0;32mI (271781) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":811,"timestamp":1791399912,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399912},"led_2":{"timestamp":1791399912}}}'[0m
+[0;32mI (271811) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (271811) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (271821) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":811,"timestamp":1791399912,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399912},"led_2":{"timestamp":1791399912}}}[0m
+[0;32mI (271841) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (271841) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.42, Humidity=51.06, Pressure=1022.95[0m
+[0;32mI (271851) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"82.42","humidity":"51.06","pressure":"1022.95"}}}}[0m
+[0;32mI (271871) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=64679)[0m
+[0;32mI (271911) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791399912},"led_2":{"timestamp":1791399912}}},"version":811,"timestamp":1791399912}'[0m
+[0;32mI (271931) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (271941) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "off"}'[0m
+[0;32mI (271951) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "off"}[0m
+[0;32mI (271961) BMP280: BMP280: Temp: 29.36°C (84.85°F), Pressure: 984.78 hPa, Sea-Level Pressure: 1022.99 hPa[0m
+[0;32mI (272021) SHT31: SHT31 Temperature: 28.02°C (82.44°F), Humidity: 51.02%[0m
+[0;32mI (272021) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.44","humidity":"51.02","pressure":"1022.99","received_at":1791399916}[0m
+[0;32mI (272031) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF[0m
+[0;32mI (272041) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.44, Humidity=51.02, Pressure=1022.99[0m
+[0;32mI (272051) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"82.44","humidity":"51.02","pressure":"1022.99"}}}}[0m
+[0;32mI (272061) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=6384)[0m
+[0;32mI (272071) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":812,"timestamp":1791399914,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399914},"led_2":{"timestamp":1791399914}}}'[0m
+[0;32mI (272101) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (272101) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (272111) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":812,"timestamp":1791399914,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399914},"led_2":{"timestamp":1791399914}}}[0m
+[0;32mI (272131) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (272131) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.44, Humidity=51.02, Pressure=1022.99[0m
+[0;32mI (272141) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"82.44","humidity":"51.02","pressure":"1022.99"}}}}[0m
+[0;32mI (272161) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=18551)[0m
+[0;32mI (272171) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791399914},"led_2":{"timestamp":1791399914}}},"version":812,"timestamp":1791399914}'[0m
+[0;32mI (272201) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (272211) MQTT: 📢 Message Published! msg_id=6647[0m
+[0;32mI (272211) MQTT: 📢 Message Published! msg_id=16388[0m
+[0;32mI (272221) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791399916},"led_2":{"timestamp":1791399916}}},"version":813,"timestamp":1791399916}'[0m
+[0;32mI (272241) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (272251) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "off"}'[0m
+[0;32mI (272261) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "off"}[0m
+[0;32mI (272271) BMP280: BMP280: Temp: 29.40°C (84.92°F), Pressure: 984.97 hPa, Sea-Level Pressure: 1023.19 hPa[0m
+[0;32mI (272331) SHT31: SHT31 Temperature: 28.01°C (82.42°F), Humidity: 51.00%[0m
+[0;32mI (272331) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.42","humidity":"51.00","pressure":"1023.19","received_at":1791399917}[0m
+[0;32mI (272341) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF[0m
+[0;32mI (272351) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.42, Humidity=51.00, Pressure=1023.19[0m
+[0;32mI (272361) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"82.42","humidity":"51.00","pressure":"1023.19"}}}}[0m
+[0;32mI (272371) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=32553)[0m
+[0;32mI (272381) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":813,"timestamp":1791399916,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399916},"led_2":{"timestamp":1791399916}}}'[0m
+[0;32mI (272411) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (272411) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (272421) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":813,"timestamp":1791399916,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791399916},"led_2":{"timestamp":1791399916}}}[0m
+[0;32mI (272441) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (272441) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.42, Humidity=51.00, Pressure=1023.19[0m
+[0;32mI (272451) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"82.42","humidity":"51.00","pressure":"1023.19"}}}}[0m
+[0;32mI (272471) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=27446)[0m
+[0;32mI (272481) MQTT: 📢 Message Published! msg_id=29845[0m
+[0;32mI (272491) MQTT: 📢 Message Published! msg_id=64679[0m
+[0;32mI (272491) MQTT: 📢 Message Published! msg_id=10722[0m
+[0;32mI (272501) MQTT: 📢 Message Published! msg_id=29531[0m
+[0;32mI (272501) MQTT: 📢 Message Published! msg_id=6384[0m
+[0;32mI (272511) MQTT: 📢 Message Published! msg_id=18551[0m
+[0;32mI (272681) MQTT: 📢 Message Published! msg_id=32553[0m
+[0;32mI (272701) MQTT: 📢 Message Published! msg_id=34275[0m
+[0;32mI (272721) MQTT: 📢 Message Published! msg_id=27446[0m
+[0;32mI (276971) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (276971) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;32mI (276981) BMP280: BMP280: Temp: 29.36°C (84.85°F), Pressure: 984.95 hPa, Sea-Level Pressure: 1023.17 hPa[0m
+[0;32mI (277041) SHT31: SHT31 Temperature: 28.02°C (82.44°F), Humidity: 50.61%[0m
+[0;32mI (277041) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.44","humidity":"50.61","pressure":"1023.17","received_at":1791399921}[0m
+[0;32mI (277051) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (277061) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.44, Humidity=50.61, Pressure=1023.17[0m
+[0;32mI (277071) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.44","humidity":"50.61","pressure":"1023.17"}}}}[0m
+[0;32mI (277081) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=3552)[0m
+[0;32mI (277191) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":814,"timestamp":1791399921,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399921},"led_2":{"timestamp":1791399921}}}'[0m
+[0;32mI (277201) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (277211) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (277211) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":814,"timestamp":1791399921,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399921},"led_2":{"timestamp":1791399921}}}[0m
+[0;32mI (277231) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (277241) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.44, Humidity=50.61, Pressure=1023.17[0m
+[0;32mI (277251) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.44","humidity":"50.61","pressure":"1023.17"}}}}[0m
+[0;32mI (277271) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=25278)[0m
+[0;32mI (277281) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791399921},"led_2":{"timestamp":1791399921}}},"version":814,"timestamp":1791399921}'[0m
+[0;32mI (277301) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (277411) MQTT: 📢 Message Published! msg_id=53333[0m
+[0;32mI (277521) MQTT: 📢 Message Published! msg_id=3552[0m
+[0;32mI (277631) MQTT: 📢 Message Published! msg_id=25278[0m
+[0;32mI (280441) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791399925},"led_2":{"timestamp":1791399925}}},"version":815,"timestamp":1791399925}'[0m
+[0;32mI (280461) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (280481) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "on"}'[0m
+[0;32mI (280481) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "on"}[0m
+[0;32mI (280491) BMP280: BMP280: Temp: 29.37°C (84.87°F), Pressure: 984.87 hPa, Sea-Level Pressure: 1023.09 hPa[0m
+[0;32mI (280551) SHT31: SHT31 Temperature: 28.00°C (82.39°F), Humidity: 50.56%[0m
+[0;32mI (280551) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.39","humidity":"50.56","pressure":"1023.09","received_at":1791399925}[0m
+[0;32mI (280561) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON[0m
+[0;32mI (280571) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.39, Humidity=50.56, Pressure=1023.09[0m
+[0;32mI (280581) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.39","humidity":"50.56","pressure":"1023.09"}}}}[0m
+[0;32mI (280591) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=61934)[0m
+[0;32mI (280601) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":815,"timestamp":1791399925,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399925},"led_2":{"timestamp":1791399925}}}'[0m
+[0;32mI (280631) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (280631) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (280641) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":815,"timestamp":1791399925,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399925},"led_2":{"timestamp":1791399925}}}[0m
+[0;32mI (280661) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (280661) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.39, Humidity=50.56, Pressure=1023.09[0m
+[0;32mI (280671) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.39","humidity":"50.56","pressure":"1023.09"}}}}[0m
+[0;32mI (280691) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=35801)[0m
+[0;32mI (283531) MQTT: 📢 Message Published! msg_id=35801[0m
+[0;32mI (283541) MQTT: 📢 Message Published! msg_id=61934[0m
+[0;32mI (283551) MQTT: 📢 Message Published! msg_id=26450[0m
+[0;32mI (285771) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (285771) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;32mI (285781) BMP280: BMP280: Temp: 29.31°C (84.76°F), Pressure: 984.95 hPa, Sea-Level Pressure: 1023.17 hPa[0m
+[0;32mI (285841) SHT31: SHT31 Temperature: 28.01°C (82.42°F), Humidity: 50.60%[0m
+[0;32mI (285841) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.42","humidity":"50.60","pressure":"1023.17","received_at":1791399930}[0m
+[0;32mI (285851) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (285861) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.42, Humidity=50.60, Pressure=1023.17[0m
+[0;32mI (285871) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.42","humidity":"50.60","pressure":"1023.17"}}}}[0m
+[0;32mI (285881) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=62195)[0m
+[0;32mI (285891) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791399930},"led_2":{"timestamp":1791399930}}},"version":816,"timestamp":1791399930}'[0m
+[0;32mI (285921) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (285931) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":816,"timestamp":1791399930,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399930},"led_2":{"timestamp":1791399930}}}'[0m
+[0;32mI (285951) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (285961) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (285961) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":816,"timestamp":1791399930,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399930},"led_2":{"timestamp":1791399930}}}[0m
+[0;32mI (285981) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (285991) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.42, Humidity=50.60, Pressure=1023.17[0m
+[0;32mI (286001) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.42","humidity":"50.60","pressure":"1023.17"}}}}[0m
+[0;32mI (286021) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=18021)[0m
+[0;32mI (286031) MQTT: 📢 Message Published! msg_id=56804[0m
+[0;32mI (286071) MQTT: 📢 Message Published! msg_id=62195[0m
+[0;32mI (286141) MQTT: 📢 Message Published! msg_id=18021[0m
+[0;32mI (290781) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":817,"timestamp":1791399935,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399935},"led_2":{"timestamp":1791399935}}}'[0m
+[0;32mI (290801) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (290801) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (290811) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":817,"timestamp":1791399935,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399935},"led_2":{"timestamp":1791399935}}}[0m
+[0;32mI (290831) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (290841) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.42, Humidity=50.60, Pressure=1023.17[0m
+[0;32mI (290851) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.42","humidity":"50.60","pressure":"1023.17"}}}}[0m
+[0;32mI (290871) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=33554)[0m
+[0;32mI (290881) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "on"}'[0m
+[0;32mI (290881) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "on"}[0m
+[0;32mI (290891) BMP280: BMP280: Temp: 29.33°C (84.79°F), Pressure: 984.74 hPa, Sea-Level Pressure: 1022.95 hPa[0m
+[0;32mI (290951) SHT31: SHT31 Temperature: 28.02°C (82.44°F), Humidity: 51.04%[0m
+[0;32mI (290951) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.44","humidity":"51.04","pressure":"1022.95","received_at":1791399935}[0m
+[0;32mI (290961) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON[0m
+[0;32mI (290971) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.44, Humidity=51.04, Pressure=1022.95[0m
+[0;32mI (290981) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.44","humidity":"51.04","pressure":"1022.95"}}}}[0m
+[0;32mI (290991) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=59150)[0m
+[0;32mI (291001) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791399935},"led_2":{"timestamp":1791399935}}},"version":817,"timestamp":1791399935}'[0m
+[0;32mI (291031) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (291041) MQTT: 📢 Message Published! msg_id=33554[0m
+[0;32mI (291151) MQTT: 📢 Message Published! msg_id=6318[0m
+[0;32mI (291231) MQTT: 📢 Message Published! msg_id=59150[0m
+[0;32mI (293341) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (293341) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;32mI (293351) BMP280: BMP280: Temp: 29.44°C (84.99°F), Pressure: 985.27 hPa, Sea-Level Pressure: 1023.50 hPa[0m
+[0;32mI (293411) SHT31: SHT31 Temperature: 28.04°C (82.47°F), Humidity: 50.88%[0m
+[0;32mI (293411) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.47","humidity":"50.88","pressure":"1023.50","received_at":1791399938}[0m
+[0;32mI (293421) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (293431) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.47, Humidity=50.88, Pressure=1023.50[0m
+[0;32mI (293441) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.47","humidity":"50.88","pressure":"1023.50"}}}}[0m
+[0;32mI (293451) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=25073)[0m
+[0;32mI (293461) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791399938},"led_2":{"timestamp":1791399938}}},"version":818,"timestamp":1791399938}'[0m
+[0;32mI (293491) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (293501) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":818,"timestamp":1791399938,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399938},"led_2":{"timestamp":1791399938}}}'[0m
+[0;32mI (293521) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (293531) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (293531) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":818,"timestamp":1791399938,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791399938},"led_2":{"timestamp":1791399938}}}[0m
+[0;32mI (293551) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (293561) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.47, Humidity=50.88, Pressure=1023.50[0m
+[0;32mI (293571) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.47","humidity":"50.88","pressure":"1023.50"}}}}[0m
+[0;32mI (293591) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=27414)[0m
+[0;32mI (293601) MQTT: 📢 Message Published! msg_id=8900[0m
+[0;32mI (293601) MQTT: 📢 Message Published! msg_id=25073[0m
+[0;32mI (293661) MQTT: 📢 Message Published! msg_id=27414[0m
+[0;32mI (305111) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (335201) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (394441) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "on"}'[0m
+[0;32mI (394441) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "on"}[0m
+[0;32mI (394451) BMP280: BMP280: Temp: 29.45°C (85.01°F), Pressure: 984.94 hPa, Sea-Level Pressure: 1023.16 hPa[0m
+[0;32mI (394511) SHT31: SHT31 Temperature: 28.09°C (82.57°F), Humidity: 50.27%[0m
+[0;32mI (394511) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.57","humidity":"50.27","pressure":"1023.16","received_at":1791400039}[0m
+[0;32mI (394521) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON[0m
+[0;32mI (394531) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.57, Humidity=50.27, Pressure=1023.16[0m
+[0;32mI (394541) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.57","humidity":"50.27","pressure":"1023.16"}}}}[0m
+[0;32mI (394551) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=32014)[0m
+[0;32mI (394561) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":819,"timestamp":1791400039,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791400039},"led_2":{"timestamp":1791400039}}}'[0m
+[0;32mI (394591) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (394591) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (394601) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":819,"timestamp":1791400039,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791400039},"led_2":{"timestamp":1791400039}}}[0m
+[0;32mI (394621) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (394621) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.57, Humidity=50.27, Pressure=1023.16[0m
+[0;32mI (394631) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.57","humidity":"50.27","pressure":"1023.16"}}}}[0m
+[0;32mI (394651) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=19615)[0m
+[0;32mI (394661) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791400039},"led_2":{"timestamp":1791400039}}},"version":819,"timestamp":1791400039}'[0m
+[0;32mI (394691) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (394701) MQTT: 📢 Message Published! msg_id=21654[0m
+[0;32mI (394701) MQTT: 📢 Message Published! msg_id=32014[0m
+[0;32mI (394711) MQTT: 📢 Message Published! msg_id=19615[0m
+[0;32mI (405201) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (405201) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;32mI (405211) BMP280: BMP280: Temp: 29.57°C (85.23°F), Pressure: 985.31 hPa, Sea-Level Pressure: 1023.55 hPa[0m
+[0;32mI (405271) SHT31: SHT31 Temperature: 28.08°C (82.54°F), Humidity: 50.25%[0m
+[0;32mI (405271) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.54","humidity":"50.25","pressure":"1023.55","received_at":1791400050}[0m
+[0;32mI (405281) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (405291) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.54, Humidity=50.25, Pressure=1023.55[0m
+[0;32mI (405301) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.54","humidity":"50.25","pressure":"1023.55"}}}}[0m
+[0;32mI (405311) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=54691)[0m
+[0;32mI (405321) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":820,"timestamp":1791400049,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791400049},"led_2":{"timestamp":1791400049}}}'[0m
+[0;32mI (405351) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (405351) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (405361) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":820,"timestamp":1791400049,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791400049},"led_2":{"timestamp":1791400049}}}[0m
+[0;32mI (405381) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (405381) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.54, Humidity=50.25, Pressure=1023.55[0m
+[0;32mI (405391) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"82.54","humidity":"50.25","pressure":"1023.55"}}}}[0m
+[0;32mI (405411) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=16147)[0m
+[0;32mI (405421) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791400049},"led_2":{"timestamp":1791400049}}},"version":820,"timestamp":1791400049}'[0m
+[0;32mI (405451) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (405461) MQTT: 📢 Message Published! msg_id=6657[0m
+[0;32mI (405461) MQTT: 📢 Message Published! msg_id=54691[0m
+[0;32mI (405511) MQTT: 📢 Message Published! msg_id=16147[0m
+[0;32mI (416561) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "on"}'[0m
+[0;32mI (416561) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "on"}[0m
+[0;32mI (416571) BMP280: BMP280: Temp: 29.54°C (85.17°F), Pressure: 985.17 hPa, Sea-Level Pressure: 1023.40 hPa[0m
+[0;32mI (416631) SHT31: SHT31 Temperature: 28.08°C (82.54°F), Humidity: 50.27%[0m
+[0;32mI (416631) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.54","humidity":"50.27","pressure":"1023.40","received_at":1791400061}[0m
+[0;32mI (416641) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON[0m
+[0;32mI (416651) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.54, Humidity=50.27, Pressure=1023.40[0m
+[0;32mI (416661) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.54","humidity":"50.27","pressure":"1023.40"}}}}[0m
+[0;32mI (416681) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=106)[0m
+[0;32mI (416681) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791400061},"led_2":{"timestamp":1791400061}}},"version":821,"timestamp":1791400061}'[0m
+[0;32mI (416711) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (416721) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":821,"timestamp":1791400061,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791400061},"led_2":{"timestamp":1791400061}}}'[0m
+[0;32mI (416741) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (416751) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (416751) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":821,"timestamp":1791400061,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791400061},"led_2":{"timestamp":1791400061}}}[0m
+[0;32mI (416771) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (416781) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.54, Humidity=50.27, Pressure=1023.40[0m
+[0;32mI (416791) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"82.54","humidity":"50.27","pressure":"1023.40"}}}}[0m
+[0;32mI (416811) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=60785)[0m
+[0;32mI (416981) MQTT: 📢 Message Published! msg_id=9127[0m
+[0;32mI (417141) MQTT: 📢 Message Published! msg_id=106[0m
+[0;32mI (417211) MQTT: 📢 Message Published! msg_id=60785[0m
+[0;32mI (422791) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "off"}'[0m
+[0;32mI (422791) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "off"}[0m
+[0;32mI (422801) BMP280: BMP280: Temp: 29.55°C (85.19°F), Pressure: 985.15 hPa, Sea-Level Pressure: 1023.37 hPa[0m
+[0;32mI (422861) SHT31: SHT31 Temperature: 28.08°C (82.54°F), Humidity: 50.44%[0m
+[0;32mI (422861) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.54","humidity":"50.44","pressure":"1023.37","received_at":1791400067}[0m
+[0;32mI (422871) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF[0m
+[0;32mI (422881) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.54, Humidity=50.44, Pressure=1023.37[0m
+[0;32mI (422891) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"82.54","humidity":"50.44","pressure":"1023.37"}}}}[0m
+[0;32mI (422901) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=30021)[0m
+[0;32mI (422941) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791400067},"led_2":{"timestamp":1791400067}}},"version":822,"timestamp":1791400067}'[0m
+[0;32mI (422961) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (422971) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":822,"timestamp":1791400067,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791400067},"led_2":{"timestamp":1791400067}}}'[0m
+[0;32mI (422991) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (422991) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (423001) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":822,"timestamp":1791400067,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791400067},"led_2":{"timestamp":1791400067}}}[0m
+[0;32mI (423021) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (423031) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.54, Humidity=50.44, Pressure=1023.37[0m
+[0;32mI (423041) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"82.54","humidity":"50.44","pressure":"1023.37"}}}}[0m
+[0;32mI (423061) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=61883)[0m
+[0;32mI (423091) MQTT: 📢 Message Published! msg_id=26883[0m
+[0;32mI (423241) MQTT: 📢 Message Published! msg_id=30021[0m
+[0;32mI (423251) MQTT: 📢 Message Published! msg_id=61883[0m
+[0;32mI (428011) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "off"}'[0m
+[0;32mI (428011) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "off"}[0m
+[0;32mI (428021) BMP280: BMP280: Temp: 29.47°C (85.05°F), Pressure: 984.93 hPa, Sea-Level Pressure: 1023.15 hPa[0m
+[0;32mI (428081) SHT31: SHT31 Temperature: 28.11°C (82.59°F), Humidity: 50.67%[0m
+[0;32mI (428081) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"82.59","humidity":"50.67","pressure":"1023.15","received_at":1791400072}[0m
+[0;32mI (428091) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF[0m
+[0;32mI (428101) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.59, Humidity=50.67, Pressure=1023.15[0m
+[0;32mI (428111) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"82.59","humidity":"50.67","pressure":"1023.15"}}}}[0m
+[0;32mI (428131) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=48182)[0m
+[0;32mI (428141) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791400072},"led_2":{"timestamp":1791400072}}},"version":823,"timestamp":1791400072}'[0m
+[0;32mI (428161) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (428171) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":823,"timestamp":1791400072,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791400072},"led_2":{"timestamp":1791400072}}}'[0m
+[0;32mI (428191) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (428201) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (428201) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":823,"timestamp":1791400072,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791400072},"led_2":{"timestamp":1791400072}}}[0m
+[0;32mI (428221) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (428231) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=82.59, Humidity=50.67, Pressure=1023.15[0m
+[0;32mI (428241) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"82.59","humidity":"50.67","pressure":"1023.15"}}}}[0m
+[0;32mI (428261) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=45159)[0m
+[0;32mI (428271) MQTT: 📢 Message Published! msg_id=35446[0m
+[0;32mI (428271) MQTT: 📢 Message Published! msg_id=48182[0m
+[0;32mI (428331) MQTT: 📢 Message Published! msg_id=45159[0m

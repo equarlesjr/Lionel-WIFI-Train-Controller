@@ -1,0 +1,205 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\Whistle-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM6'
+[0;32mI (195) esp_image: segment 4: paddr=000dc734 vaddr=403795c4 sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x420261f2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1548
+load:0x403c8700,len:0xdac
+load:0x403cb700,len:0x2f60
+entry 0x403c8900
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov  3 2026 18:38:44[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (28) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (29) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (30) boot: Enabling RNG early entropy source...[0m
+[0;32mI (31) boot: Partition Table:[0m
+[0;32mI (32) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (34) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (35) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (36) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (37) boot: End of partition table[0m
+[0;32mI (37) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=258d4h (153812) map[0m
+[0;32mI (67) esp_image: segment 1: paddr=000358fc vaddr=3fc98900 size=05150h ( 20816) load[0m
+[0;32mI (72) esp_image: segment 2: paddr=0003aa54 vaddr=40374000 size=055c4h ( 21956) load[0m
+[0;32mI (77) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=9c70ch (640780) map[0m
+[0;32mI (195) esp_image: segment 4: paddr=000dc734 vaddr=403795c4 size=0f26ch ( 62060) load[0m
+[0;32mI (209) esp_image: segment 5: paddr=000eb9a8 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (218) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (219) boot: Disabling RNG early entropy source...[0m
+[0;32mI (220) cpu_start: Multicore app[0m
+[0;32mI (229) cpu_start: Pro cpu start user code[0m
+[0;32mI (229) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (229) app_init: Application information:[0m
+[0;32mI (230) app_init: Project name:     Whistle-Controller[0m
+[0;32mI (231) app_init: App version:      5fbbb61[0m
+[0;32mI (232) app_init: Compile time:     Nov  9 2026 17:24:31[0m
+[0;32mI (233) app_init: ELF file SHA256:  09cf5b0fe...[0m
+[0;32mI (234) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (235) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (236) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (237) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (238) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (240) heap_init: At 3FCA25B0 len 00047160 (284 KiB): RAM[0m
+[0;32mI (240) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (241) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (242) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (244) spi_flash: detected chip: gd[0m
+[0;32mI (244) spi_flash: flash io: dio[0m
+[0;33mW (245) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (248) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (248) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (250) main_task: Started on CPU0[0m
+[0;32mI (250) main_task: Calling app_main()[0m
+[0;32mI (250) whistle: Logs use USB Serial/JTAG. DFPlayer UART is UART1 on GPIO43 (TX) and GPIO44 (RX).[0m
+[0;32mI (250) catalog: Loaded 3 sounds. Default horn is Horn3.mp3[0m
+[0;32mI (250) catalog:   [0] Horn3.mp3 -> /Horn3.mp3[0m
+[0;32mI (250) catalog:   [1] Horn4.mp3 -> /Horn4.mp3[0m
+[0;32mI (250) catalog:   [2] Horn1.mp3 -> /Horn1.mp3[0m
+[0;32mI (270) pp: pp rom version: e7ae62f[0m
+[0;32mI (270) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (280) wifi:wifi driver task: 3fcee6c0, prio:23, stack:6656, core=0[0m
+[0;32mI (280) wifi:wifi firmware version: e12a754[0m
+[0;32mI (280) wifi:wifi certification version: v7.0[0m
+[0;32mI (280) wifi:config NVS flash: enabled[0m
+[0;32mI (280) wifi:config nano formatting: disabled[0m
+[0;32mI (280) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (280) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (280) wifi:Init management short buffer num: 32[0m
+[0;32mI (290) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (290) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (290) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (290) wifi:Init static rx buffer num: 10[0m
+[0;32mI (290) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (290) wifi_init: rx ba win: 6[0m
+[0;32mI (290) wifi_init: accept mbox: 6[0m
+[0;32mI (290) wifi_init: tcpip mbox: 32[0m
+[0;32mI (290) wifi_init: udp mbox: 6[0m
+[0;32mI (290) wifi_init: tcp mbox: 6[0m
+[0;32mI (300) wifi_init: tcp tx win: 5760[0m
+[0;32mI (300) wifi_init: tcp rx win: 5760[0m
+[0;32mI (300) wifi_init: tcp mss: 1440[0m
+[0;32mI (300) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (300) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (300) wifi: DHCP hostname whistleblower[0m
+[0;32mI (300) wifi: mDNS is not in this ESP-IDF tree and the train controller does not advertise it[0m
+[0;33mW (310) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (310) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (350) wifi:mode : sta (f0:9e:9e:21:db:14)[0m
+[0;32mI (350) wifi:enable tsf[0m
+[0;32mI (350) wifi: joining "harmonicminor"[0m
+[0;32mI (350) whistle_http: HTTP server listening on port 80[0m
+[0;32mI (360) dfplayer: UART1 ready: TX GPIO43, RX GPIO44, 115200 baud, 8N1[0m
+[0;32mI (360) whistle: UART init accepted[0m
+[0;32mI (360) whistle: Waiting 2000 ms for the DFPlayer to finish starting[0m
+[0;32mI (1030) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1030) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1040) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1050) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1100) wifi:connected with harmonicminor, aid = 11, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (1100) wifi:security: WPA2-PSK, phy: bgn, rssi: -81, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1100) wifi:pm start, type: 1[0m
+
+[0;32mI (1100) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1100) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1110) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1170) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2360) dfplayer: TX AT\r\n[0m
+[0;32mI (2420) dfplayer: RX OK\r\n[0m
+[0;32mI (2420) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2420) whistle: DFPlayer connected[0m
+[0;32mI (2420) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2480) dfplayer: RX 4\r\n[0m
+[0;32mI (2480) whistle: DFPlayer reports 4 files; catalog lists 3 configured names[0m
+[0;32mI (2480) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2540) dfplayer: RX OK\r\n[0m
+[0;32mI (2540) whistle: Amplifier accepted[0m
+[0;32mI (2540) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2600) dfplayer: RX OK\r\n[0m
+[0;32mI (2600) whistle: Volume 20 accepted[0m
+[0;32mI (2600) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2660) dfplayer: RX OK\r\n[0m
+[0;32mI (2660) whistle: Single-play mode accepted[0m
+[0;32mI (2660) whistle: Horn button ready on GPIO1[0m
+[0;32mI (4620) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (4620) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (4620) wifi: setup AP closed[0m
+[0;32mI (15980) whistle: Playing /Horn3.mp3[0m
+[0;32mI (15980) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (15980) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (15980) whistle: Button pressed[0m
+[0;32mI (15980) whistle: Button released[0m
+[0;32mI (16060) dfplayer: RX OK\r\n[0m
+[0;32mI (16060) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (16060) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (16120) dfplayer: RX 2\r\n[0m
+[0;32mI (16620) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16680) dfplayer: RX 0\r\n[0m
+[0;32mI (17180) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17240) dfplayer: RX 1\r\n[0m
+[0;32mI (17740) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17800) dfplayer: RX 1\r\n[0m
+[0;32mI (18300) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18350) dfplayer: RX 2\r\n[0m
+[0;32mI (18850) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18900) dfplayer: RX 2\r\n[0m
+[0;32mI (18900) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (1085) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1085) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1095) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1135) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1155) wifi:connected with harmonicminor, aid = 11, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (1155) wifi:security: WPA2-PSK, phy: bgn, rssi: -74, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1155) wifi:pm start, type: 1[0m
+
+[0;32mI (1165) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1165) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1175) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1225) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2195) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (2195) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (2195) wifi: setup AP closed[0m
+[0;32mI (2385) dfplayer: TX AT\r\n[0m
+[0;32mI (2435) dfplayer: RX OK\r\n[0m
+[0;32mI (2435) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2435) whistle: DFPlayer connected[0m
+[0;32mI (2435) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2485) dfplayer: RX 4\r\n[0m
+[0;32mI (2485) whistle: DFPlayer reports 4 files; catalog lists 3 configured names[0m
+[0;32mI (2485) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2535) dfplayer: RX OK\r\n[0m
+[0;32mI (2535) whistle: Amplifier accepted[0m
+[0;32mI (2535) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2585) dfplayer: RX OK\r\n[0m
+[0;32mI (2585) whistle: Volume 20 accepted[0m
+[0;32mI (2585) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2635) dfplayer: RX OK\r\n[0m
+[0;32mI (2635) whistle: Single-play mode accepted[0m
+[0;32mI (2635) whistle: Horn button ready on GPIO1[0m
+[0;32mI (54235) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (99375) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (114415) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (159545) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (174585) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (219615) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (234655) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (279785) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (294825) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (339965) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (354995) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (401765) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (415175) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (460315) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (475365) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (520505) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (535515) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (580755) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (595705) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (640825) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (655865) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (701095) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m

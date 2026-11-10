@@ -1,0 +1,228 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\Whistle-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM6'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378ee2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1548
+load:0x403c8700,len:0xdac
+load:0x403cb700,len:0x2f60
+entry 0x403c8900
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov  3 2026 18:38:44[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (29) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (30) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (31) boot: Enabling RNG early entropy source...[0m
+[0;32mI (32) boot: Partition Table:[0m
+[0;32mI (33) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (35) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (36) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (37) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (38) boot: End of partition table[0m
+[0;32mI (38) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b760h ( 46944) map[0m
+[0;32mI (48) esp_image: segment 1: paddr=0001b788 vaddr=3fc90f00 size=03168h ( 12648) load[0m
+[0;32mI (51) esp_image: segment 2: paddr=0001e8f8 vaddr=40374000 size=01720h (  5920) load[0m
+[0;32mI (53) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=16788h ( 92040) map[0m
+[0;32mI (70) esp_image: segment 4: paddr=000367b0 vaddr=40375720 size=0b75ch ( 46940) load[0m
+[0;32mI (82) esp_image: segment 5: paddr=00041f14 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (87) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (88) boot: Disabling RNG early entropy source...[0m
+[0;32mI (89) cpu_start: Multicore app[0m
+[0;32mI (98) cpu_start: Pro cpu start user code[0m
+[0;32mI (98) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (98) app_init: Application information:[0m
+[0;32mI (99) app_init: Project name:     Whistle-Controller[0m
+[0;32mI (99) app_init: App version:      5fbbb61[0m
+[0;32mI (100) app_init: Compile time:     Nov  3 2026 19:09:03[0m
+[0;32mI (101) app_init: ELF file SHA256:  bd5ec3984...[0m
+[0;32mI (102) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (103) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (104) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (105) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (107) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (109) heap_init: At 3FC94BE0 len 00054B30 (338 KiB): RAM[0m
+[0;32mI (109) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (110) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (111) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (113) spi_flash: detected chip: gd[0m
+[0;32mI (113) spi_flash: flash io: dio[0m
+[0;33mW (113) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (116) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (117) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (118) main_task: Started on CPU0[0m
+[0;32mI (118) main_task: Calling app_main()[0m
+[0;32mI (118) whistle: Logs use USB Serial/JTAG. DFPlayer UART is UART1 on GPIO43 (TX) and GPIO44 (RX).[0m
+[0;32mI (118) dfplayer: UART1 ready: TX GPIO43, RX GPIO44, 115200 baud, 8N1[0m
+[0;32mI (118) whistle: UART init accepted[0m
+[0;32mI (118) whistle: Waiting 2000 ms for the DFPlayer to finish starting[0m
+[0;32mI (2128) dfplayer: TX AT\r\n[0m
+[0;33mW (3128) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3128) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3428) dfplayer: TX AT\r\n[0m
+[0;33mW (4428) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4428) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (4728) dfplayer: TX AT\r\n[0m
+[0;33mW (5728) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (5728) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (6028) dfplayer: TX AT\r\n[0m
+[0;33mW (7028) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (7028) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7328) dfplayer: TX AT\r\n[0m
+[0;33mW (8328) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8328) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8328) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8328) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;33mW (9328) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (9328) whistle: Amplifier failed: no response before timeout. Response: [0m
+[0;32mI (9328) dfplayer: TX AT+VOL=20\r\n[0m
+[0;33mW (10328) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (10328) whistle: Volume 20 failed: no response before timeout. Response: [0m
+[0;32mI (10328) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;33mW (11328) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (11328) whistle: Single-play mode failed: no response before timeout. Response: [0m
+[0;32mI (11328) whistle: Horn button ready on GPIO1[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;33mW (3098) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3098) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3398) dfplayer: TX AT\r\n[0m
+[0;33mW (4398) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4398) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (4698) dfplayer: TX AT\r\n[0m
+[0;33mW (5698) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (5698) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (5998) dfplayer: TX AT\r\n[0m
+[0;33mW (6998) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (6998) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7298) dfplayer: TX AT\r\n[0m
+[0;33mW (8298) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8298) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8298) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8298) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;33mW (9298) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (9298) whistle: Amplifier failed: no response before timeout. Response: [0m
+[0;32mI (9298) dfplayer: TX AT+VOL=20\r\n[0m
+[0;33mW (10298) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (10298) whistle: Volume 20 failed: no response before timeout. Response: [0m
+[0;32mI (10298) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;33mW (11298) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (11298) whistle: Single-play mode failed: no response before timeout. Response: [0m
+[0;32mI (11298) whistle: Horn button ready on GPIO1[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;33mW (3098) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3098) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3398) dfplayer: TX AT\r\n[0m
+[0;33mW (4398) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4398) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (4698) dfplayer: TX AT\r\n[0m
+[0;33mW (5698) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (5698) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (5998) dfplayer: TX AT\r\n[0m
+[0;33mW (6998) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (6998) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7298) dfplayer: TX AT\r\n[0m
+[0;33mW (8298) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8298) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8298) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8298) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;33mW (9298) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (9298) whistle: Amplifier failed: no response before timeout. Response: [0m
+[0;32mI (9298) dfplayer: TX AT+VOL=20\r\n[0m
+[0;33mW (10298) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (10298) whistle: Volume 20 failed: no response before timeout. Response: [0m
+[0;32mI (10298) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;33mW (11298) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (11298) whistle: Single-play mode failed: no response before timeout. Response: [0m
+[0;32mI (11298) whistle: Horn button ready on GPIO1[0m
+[0;32mI (2138) dfplayer: TX AT\r\n[0m
+[0;32mI (2198) dfplayer: RX OK\r\n[0m
+[0;32mI (2198) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2198) whistle: DFPlayer connected[0m
+[0;32mI (2198) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2258) dfplayer: RX OK\r\n[0m
+[0;32mI (2258) whistle: Amplifier accepted[0m
+[0;32mI (2258) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2318) dfplayer: RX OK\r\n[0m
+[0;32mI (2318) whistle: Volume 20 accepted[0m
+[0;32mI (2318) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2378) dfplayer: RX OK\r\n[0m
+[0;32mI (2378) whistle: Single-play mode accepted[0m
+[0;32mI (2378) whistle: Horn button ready on GPIO1[0m
+[0;32mI (9858) whistle: Button pressed[0m
+[0;32mI (9858) whistle: Playing /Horn3.mp3[0m
+[0;32mI (9858) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (9948) dfplayer: RX OK\r\n[0m
+[0;32mI (9948) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (10008) dfplayer: RX 2\r\n[0m
+[0;32mI (10048) whistle: Button released[0m
+[0;32mI (10508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10568) dfplayer: RX 0\r\n[0m
+[0;32mI (11068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11128) dfplayer: RX 1\r\n[0m
+[0;32mI (11628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11688) dfplayer: RX 1\r\n[0m
+[0;32mI (12188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12248) dfplayer: RX 2\r\n[0m
+[0;32mI (12748) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12808) dfplayer: RX 2\r\n[0m
+[0;32mI (12808) whistle: Playback completed[0m
+[0;32mI (2138) dfplayer: TX AT\r\n[0m
+[0;32mI (2198) dfplayer: RX OK\r\n[0m
+[0;32mI (2198) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2198) whistle: DFPlayer connected[0m
+[0;32mI (2198) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2258) dfplayer: RX OK\r\n[0m
+[0;32mI (2258) whistle: Amplifier accepted[0m
+[0;32mI (2258) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2318) dfplayer: RX OK\r\n[0m
+[0;32mI (2318) whistle: Volume 20 accepted[0m
+[0;32mI (2318) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2378) dfplayer: RX OK\r\n[0m
+[0;32mI (2378) whistle: Single-play mode accepted[0m
+[0;32mI (2378) whistle: Horn button ready on GPIO1[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2158) dfplayer: RX OK\r\n[0m
+[0;32mI (2158) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2158) whistle: DFPlayer connected[0m
+[0;32mI (2158) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2218) dfplayer: RX OK\r\n[0m
+[0;32mI (2218) whistle: Amplifier accepted[0m
+[0;32mI (2218) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2278) dfplayer: RX OK\r\n[0m
+[0;32mI (2278) whistle: Volume 20 accepted[0m
+[0;32mI (2278) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) whistle: Horn button ready on GPIO1[0m
+[0;32mI (2138) dfplayer: TX AT\r\n[0m
+[0;32mI (2188) dfplayer: RX OK\r\n[0m
+[0;32mI (2188) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2188) whistle: DFPlayer connected[0m
+[0;32mI (2188) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2238) dfplayer: RX OK\r\n[0m
+[0;32mI (2238) whistle: Amplifier accepted[0m
+[0;32mI (2238) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2288) dfplayer: RX OK\r\n[0m
+[0;32mI (2288) whistle: Volume 20 accepted[0m
+[0;32mI (2288) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) whistle: Horn button ready on GPIO1[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2158) dfplayer: RX OK\r\n[0m
+[0;32mI (2158) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2158) whistle: DFPlayer connected[0m
+[0;32mI (2158) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2218) dfplayer: RX OK\r\n[0m
+[0;32mI (2218) whistle: Amplifier accepted[0m
+[0;32mI (2218) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2278) dfplayer: RX OK\r\n[0m
+[0;32mI (2278) whistle: Volume 20 accepted[0m
+[0;32mI (2278) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) whistle: Horn button ready on GPIO1[0m

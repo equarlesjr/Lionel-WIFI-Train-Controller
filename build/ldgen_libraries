@@ -56,9 +56,12 @@ C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/vfs/libvfs.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_driver_usb_serial_jtag/libesp_driver_usb_serial_jtag.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_hal_usb/libesp_hal_usb.a
-C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_http_server/libesp_http_server.a
-C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/http_parser/libhttp_parser.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_http_client/libesp_http_client.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_event/libesp_event.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/tcp_transport/libtcp_transport.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp-tls/libesp-tls.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/http_parser/libhttp_parser.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_http_server/libesp_http_server.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_wifi/libesp_wifi.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_phy/libesp_phy.a
 C:/esp/v6.1-rc1/esp-idf/components/esp_phy/lib/esp32s3/libbtbb.a
@@ -73,7 +76,6 @@ C:/esp/v6.1-rc1/esp-idf/components/esp_wifi/lib/esp32s3/libnet80211.a
 C:/esp/v6.1-rc1/esp-idf/components/esp_wifi/lib/esp32s3/libpp.a
 C:/esp/v6.1-rc1/esp-idf/components/esp_wifi/lib/esp32s3/libsmartconfig.a
 C:/esp/v6.1-rc1/esp-idf/components/esp_wifi/lib/esp32s3/libwapi.a
-C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp-tls/libesp-tls.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_hal_pmu/libesp_hal_pmu.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_hal_touch_sens/libesp_hal_touch_sens.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/pthread/libpthread.a
@@ -136,7 +138,13 @@ C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_hal_ledc/libesp_hal_ledc.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_adc/libesp_adc.a
-C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/main/libmain.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/tcp_transport/libtcp_transport.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_http_client/libesp_http_client.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/console/libconsole.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/espressif__mdns/libespressif__mdns.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/console/libconsole.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_eth/libesp_eth.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/main/libmain.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_driver_ledc/libesp_driver_ledc.a
 C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/esp_adc/libesp_adc.a
+C:/Users/ernest/Desktop/Train-HTTPServer/Lionel-WIFI-Train-Controller/build/esp-idf/espressif__mdns/libespressif__mdns.a

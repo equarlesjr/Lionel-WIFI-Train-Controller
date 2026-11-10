@@ -1,0 +1,1723 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\Whistle-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM6'
+[0;33mW (3161) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3161) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378ee2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1548
+load:0x403c8700,len:0xdac
+load:0x403cb700,len:0x2f60
+entry 0x403c8900
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov  3 2026 18:38:44[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (29) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (30) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (31) boot: Enabling RNG early entropy source...[0m
+[0;32mI (32) boot: Partition Table:[0m
+[0;32mI (33) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (35) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (35) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (36) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (38) boot: End of partition table[0m
+[0;32mI (38) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b780h ( 46976) map[0m
+[0;32mI (48) esp_image: segment 1: paddr=0001b7a8 vaddr=3fc90f00 size=03158h ( 12632) load[0m
+[0;32mI (51) esp_image: segment 2: paddr=0001e908 vaddr=40374000 size=01710h (  5904) load[0m
+[0;32mI (53) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=15b78h ( 88952) map[0m
+[0;32mI (70) esp_image: segment 4: paddr=00035ba0 vaddr=40375710 size=0b72ch ( 46892) load[0m
+[0;32mI (81) esp_image: segment 5: paddr=000412d4 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (87) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (87) boot: Disabling RNG early entropy source...[0m
+[0;32mI (88) cpu_start: Multicore app[0m
+[0;32mI (97) cpu_start: Pro cpu start user code[0m
+[0;32mI (97) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (97) app_init: Application information:[0m
+[0;32mI (98) app_init: Project name:     Whistle-Controller[0m
+[0;32mI (98) app_init: App version:      5fbbb61[0m
+[0;32mI (99) app_init: Compile time:     Nov  3 2026 19:09:03[0m
+[0;32mI (100) app_init: ELF file SHA256:  75e89f8c9...[0m
+[0;32mI (101) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (102) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (103) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (104) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (106) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (108) heap_init: At 3FC96FB0 len 00052760 (329 KiB): RAM[0m
+[0;32mI (108) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (109) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (110) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (111) spi_flash: detected chip: gd[0m
+[0;32mI (112) spi_flash: flash io: dio[0m
+[0;33mW (113) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (115) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (116) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (117) main_task: Started on CPU0[0m
+[0;32mI (117) main_task: Calling app_main()[0m
+[0;32mI (117) whistle: Whistleblower sprint 1 starting[0m
+[0;32mI (117) whistle: Logs use USB Serial/JTAG. DFPlayer UART is UART1 on GPIO43 (TX) and GPIO44 (RX).[0m
+[0;32mI (117) dfplayer: UART1 ready: TX GPIO43, RX GPIO44, 115200 baud, 8N1[0m
+[0;32mI (117) whistle: UART init accepted[0m
+[0;32mI (117) whistle: Waiting 2000 ms for the DFPlayer to finish starting[0m
+[0;32mI (2127) dfplayer: TX AT\r\n[0m
+[0;33mW (3127) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3127) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3427) dfplayer: TX AT\r\n[0m
+[0;33mW (4427) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4427) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (4727) dfplayer: TX AT\r\n[0m
+[0;33mW (5727) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (5727) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (6027) dfplayer: TX AT\r\n[0m
+[0;33mW (7027) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (7027) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7327) dfplayer: TX AT\r\n[0m
+[0;33mW (8327) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8327) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8327) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8327) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (10858) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10908) dfplayer: RX 4\r\n[0m
+[0;32mI (11408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11458) dfplayer: RX 4\r\n[0m
+[0;32mI (11958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12008) dfplayer: RX 5\r\n[0m
+[0;32mI (12508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12558) dfplayer: RX 5\r\n[0m
+[0;32mI (12558) whistle: File 3 finished[0m
+[0;32mI (12558) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12628) dfplayer: RX OK\r\n[0m
+[0;32mI (12628) whistle: File 4 play command accepted[0m
+[0;32mI (12628) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12688) dfplayer: RX H[0m
+[0;32mI (12688) whistle: File 4 name: Horn1.mp3[0m
+[0;32mI (12688) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12738) dfplayer: RX 30\r\n[0m
+[0;32mI (12738) whistle: File 4 duration: 30 s[0m
+[0;32mI (13238) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13288) dfplayer: RX 0\r\n[0m
+[0;32mI (13788) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13838) dfplayer: RX 1\r\n[0m
+[0;32mI (14338) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14388) dfplayer: RX 1\r\n[0m
+[0;32mI (14888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14938) dfplayer: RX 2\r\n[0m
+[0;32mI (15438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15488) dfplayer: RX 2\r\n[0m
+[0;32mI (15988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16038) dfplayer: RX 3\r\n[0m
+[0;32mI (16538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16588) dfplayer: RX 3\r\n[0m
+[0;32mI (17088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17138) dfplayer: RX 4\r\n[0m
+[0;32mI (17638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17688) dfplayer: RX 5\r\n[0m
+[0;32mI (18188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18238) dfplayer: RX 5\r\n[0m
+[0;32mI (18738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18788) dfplayer: RX 6\r\n[0m
+[0;32mI (19288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19338) dfplayer: RX 6\r\n[0m
+[0;32mI (19838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19898) dfplayer: RX 7\r\n[0m
+[0;32mI (20398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20458) dfplayer: RX 7\r\n[0m
+[0;32mI (20958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21008) dfplayer: RX 8\r\n[0m
+[0;32mI (21508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21568) dfplayer: RX 8\r\n[0m
+[0;32mI (22068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22128) dfplayer: RX 9\r\n[0m
+[0;32mI (22628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22678) dfplayer: RX 10\r\n[0m
+[0;32mI (23178) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23228) dfplayer: RX 10\r\n[0m
+[0;32mI (23728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23788) dfplayer: RX 11\r\n[0m
+[0;32mI (24288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24348) dfplayer: RX 11\r\n[0m
+[0;32mI (24848) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24898) dfplayer: RX 12\r\n[0m
+[0;32mI (25398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25458) dfplayer: RX 12\r\n[0m
+[0;32mI (25958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26008) dfplayer: RX 13\r\n[0m
+[0;32mI (26508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26558) dfplayer: RX 13\r\n[0m
+[0;32mI (27058) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27108) dfplayer: RX 14\r\n[0m
+[0;32mI (27608) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27658) dfplayer: RX 15\r\n[0m
+[0;32mI (28158) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28208) dfplayer: RX 15\r\n[0m
+[0;32mI (28708) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28758) dfplayer: RX 16\r\n[0m
+[0;32mI (29258) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29308) dfplayer: RX 16\r\n[0m
+[0;32mI (29808) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29858) dfplayer: RX 17\r\n[0m
+[0;32mI (30358) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30418) dfplayer: RX 17\r\n[0m
+[0;32mI (30918) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30968) dfplayer: RX 18\r\n[0m
+[0;32mI (31468) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (31518) dfplayer: RX 18\r\n[0m
+[0;32mI (32018) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (32078) dfplayer: RX 19\r\n[0m
+[0;32mI (32578) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (32638) dfplayer: RX 20\r\n[0m
+[0;32mI (33138) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33188) dfplayer: RX 20\r\n[0m
+[0;32mI (33688) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33738) dfplayer: RX 21\r\n[0m
+[0;32mI (34238) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34288) dfplayer: RX 21\r\n[0m
+[0;32mI (34788) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34838) dfplayer: RX 22\r\n[0m
+[0;32mI (35338) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35388) dfplayer: RX 22\r\n[0m
+[0;32mI (35888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35938) dfplayer: RX 23\r\n[0m
+[0;32mI (36438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (36488) dfplayer: RX 23\r\n[0m
+[0;32mI (36988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (37038) dfplayer: RX 24\r\n[0m
+[0;32mI (37538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (37588) dfplayer: RX 24\r\n[0m
+[0;32mI (38088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38138) dfplayer: RX 25\r\n[0m
+[0;32mI (38638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38698) dfplayer: RX 26\r\n[0m
+[0;32mI (39198) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39258) dfplayer: RX 26\r\n[0m
+[0;32mI (39758) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39808) dfplayer: RX 27\r\n[0m
+[0;32mI (40308) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40368) dfplayer: RX 27\r\n[0m
+[0;32mI (40868) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40918) dfplayer: RX 28\r\n[0m
+[0;32mI (41418) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (41478) dfplayer: RX 28\r\n[0m
+[0;32mI (41978) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (42028) dfplayer: RX 29\r\n[0m
+[0;32mI (42528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (42588) dfplayer: RX 30\r\n[0m
+[0;32mI (43088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (43138) dfplayer: RX 30\r\n[0m
+[0;32mI (43138) whistle: File 4 finished[0m
+[0;32mI (43138) whistle: Playback summary[0m
+[0;32mI (43138) whistle: Files reported: 4[0m
+[0;32mI (43138) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (43138) whistle: Play commands accepted: 3[0m
+[0;32mI (43138) whistle: Play commands rejected: 1[0m
+[0;32mI (43138) whistle: Filenames retrieved: 3[0m
+[0;32mI (43138) whistle: Files finished: 3[0m
+[0;32mI (43138) whistle: Errors recorded: 1[0m
+[0;32mI (43138) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (43138) whistle: File 2: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (43148) whistle: File 3: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (43148) whistle: File 4: play accepted, name Horn1.mp3, duration 30 s, finished[0m
+[0;32mI (43148) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (43148) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2148) dfplayer: RX OK\r\n[0m
+[0;32mI (2148) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2148) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2198) dfplayer: RX OK\r\n[0m
+[0;32mI (2198) whistle: Amplifier accepted[0m
+[0;32mI (2198) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2248) dfplayer: RX OK\r\n[0m
+[0;32mI (2248) whistle: Volume 30 accepted[0m
+[0;32mI (2248) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2298) dfplayer: RX OK\r\n[0m
+[0;32mI (2298) whistle: Single-play mode accepted[0m
+[0;32mI (2298) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2348) dfplayer: RX 4\r\n[0m
+[0;32mI (2348) whistle: Playable files found: 4[0m
+[0;32mI (2348) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3848) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3848) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3848) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3918) dfplayer: RX OK\r\n[0m
+[0;32mI (3918) whistle: File 2 play command accepted[0m
+[0;32mI (3918) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (3978) dfplayer: RX H[0m
+[0;32mI (3978) whistle: File 2 name: Horn3.mp3[0m
+[0;32mI (3978) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4028) dfplayer: RX 2\r\n[0m
+[0;32mI (4028) whistle: File 2 duration: 2 s[0m
+[0;32mI (4528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4578) dfplayer: RX 0\r\n[0m
+[0;32mI (5078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5128) dfplayer: RX 1\r\n[0m
+[0;32mI (5628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5678) dfplayer: RX 1\r\n[0m
+[0;32mI (6178) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6228) dfplayer: RX 2\r\n[0m
+[0;32mI (6728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6778) dfplayer: RX 2\r\n[0m
+[0;32mI (6778) whistle: File 2 finished[0m
+[0;32mI (6778) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (6858) dfplayer: RX OK\r\n[0m
+[0;32mI (6858) whistle: File 3 play command accepted[0m
+[0;32mI (6858) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (6918) dfplayer: RX H[0m
+[0;32mI (6918) whistle: File 3 name: Horn4.mp3[0m
+[0;32mI (6918) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (6978) dfplayer: RX 5\r\n[0m
+[0;32mI (6978) whistle: File 3 duration: 5 s[0m
+[0;32mI (7478) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7538) dfplayer: RX 0\r\n[0m
+[0;32mI (8038) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8088) dfplayer: RX 1\r\n[0m
+[0;32mI (8588) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8648) dfplayer: RX 1\r\n[0m
+[0;32mI (9148) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9198) dfplayer: RX 2\r\n[0m
+[0;32mI (9698) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9758) dfplayer: RX 2\r\n[0m
+[0;32mI (10258) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10308) dfplayer: RX 3\r\n[0m
+[0;32mI (10808) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10868) dfplayer: RX 4\r\n[0m
+[0;32mI (11368) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11428) dfplayer: RX 4\r\n[0m
+[0;32mI (11928) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11978) dfplayer: RX 5\r\n[0m
+[0;32mI (12478) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12528) dfplayer: RX 5\r\n[0m
+[0;32mI (12528) whistle: File 3 finished[0m
+[0;32mI (12528) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12588) dfplayer: RX OK\r\n[0m
+[0;32mI (12588) whistle: File 4 play command accepted[0m
+[0;32mI (12588) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12638) dfplayer: RX H[0m
+[0;32mI (12638) whistle: File 4 name: Horn1.mp3[0m
+[0;32mI (12638) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12688) dfplayer: RX 30\r\n[0m
+[0;32mI (12688) whistle: File 4 duration: 30 s[0m
+[0;32mI (13188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13238) dfplayer: RX 0\r\n[0m
+[0;32mI (13738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13788) dfplayer: RX 1\r\n[0m
+[0;32mI (14288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14338) dfplayer: RX 1\r\n[0m
+[0;32mI (14838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14888) dfplayer: RX 2\r\n[0m
+[0;32mI (15388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15438) dfplayer: RX 2\r\n[0m
+[0;32mI (15938) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15988) dfplayer: RX 3\r\n[0m
+[0;32mI (16488) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16538) dfplayer: RX 3\r\n[0m
+[0;32mI (17038) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17088) dfplayer: RX 4\r\n[0m
+[0;32mI (17588) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17658) dfplayer: RX 5\r\n[0m
+[0;32mI (18158) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18218) dfplayer: RX 5\r\n[0m
+[0;32mI (18718) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18768) dfplayer: RX 6\r\n[0m
+[0;32mI (19268) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19318) dfplayer: RX 6\r\n[0m
+[0;32mI (19818) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19868) dfplayer: RX 7\r\n[0m
+[0;32mI (20368) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20418) dfplayer: RX 7\r\n[0m
+[0;32mI (20918) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20968) dfplayer: RX 8\r\n[0m
+[0;32mI (21468) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21518) dfplayer: RX 8\r\n[0m
+[0;32mI (22018) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22068) dfplayer: RX 9\r\n[0m
+[0;32mI (22568) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22618) dfplayer: RX 10\r\n[0m
+[0;32mI (23118) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23168) dfplayer: RX 10\r\n[0m
+[0;32mI (23668) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23728) dfplayer: RX 11\r\n[0m
+[0;32mI (24228) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24278) dfplayer: RX 11\r\n[0m
+[0;32mI (24778) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24828) dfplayer: RX 12\r\n[0m
+[0;32mI (25328) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25378) dfplayer: RX 12\r\n[0m
+[0;32mI (25878) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25928) dfplayer: RX 13\r\n[0m
+[0;32mI (26428) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26478) dfplayer: RX 13\r\n[0m
+[0;32mI (26978) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27028) dfplayer: RX 14\r\n[0m
+[0;32mI (27528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27578) dfplayer: RX 15\r\n[0m
+[0;32mI (28078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28128) dfplayer: RX 15\r\n[0m
+[0;32mI (28628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28678) dfplayer: RX 16\r\n[0m
+[0;32mI (29178) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29228) dfplayer: RX 16\r\n[0m
+[0;32mI (29728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29778) dfplayer: RX 17\r\n[0m
+[0;32mI (30278) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30338) dfplayer: RX 17\r\n[0m
+[0;32mI (30838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30888) dfplayer: RX 18\r\n[0m
+[0;32mI (31388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (31438) dfplayer: RX 18\r\n[0m
+[0;32mI (31938) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (31988) dfplayer: RX 19\r\n[0m
+[0;32mI (32488) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (32538) dfplayer: RX 19\r\n[0m
+[0;32mI (33038) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33088) dfplayer: RX 20\r\n[0m
+[0;32mI (33588) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33638) dfplayer: RX 21\r\n[0m
+[0;32mI (34138) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34188) dfplayer: RX 21\r\n[0m
+[0;32mI (34688) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34738) dfplayer: RX 22\r\n[0m
+[0;32mI (35238) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35298) dfplayer: RX 22\r\n[0m
+[0;32mI (35798) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35848) dfplayer: RX 23\r\n[0m
+[0;32mI (36348) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (36398) dfplayer: RX 23\r\n[0m
+[0;32mI (36898) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (36948) dfplayer: RX 24\r\n[0m
+[0;32mI (37448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (37498) dfplayer: RX 24\r\n[0m
+[0;32mI (37998) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38048) dfplayer: RX 25\r\n[0m
+[0;32mI (38548) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38598) dfplayer: RX 26\r\n[0m
+[0;32mI (39098) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39148) dfplayer: RX 26\r\n[0m
+[0;32mI (39648) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39698) dfplayer: RX 27\r\n[0m
+[0;32mI (40198) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40248) dfplayer: RX 27\r\n[0m
+[0;32mI (40748) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40808) dfplayer: RX 28\r\n[0m
+[0;32mI (41308) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (41368) dfplayer: RX 28\r\n[0m
+[0;32mI (41868) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (41918) dfplayer: RX 29\r\n[0m
+[0;32mI (42418) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (42478) dfplayer: RX 29\r\n[0m
+[0;32mI (42978) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (43028) dfplayer: RX 30\r\n[0m
+[0;32mI (43528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (43578) dfplayer: RX 30\r\n[0m
+[0;32mI (43578) whistle: File 4 finished[0m
+[0;32mI (43578) whistle: Playback summary[0m
+[0;32mI (43578) whistle: Files reported: 4[0m
+[0;32mI (43578) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (43578) whistle: Play commands accepted: 3[0m
+[0;32mI (43578) whistle: Play commands rejected: 1[0m
+[0;32mI (43578) whistle: Filenames retrieved: 3[0m
+[0;32mI (43578) whistle: Files finished: 3[0m
+[0;32mI (43578) whistle: Errors recorded: 1[0m
+[0;32mI (43578) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (43588) whistle: File 2: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (43588) whistle: File 3: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (43588) whistle: File 4: play accepted, name Horn1.mp3, duration 30 s, finished[0m
+[0;32mI (43588) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (43588) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2148) dfplayer: RX OK\r\n[0m
+[0;32mI (2148) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2148) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2198) dfplayer: RX OK\r\n[0m
+[0;32mI (2198) whistle: Amplifier accepted[0m
+[0;32mI (2198) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2248) dfplayer: RX OK\r\n[0m
+[0;32mI (2248) whistle: Volume 30 accepted[0m
+[0;32mI (2248) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2298) dfplayer: RX OK\r\n[0m
+[0;32mI (2298) whistle: Single-play mode accepted[0m
+[0;32mI (2298) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2348) dfplayer: RX 4\r\n[0m
+[0;32mI (2348) whistle: Playable files found: 4[0m
+[0;32mI (2348) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3848) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3848) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3848) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3918) dfplayer: RX OK\r\n[0m
+[0;32mI (3918) whistle: File 2 play command accepted[0m
+[0;32mI (3918) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (3978) dfplayer: RX H[0m
+[0;32mI (3978) whistle: File 2 name: Horn3.mp3[0m
+[0;32mI (3978) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4028) dfplayer: RX 2\r\n[0m
+[0;32mI (4028) whistle: File 2 duration: 2 s[0m
+[0;32mI (4528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4578) dfplayer: RX 0\r\n[0m
+[0;32mI (5078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5128) dfplayer: RX 1\r\n[0m
+[0;32mI (5628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5678) dfplayer: RX 1\r\n[0m
+[0;32mI (6178) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6228) dfplayer: RX 2\r\n[0m
+[0;32mI (6728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6778) dfplayer: RX 2\r\n[0m
+[0;32mI (6778) whistle: File 2 finished[0m
+[0;32mI (6778) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (6848) dfplayer: RX OK\r\n[0m
+[0;32mI (6848) whistle: File 3 play command accepted[0m
+[0;32mI (6848) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (6898) dfplayer: RX H[0m
+[0;32mI (6898) whistle: File 3 name: Horn4.mp3[0m
+[0;32mI (6898) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (6948) dfplayer: RX 5\r\n[0m
+[0;32mI (6948) whistle: File 3 duration: 5 s[0m
+[0;32mI (7448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7498) dfplayer: RX 0\r\n[0m
+[0;32mI (7998) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8048) dfplayer: RX 1\r\n[0m
+[0;32mI (8548) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8598) dfplayer: RX 1\r\n[0m
+[0;32mI (9098) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9158) dfplayer: RX 2\r\n[0m
+[0;32mI (9658) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9708) dfplayer: RX 2\r\n[0m
+[0;32mI (10208) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10268) dfplayer: RX 3\r\n[0m
+[0;32mI (10768) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10828) dfplayer: RX 4\r\n[0m
+[0;32mI (11328) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11388) dfplayer: RX 4\r\n[0m
+[0;32mI (11888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11938) dfplayer: RX 5\r\n[0m
+[0;32mI (12438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12488) dfplayer: RX 5\r\n[0m
+[0;32mI (12488) whistle: File 3 finished[0m
+[0;32mI (12488) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12548) dfplayer: RX OK\r\n[0m
+[0;32mI (12548) whistle: File 4 play command accepted[0m
+[0;32mI (12548) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12608) dfplayer: RX H[0m
+[0;32mI (12608) whistle: File 4 name: Horn1.mp3[0m
+[0;32mI (12608) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12658) dfplayer: RX 30\r\n[0m
+[0;32mI (12658) whistle: File 4 duration: 30 s[0m
+[0;32mI (13158) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13218) dfplayer: RX 0\r\n[0m
+[0;32mI (13718) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13768) dfplayer: RX 1\r\n[0m
+[0;32mI (14268) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14318) dfplayer: RX 1\r\n[0m
+[0;32mI (14818) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14878) dfplayer: RX 2\r\n[0m
+[0;32mI (15378) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15438) dfplayer: RX 2\r\n[0m
+[0;32mI (15938) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15988) dfplayer: RX 3\r\n[0m
+[0;32mI (16488) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16538) dfplayer: RX 4\r\n[0m
+[0;32mI (17038) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17088) dfplayer: RX 4\r\n[0m
+[0;32mI (17588) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17638) dfplayer: RX 5\r\n[0m
+[0;32mI (18138) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18188) dfplayer: RX 5\r\n[0m
+[0;32mI (18688) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18738) dfplayer: RX 6\r\n[0m
+[0;32mI (19238) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19288) dfplayer: RX 6\r\n[0m
+[0;32mI (19788) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19838) dfplayer: RX 7\r\n[0m
+[0;32mI (20338) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20388) dfplayer: RX 7\r\n[0m
+[0;32mI (20888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20938) dfplayer: RX 8\r\n[0m
+[0;32mI (21438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21488) dfplayer: RX 8\r\n[0m
+[0;32mI (21988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22058) dfplayer: RX 9\r\n[0m
+[0;32mI (22558) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22608) dfplayer: RX 10\r\n[0m
+[0;32mI (23108) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23168) dfplayer: RX 10\r\n[0m
+[0;32mI (23668) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23728) dfplayer: RX 11\r\n[0m
+[0;32mI (24228) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24278) dfplayer: RX 11\r\n[0m
+[0;32mI (24778) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24828) dfplayer: RX 12\r\n[0m
+[0;32mI (25328) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25388) dfplayer: RX 12\r\n[0m
+[0;32mI (25888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25938) dfplayer: RX 13\r\n[0m
+[0;32mI (26438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26488) dfplayer: RX 13\r\n[0m
+[0;32mI (26988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27038) dfplayer: RX 14\r\n[0m
+[0;32mI (27538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27588) dfplayer: RX 15\r\n[0m
+[0;32mI (28088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28138) dfplayer: RX 15\r\n[0m
+[0;32mI (28638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28688) dfplayer: RX 16\r\n[0m
+[0;32mI (29188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29238) dfplayer: RX 16\r\n[0m
+[0;32mI (29738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29788) dfplayer: RX 17\r\n[0m
+[0;32mI (2138) dfplayer: TX AT\r\n[0m
+[0;32mI (2188) dfplayer: RX OK\r\n[0m
+[0;32mI (2188) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2188) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2238) dfplayer: RX OK\r\n[0m
+[0;32mI (2238) whistle: Amplifier accepted[0m
+[0;32mI (2238) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2288) dfplayer: RX OK\r\n[0m
+[0;32mI (2288) whistle: Volume 30 accepted[0m
+[0;32mI (2288) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2388) dfplayer: RX 4\r\n[0m
+[0;32mI (2388) whistle: Playable files found: 4[0m
+[0;32mI (2388) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3888) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3888) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3888) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3968) dfplayer: RX OK\r\n[0m
+[0;32mI (3968) whistle: File 2 play command accepted[0m
+[0;32mI (3968) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4028) dfplayer: RX H[0m
+[0;32mI (4028) whistle: File 2 name: Horn3.mp3[0m
+[0;32mI (4028) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4078) dfplayer: RX 2\r\n[0m
+[0;32mI (4078) whistle: File 2 duration: 2 s[0m
+[0;32mI (4578) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4628) dfplayer: RX 0\r\n[0m
+[0;32mI (5128) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5178) dfplayer: RX 1\r\n[0m
+[0;32mI (5678) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5728) dfplayer: RX 1\r\n[0m
+[0;32mI (6228) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6278) dfplayer: RX 2\r\n[0m
+[0;32mI (6778) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6828) dfplayer: RX 2\r\n[0m
+[0;32mI (6828) whistle: File 2 finished[0m
+[0;32mI (6828) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (6898) dfplayer: RX OK\r\n[0m
+[0;32mI (6898) whistle: File 3 play command accepted[0m
+[0;32mI (6898) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (6948) dfplayer: RX H[0m
+[0;32mI (6948) whistle: File 3 name: Horn4.mp3[0m
+[0;32mI (6948) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (6998) dfplayer: RX 5\r\n[0m
+[0;32mI (6998) whistle: File 3 duration: 5 s[0m
+[0;32mI (7498) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7548) dfplayer: RX 0\r\n[0m
+[0;32mI (8048) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8098) dfplayer: RX 1\r\n[0m
+[0;32mI (8598) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8648) dfplayer: RX 1\r\n[0m
+[0;32mI (9148) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9198) dfplayer: RX 2\r\n[0m
+[0;32mI (9698) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9748) dfplayer: RX 2\r\n[0m
+[0;32mI (10248) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10298) dfplayer: RX 3\r\n[0m
+[0;32mI (10798) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10848) dfplayer: RX 3\r\n[0m
+[0;32mI (11348) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11398) dfplayer: RX 4\r\n[0m
+[0;32mI (11898) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11948) dfplayer: RX 5\r\n[0m
+[0;32mI (12448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12498) dfplayer: RX 5\r\n[0m
+[0;32mI (12498) whistle: File 3 finished[0m
+[0;32mI (12498) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12558) dfplayer: RX OK\r\n[0m
+[0;32mI (12558) whistle: File 4 play command accepted[0m
+[0;32mI (12558) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12608) dfplayer: RX H[0m
+[0;32mI (12608) whistle: File 4 name: Horn1.mp3[0m
+[0;32mI (12608) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12658) dfplayer: RX 30\r\n[0m
+[0;32mI (12658) whistle: File 4 duration: 30 s[0m
+[0;32mI (13158) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13228) dfplayer: RX 0\r\n[0m
+[0;32mI (13728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13778) dfplayer: RX 1\r\n[0m
+[0;32mI (14278) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14328) dfplayer: RX 1\r\n[0m
+[0;32mI (14828) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14878) dfplayer: RX 2\r\n[0m
+[0;32mI (15378) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15428) dfplayer: RX 2\r\n[0m
+[0;32mI (15928) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15978) dfplayer: RX 3\r\n[0m
+[0;32mI (16478) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16528) dfplayer: RX 3\r\n[0m
+[0;32mI (17028) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17078) dfplayer: RX 4\r\n[0m
+[0;32mI (17578) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17628) dfplayer: RX 5\r\n[0m
+[0;32mI (18128) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18188) dfplayer: RX 5\r\n[0m
+[0;32mI (18688) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18738) dfplayer: RX 6\r\n[0m
+[0;32mI (19238) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19288) dfplayer: RX 6\r\n[0m
+[0;32mI (19788) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19838) dfplayer: RX 7\r\n[0m
+[0;32mI (20338) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20388) dfplayer: RX 7\r\n[0m
+[0;32mI (20888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20938) dfplayer: RX 8\r\n[0m
+[0;32mI (21438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21488) dfplayer: RX 8\r\n[0m
+[0;32mI (21988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22038) dfplayer: RX 9\r\n[0m
+[0;32mI (22538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22588) dfplayer: RX 10\r\n[0m
+[0;32mI (23088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23138) dfplayer: RX 10\r\n[0m
+[0;32mI (23638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23688) dfplayer: RX 11\r\n[0m
+[0;32mI (24188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24238) dfplayer: RX 11\r\n[0m
+[0;32mI (24738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24798) dfplayer: RX 12\r\n[0m
+[0;32mI (25298) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25348) dfplayer: RX 12\r\n[0m
+[0;32mI (25848) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25898) dfplayer: RX 13\r\n[0m
+[0;32mI (26398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26448) dfplayer: RX 13\r\n[0m
+[0;32mI (26948) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26998) dfplayer: RX 14\r\n[0m
+[0;32mI (27498) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27548) dfplayer: RX 15\r\n[0m
+[0;32mI (28048) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28098) dfplayer: RX 15\r\n[0m
+[0;32mI (28598) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28648) dfplayer: RX 16\r\n[0m
+[0;32mI (29148) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29198) dfplayer: RX 16\r\n[0m
+[0;32mI (29698) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29748) dfplayer: RX 17\r\n[0m
+[0;32mI (30248) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30308) dfplayer: RX 17\r\n[0m
+[0;32mI (30808) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30858) dfplayer: RX 18\r\n[0m
+[0;32mI (31358) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (31408) dfplayer: RX 18\r\n[0m
+[0;32mI (31908) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (31958) dfplayer: RX 19\r\n[0m
+[0;32mI (32458) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (32508) dfplayer: RX 19\r\n[0m
+[0;32mI (33008) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33058) dfplayer: RX 20\r\n[0m
+[0;32mI (33558) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33608) dfplayer: RX 21\r\n[0m
+[0;32mI (34108) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34158) dfplayer: RX 21\r\n[0m
+[0;32mI (34658) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34708) dfplayer: RX 22\r\n[0m
+[0;32mI (35208) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35268) dfplayer: RX 22\r\n[0m
+[0;32mI (35768) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35818) dfplayer: RX 23\r\n[0m
+[0;32mI (36318) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (36378) dfplayer: RX 23\r\n[0m
+[0;32mI (36878) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (36928) dfplayer: RX 24\r\n[0m
+[0;32mI (37428) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (37488) dfplayer: RX 24\r\n[0m
+[0;32mI (37988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38038) dfplayer: RX 25\r\n[0m
+[0;32mI (38538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38588) dfplayer: RX 26\r\n[0m
+[0;32mI (39088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39138) dfplayer: RX 26\r\n[0m
+[0;32mI (39638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39688) dfplayer: RX 27\r\n[0m
+[0;32mI (40188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40238) dfplayer: RX 27\r\n[0m
+[0;32mI (40738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40788) dfplayer: RX 28\r\n[0m
+[0;32mI (41288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (41338) dfplayer: RX 28\r\n[0m
+[0;32mI (41838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (41888) dfplayer: RX 29\r\n[0m
+[0;32mI (42388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (42438) dfplayer: RX 29\r\n[0m
+[0;32mI (42938) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (42988) dfplayer: RX 30\r\n[0m
+[0;32mI (43488) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (43538) dfplayer: RX 30\r\n[0m
+[0;32mI (43538) whistle: File 4 finished[0m
+[0;32mI (43538) whistle: Playback summary[0m
+[0;32mI (43538) whistle: Files reported: 4[0m
+[0;32mI (43538) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (43538) whistle: Play commands accepted: 3[0m
+[0;32mI (43538) whistle: Play commands rejected: 1[0m
+[0;32mI (43538) whistle: Filenames retrieved: 3[0m
+[0;32mI (43538) whistle: Files finished: 3[0m
+[0;32mI (43538) whistle: Errors recorded: 1[0m
+[0;32mI (43538) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (43538) whistle: File 2: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (43548) whistle: File 3: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (43548) whistle: File 4: play accepted, name Horn1.mp3, duration 30 s, finished[0m
+[0;32mI (43548) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (43548) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2148) dfplayer: RX OK\r\n[0m
+[0;32mI (2148) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2148) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2198) dfplayer: RX OK\r\n[0m
+[0;32mI (2198) whistle: Amplifier accepted[0m
+[0;32mI (2198) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2248) dfplayer: RX OK\r\n[0m
+[0;32mI (2248) whistle: Volume 30 accepted[0m
+[0;32mI (2248) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2298) dfplayer: RX OK\r\n[0m
+[0;32mI (2298) whistle: Single-play mode accepted[0m
+[0;32mI (2298) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2348) dfplayer: RX 4\r\n[0m
+[0;32mI (2348) whistle: Playable files found: 4[0m
+[0;32mI (2348) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3848) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3848) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3848) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3938) dfplayer: RX OK\r\n[0m
+[0;32mI (3938) whistle: File 2 play command accepted[0m
+[0;32mI (3938) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (3998) dfplayer: RX H[0m
+[0;32mI (3998) whistle: File 2 name: Horn3.mp3[0m
+[0;32mI (3998) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4048) dfplayer: RX 2\r\n[0m
+[0;32mI (4048) whistle: File 2 duration: 2 s[0m
+[0;32mI (4548) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4608) dfplayer: RX 0\r\n[0m
+[0;32mI (5108) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5168) dfplayer: RX 1\r\n[0m
+[0;32mI (5668) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5718) dfplayer: RX 1\r\n[0m
+[0;32mI (6218) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6268) dfplayer: RX 2\r\n[0m
+[0;32mI (6768) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6818) dfplayer: RX 2\r\n[0m
+[0;32mI (6818) whistle: File 2 finished[0m
+[0;32mI (6818) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (6898) dfplayer: RX OK\r\n[0m
+[0;32mI (6898) whistle: File 3 play command accepted[0m
+[0;32mI (6898) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (6958) dfplayer: RX H[0m
+[0;32mI (6958) whistle: File 3 name: Horn4.mp3[0m
+[0;32mI (6958) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (7018) dfplayer: RX 5\r\n[0m
+[0;32mI (7018) whistle: File 3 duration: 5 s[0m
+[0;32mI (7518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7578) dfplayer: RX 0\r\n[0m
+[0;32mI (8078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8128) dfplayer: RX 1\r\n[0m
+[0;32mI (8628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8688) dfplayer: RX 1\r\n[0m
+[0;32mI (9188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9238) dfplayer: RX 2\r\n[0m
+[0;32mI (9738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9798) dfplayer: RX 2\r\n[0m
+[0;32mI (10298) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10358) dfplayer: RX 3\r\n[0m
+[0;32mI (10858) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10908) dfplayer: RX 4\r\n[0m
+[0;32mI (11408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11468) dfplayer: RX 4\r\n[0m
+[0;32mI (11968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12018) dfplayer: RX 5\r\n[0m
+[0;32mI (12518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12568) dfplayer: RX 5\r\n[0m
+[0;32mI (12568) whistle: File 3 finished[0m
+[0;32mI (12568) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12638) dfplayer: RX OK\r\n[0m
+[0;32mI (12638) whistle: File 4 play command accepted[0m
+[0;32mI (12638) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12698) dfplayer: RX H[0m
+[0;32mI (12698) whistle: File 4 name: Horn1.mp3[0m
+[0;32mI (12698) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12748) dfplayer: RX 30\r\n[0m
+[0;32mI (12748) whistle: File 4 duration: 30 s[0m
+[0;32mI (13248) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13298) dfplayer: RX 0\r\n[0m
+[0;32mI (13798) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13848) dfplayer: RX 1\r\n[0m
+[0;32mI (14348) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14398) dfplayer: RX 1\r\n[0m
+[0;32mI (14898) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14948) dfplayer: RX 2\r\n[0m
+[0;32mI (15448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15498) dfplayer: RX 2\r\n[0m
+[0;32mI (15998) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16048) dfplayer: RX 3\r\n[0m
+[0;32mI (16548) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16598) dfplayer: RX 3\r\n[0m
+[0;32mI (17098) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17148) dfplayer: RX 4\r\n[0m
+[0;32mI (17648) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17698) dfplayer: RX 5\r\n[0m
+[0;32mI (18198) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18248) dfplayer: RX 5\r\n[0m
+[0;32mI (18748) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18798) dfplayer: RX 6\r\n[0m
+[0;32mI (19298) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19358) dfplayer: RX 6\r\n[0m
+[0;32mI (19858) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19918) dfplayer: RX 7\r\n[0m
+[0;32mI (20418) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20468) dfplayer: RX 7\r\n[0m
+[0;32mI (20968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21018) dfplayer: RX 8\r\n[0m
+[0;32mI (21518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21568) dfplayer: RX 8\r\n[0m
+[0;32mI (22068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22118) dfplayer: RX 9\r\n[0m
+[0;32mI (22618) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (22688) dfplayer: RX 10\r\n[0m
+[0;32mI (23188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23248) dfplayer: RX 10\r\n[0m
+[0;32mI (23748) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (23798) dfplayer: RX 11\r\n[0m
+[0;32mI (24298) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24358) dfplayer: RX 11\r\n[0m
+[0;32mI (24858) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (24908) dfplayer: RX 12\r\n[0m
+[0;32mI (25408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (25468) dfplayer: RX 12\r\n[0m
+[0;32mI (25968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26018) dfplayer: RX 13\r\n[0m
+[0;32mI (26518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (26568) dfplayer: RX 13\r\n[0m
+[0;32mI (27068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27118) dfplayer: RX 14\r\n[0m
+[0;32mI (27618) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (27668) dfplayer: RX 15\r\n[0m
+[0;32mI (28168) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28218) dfplayer: RX 15\r\n[0m
+[0;32mI (28718) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (28768) dfplayer: RX 16\r\n[0m
+[0;32mI (29268) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29318) dfplayer: RX 16\r\n[0m
+[0;32mI (29818) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (29868) dfplayer: RX 17\r\n[0m
+[0;32mI (30368) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30428) dfplayer: RX 17\r\n[0m
+[0;32mI (30928) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (30978) dfplayer: RX 18\r\n[0m
+[0;32mI (31478) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (31528) dfplayer: RX 18\r\n[0m
+[0;32mI (32028) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (32078) dfplayer: RX 19\r\n[0m
+[0;32mI (32578) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (32628) dfplayer: RX 20\r\n[0m
+[0;32mI (33128) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33178) dfplayer: RX 20\r\n[0m
+[0;32mI (33678) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (33728) dfplayer: RX 21\r\n[0m
+[0;32mI (34228) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34278) dfplayer: RX 21\r\n[0m
+[0;32mI (34778) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (34828) dfplayer: RX 22\r\n[0m
+[0;32mI (35328) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35388) dfplayer: RX 22\r\n[0m
+[0;32mI (35888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (35938) dfplayer: RX 23\r\n[0m
+[0;32mI (36438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (36488) dfplayer: RX 23\r\n[0m
+[0;32mI (36988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (37038) dfplayer: RX 24\r\n[0m
+[0;32mI (37538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (37588) dfplayer: RX 24\r\n[0m
+[0;32mI (38088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38138) dfplayer: RX 25\r\n[0m
+[0;32mI (38638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (38688) dfplayer: RX 26\r\n[0m
+[0;32mI (39188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39238) dfplayer: RX 26\r\n[0m
+[0;32mI (39738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (39788) dfplayer: RX 27\r\n[0m
+[0;32mI (40288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40338) dfplayer: RX 27\r\n[0m
+[0;32mI (40838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (40888) dfplayer: RX 28\r\n[0m
+[0;32mI (41388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (41438) dfplayer: RX 28\r\n[0m
+[0;32mI (41938) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (41998) dfplayer: RX 29\r\n[0m
+[0;32mI (42498) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (42548) dfplayer: RX 29\r\n[0m
+[0;32mI (43048) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (43098) dfplayer: RX 30\r\n[0m
+[0;32mI (43598) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (43648) dfplayer: RX 30\r\n[0m
+[0;32mI (43648) whistle: File 4 finished[0m
+[0;32mI (43648) whistle: Playback summary[0m
+[0;32mI (43648) whistle: Files reported: 4[0m
+[0;32mI (43648) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (43648) whistle: Play commands accepted: 3[0m
+[0;32mI (43648) whistle: Play commands rejected: 1[0m
+[0;32mI (43648) whistle: Filenames retrieved: 3[0m
+[0;32mI (43648) whistle: Files finished: 3[0m
+[0;32mI (43648) whistle: Errors recorded: 1[0m
+[0;32mI (43648) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (43658) whistle: File 2: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (43658) whistle: File 3: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (43658) whistle: File 4: play accepted, name Horn1.mp3, duration 30 s, finished[0m
+[0;32mI (43658) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (43658) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2138) dfplayer: TX AT\r\n[0m
+[0;32mI (2188) dfplayer: RX OK\r\n[0m
+[0;32mI (2188) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2188) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2238) dfplayer: RX OK\r\n[0m
+[0;32mI (2238) whistle: Amplifier accepted[0m
+[0;32mI (2238) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2288) dfplayer: RX OK\r\n[0m
+[0;32mI (2288) whistle: Volume 30 accepted[0m
+[0;32mI (2288) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2388) dfplayer: RX 4\r\n[0m
+[0;32mI (2388) whistle: Playable files found: 4[0m
+[0;32mI (2388) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3888) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3888) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3888) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3978) dfplayer: RX OK\r\n[0m
+[0;32mI (3978) whistle: File 2 play command accepted[0m
+[0;32mI (3978) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4038) dfplayer: RX H[0m
+[0;32mI (4038) whistle: File 2 name: HORN    .MP3[0m
+[0;32mI (4038) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4088) dfplayer: RX 3\r\n[0m
+[0;32mI (4088) whistle: File 2 duration: 3 s[0m
+[0;32mI (4588) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4638) dfplayer: RX 0\r\n[0m
+[0;32mI (5138) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5188) dfplayer: RX 1\r\n[0m
+[0;32mI (5688) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5738) dfplayer: RX 1\r\n[0m
+[0;32mI (6238) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6288) dfplayer: RX 2\r\n[0m
+[0;32mI (6788) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6838) dfplayer: RX 2\r\n[0m
+[0;32mI (7338) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7388) dfplayer: RX 3\r\n[0m
+[0;32mI (7888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7938) dfplayer: RX 3\r\n[0m
+[0;32mI (7938) whistle: File 2 finished[0m
+[0;32mI (7938) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (8008) dfplayer: RX OK\r\n[0m
+[0;32mI (8008) whistle: File 3 play command accepted[0m
+[0;32mI (8008) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (8068) dfplayer: RX B[0m
+[0;32mI (8068) whistle: File 3 name: BEEP    .MP3[0m
+[0;32mI (8068) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (8118) dfplayer: RX 5\r\n[0m
+[0;32mI (8118) whistle: File 3 duration: 5 s[0m
+[0;32mI (8618) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8668) dfplayer: RX 0\r\n[0m
+[0;32mI (9168) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9228) dfplayer: RX 1\r\n[0m
+[0;32mI (9728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9778) dfplayer: RX 1\r\n[0m
+[0;32mI (10278) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10328) dfplayer: RX 2\r\n[0m
+[0;32mI (10828) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10878) dfplayer: RX 2\r\n[0m
+[0;32mI (11378) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11428) dfplayer: RX 3\r\n[0m
+[0;32mI (11928) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11978) dfplayer: RX 3\r\n[0m
+[0;32mI (12478) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12528) dfplayer: RX 4\r\n[0m
+[0;32mI (13028) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13078) dfplayer: RX 4\r\n[0m
+[0;32mI (13578) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13628) dfplayer: RX 4\r\n[0m
+[0;32mI (14128) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14178) dfplayer: RX 4\r\n[0m
+[0;32mI (14678) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14728) dfplayer: RX 4\r\n[0m
+[1;31mE (14728) whistle: File 3 did not finish cleanly: elapsed clock stopped before the reported duration[0m
+[0;32mI (14728) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (14808) dfplayer: RX OK\r\n[0m
+[0;32mI (14808) whistle: File 4 play command accepted[0m
+[0;32mI (14808) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (14858) dfplayer: RX B[0m
+[0;32mI (14858) whistle: File 4 name: BEEP    .MP3[0m
+[0;32mI (14858) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (14908) dfplayer: RX 5\r\n[0m
+[0;32mI (14908) whistle: File 4 duration: 5 s[0m
+[0;32mI (15408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15458) dfplayer: RX 0\r\n[0m
+[0;32mI (15958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16008) dfplayer: RX 1\r\n[0m
+[0;32mI (16508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16558) dfplayer: RX 1\r\n[0m
+[0;32mI (17058) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17108) dfplayer: RX 2\r\n[0m
+[0;32mI (17608) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17658) dfplayer: RX 2\r\n[0m
+[0;32mI (18158) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18208) dfplayer: RX 3\r\n[0m
+[0;32mI (18708) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18758) dfplayer: RX 3\r\n[0m
+[0;32mI (19258) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19308) dfplayer: RX 4\r\n[0m
+[0;32mI (19808) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19858) dfplayer: RX 4\r\n[0m
+[0;32mI (20358) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20408) dfplayer: RX 4\r\n[0m
+[0;32mI (20908) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20958) dfplayer: RX 4\r\n[0m
+[0;32mI (21458) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (21508) dfplayer: RX 4\r\n[0m
+[1;31mE (21508) whistle: File 4 did not finish cleanly: elapsed clock stopped before the reported duration[0m
+[0;32mI (21508) whistle: Playback summary[0m
+[0;32mI (21508) whistle: Files reported: 4[0m
+[0;32mI (21508) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (21508) whistle: Play commands accepted: 3[0m
+[0;32mI (21508) whistle: Play commands rejected: 1[0m
+[0;32mI (21508) whistle: Filenames retrieved: 3[0m
+[0;32mI (21508) whistle: Files finished: 1[0m
+[0;32mI (21508) whistle: Errors recorded: 3[0m
+[0;32mI (21508) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (21518) whistle: File 2: play accepted, name HORN    .MP3, duration 3 s, finished[0m
+[0;32mI (21518) whistle: File 3: play accepted, name BEEP    .MP3, duration 5 s, not finished, elapsed clock stopped before the reported duration[0m
+[0;32mI (21518) whistle: File 4: play accepted, name BEEP    .MP3, duration 5 s, not finished, elapsed clock stopped before the reported duration[0m
+[0;32mI (21518) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (21518) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2158) dfplayer: RX OK\r\n[0m
+[0;32mI (2158) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2158) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2218) dfplayer: RX OK\r\n[0m
+[0;32mI (2218) whistle: Amplifier accepted[0m
+[0;32mI (2218) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2278) dfplayer: RX OK\r\n[0m
+[0;32mI (2278) whistle: Volume 30 accepted[0m
+[0;32mI (2278) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2398) dfplayer: RX 4\r\n[0m
+[0;32mI (2398) whistle: Playable files found: 4[0m
+[0;32mI (2398) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3898) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3898) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3898) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3968) dfplayer: RX OK\r\n[0m
+[0;32mI (3968) whistle: File 2 play command accepted[0m
+[0;32mI (3968) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4028) dfplayer: RX H[0m
+[0;32mI (4028) whistle: File 2 name: HORN    .MP3[0m
+[0;32mI (4028) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4088) dfplayer: RX 3\r\n[0m
+[0;32mI (4088) whistle: File 2 duration: 3 s[0m
+[0;32mI (4588) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4648) dfplayer: RX 0\r\n[0m
+[0;32mI (5148) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5208) dfplayer: RX 1\r\n[0m
+[0;32mI (5708) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5768) dfplayer: RX 1\r\n[0m
+[0;32mI (6268) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6328) dfplayer: RX 2\r\n[0m
+[0;32mI (6828) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6888) dfplayer: RX 2\r\n[0m
+[0;32mI (7388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7448) dfplayer: RX 3\r\n[0m
+[0;32mI (7948) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8008) dfplayer: RX 3\r\n[0m
+[0;32mI (8008) whistle: File 2 finished[0m
+[0;32mI (8008) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (8088) dfplayer: RX OK\r\n[0m
+[0;32mI (8088) whistle: File 3 play command accepted[0m
+[0;32mI (8088) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (8148) dfplayer: RX B[0m
+[0;32mI (8148) whistle: File 3 name: BEEP    .MP3[0m
+[0;32mI (8148) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (8208) dfplayer: RX 5\r\n[0m
+[0;32mI (8208) whistle: File 3 duration: 5 s[0m
+[0;32mI (8708) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8768) dfplayer: RX 0\r\n[0m
+[0;32mI (9268) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9328) dfplayer: RX 1\r\n[0m
+[0;32mI (9828) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9888) dfplayer: RX 1\r\n[0m
+[0;32mI (10388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10448) dfplayer: RX 2\r\n[0m
+[0;32mI (10948) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11008) dfplayer: RX 2\r\n[0m
+[0;32mI (11508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11568) dfplayer: RX 3\r\n[0m
+[0;32mI (12068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12128) dfplayer: RX 4\r\n[0m
+[0;32mI (12628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12688) dfplayer: RX 4\r\n[0m
+[0;32mI (13188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13248) dfplayer: RX 4\r\n[0m
+[0;32mI (13748) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13808) dfplayer: RX 4\r\n[0m
+[0;32mI (14308) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14368) dfplayer: RX 4\r\n[0m
+[1;31mE (14368) whistle: File 3 did not finish cleanly: elapsed clock stopped before the reported duration[0m
+[0;32mI (14368) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (14438) dfplayer: RX OK\r\n[0m
+[0;32mI (14438) whistle: File 4 play command accepted[0m
+[0;32mI (14438) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (14498) dfplayer: RX B[0m
+[0;32mI (14498) whistle: File 4 name: BEEP    .MP3[0m
+[0;32mI (14498) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (14558) dfplayer: RX 5\r\n[0m
+[0;32mI (14558) whistle: File 4 duration: 5 s[0m
+[0;32mI (15058) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15118) dfplayer: RX 0\r\n[0m
+[0;32mI (15618) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15678) dfplayer: RX 1\r\n[0m
+[0;32mI (16178) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16238) dfplayer: RX 1\r\n[0m
+[0;32mI (16738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16798) dfplayer: RX 2\r\n[0m
+[0;32mI (17298) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17358) dfplayer: RX 2\r\n[0m
+[0;32mI (17858) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17918) dfplayer: RX 3\r\n[0m
+[0;32mI (18418) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18478) dfplayer: RX 4\r\n[0m
+[0;32mI (18978) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19038) dfplayer: RX 4\r\n[0m
+[0;32mI (19538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19598) dfplayer: RX 4\r\n[0m
+[0;32mI (20098) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20158) dfplayer: RX 4\r\n[0m
+[0;32mI (20658) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20718) dfplayer: RX 4\r\n[0m
+[1;31mE (20718) whistle: File 4 did not finish cleanly: elapsed clock stopped before the reported duration[0m
+[0;32mI (20718) whistle: Playback summary[0m
+[0;32mI (20718) whistle: Files reported: 4[0m
+[0;32mI (20718) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (20718) whistle: Play commands accepted: 3[0m
+[0;32mI (20718) whistle: Play commands rejected: 1[0m
+[0;32mI (20718) whistle: Filenames retrieved: 3[0m
+[0;32mI (20718) whistle: Files finished: 1[0m
+[0;32mI (20718) whistle: Errors recorded: 3[0m
+[0;32mI (20718) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (20718) whistle: File 2: play accepted, name HORN    .MP3, duration 3 s, finished[0m
+[0;32mI (20728) whistle: File 3: play accepted, name BEEP    .MP3, duration 5 s, not finished, elapsed clock stopped before the reported duration[0m
+[0;32mI (20728) whistle: File 4: play accepted, name BEEP    .MP3, duration 5 s, not finished, elapsed clock stopped before the reported duration[0m
+[0;32mI (20728) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (20728) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2108) dfplayer: TX AT\r\n[0m
+[0;32mI (2168) dfplayer: RX OK\r\n[0m
+[0;32mI (2168) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2168) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2228) dfplayer: RX OK\r\n[0m
+[0;32mI (2228) whistle: Amplifier accepted[0m
+[0;32mI (2228) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2288) dfplayer: RX OK\r\n[0m
+[0;32mI (2288) whistle: Volume 30 accepted[0m
+[0;32mI (2288) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2348) dfplayer: RX OK\r\n[0m
+[0;32mI (2348) whistle: Single-play mode accepted[0m
+[0;32mI (2348) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2408) dfplayer: RX 4\r\n[0m
+[0;32mI (2408) whistle: Playable files found: 4[0m
+[0;32mI (2408) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3908) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3908) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3908) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3988) dfplayer: RX OK\r\n[0m
+[0;32mI (3988) whistle: File 2 play command accepted[0m
+[0;32mI (3988) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4048) dfplayer: RX H[0m
+[0;32mI (4048) whistle: File 2 name: Horn2.mp3[0m
+[0;32mI (4048) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4108) dfplayer: RX 5\r\n[0m
+[0;32mI (4108) whistle: File 2 duration: 5 s[0m
+[0;32mI (4608) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4668) dfplayer: RX 0\r\n[0m
+[0;32mI (5168) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5228) dfplayer: RX 1\r\n[0m
+[0;32mI (5728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5788) dfplayer: RX 1\r\n[0m
+[0;32mI (6288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6348) dfplayer: RX 2\r\n[0m
+[0;32mI (6848) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6908) dfplayer: RX 2\r\n[0m
+[0;32mI (7408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7468) dfplayer: RX 3\r\n[0m
+[0;32mI (7968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8028) dfplayer: RX 4\r\n[0m
+[0;32mI (8528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8588) dfplayer: RX 4\r\n[0m
+[0;32mI (9088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9148) dfplayer: RX 5\r\n[0m
+[0;32mI (9648) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9698) dfplayer: RX 5\r\n[0m
+[0;32mI (9698) whistle: File 2 finished[0m
+[0;32mI (9698) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (9778) dfplayer: RX OK\r\n[0m
+[0;32mI (9778) whistle: File 3 play command accepted[0m
+[0;32mI (9778) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (9838) dfplayer: RX H[0m
+[0;32mI (9838) whistle: File 3 name: Horn3.mp3[0m
+[0;32mI (9838) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (9898) dfplayer: RX 2\r\n[0m
+[0;32mI (9898) whistle: File 3 duration: 2 s[0m
+[0;32mI (10398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10458) dfplayer: RX 0\r\n[0m
+[0;32mI (10958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11018) dfplayer: RX 1\r\n[0m
+[0;32mI (11518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11578) dfplayer: RX 1\r\n[0m
+[0;32mI (12078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12138) dfplayer: RX 2\r\n[0m
+[0;32mI (12638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12688) dfplayer: RX 2\r\n[0m
+[0;32mI (12688) whistle: File 3 finished[0m
+[0;32mI (12688) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12768) dfplayer: RX OK\r\n[0m
+[0;32mI (12768) whistle: File 4 play command accepted[0m
+[0;32mI (12768) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12828) dfplayer: RX H[0m
+[0;32mI (12828) whistle: File 4 name: Horn4.mp3[0m
+[0;32mI (12828) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12888) dfplayer: RX 5\r\n[0m
+[0;32mI (12888) whistle: File 4 duration: 5 s[0m
+[0;32mI (13388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13448) dfplayer: RX 0\r\n[0m
+[0;32mI (13948) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14008) dfplayer: RX 1\r\n[0m
+[0;32mI (14508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14568) dfplayer: RX 1\r\n[0m
+[0;32mI (15068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15128) dfplayer: RX 2\r\n[0m
+[0;32mI (15628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15688) dfplayer: RX 2\r\n[0m
+[0;32mI (16188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16248) dfplayer: RX 3\r\n[0m
+[0;32mI (16748) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16808) dfplayer: RX 4\r\n[0m
+[0;32mI (17308) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17368) dfplayer: RX 4\r\n[0m
+[0;32mI (17868) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17918) dfplayer: RX 5\r\n[0m
+[0;32mI (18418) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18468) dfplayer: RX 5\r\n[0m
+[0;32mI (18468) whistle: File 4 finished[0m
+[0;32mI (18468) whistle: Playback summary[0m
+[0;32mI (18468) whistle: Files reported: 4[0m
+[0;32mI (18468) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (18468) whistle: Play commands accepted: 3[0m
+[0;32mI (18468) whistle: Play commands rejected: 1[0m
+[0;32mI (18468) whistle: Filenames retrieved: 3[0m
+[0;32mI (18468) whistle: Files finished: 3[0m
+[0;32mI (18468) whistle: Errors recorded: 1[0m
+[0;32mI (18468) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (18478) whistle: File 2: play accepted, name Horn2.mp3, duration 5 s, finished[0m
+[0;32mI (18478) whistle: File 3: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (18478) whistle: File 4: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (18478) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (18478) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2158) dfplayer: RX OK\r\n[0m
+[0;32mI (2158) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2158) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2218) dfplayer: RX OK\r\n[0m
+[0;32mI (2218) whistle: Amplifier accepted[0m
+[0;32mI (2218) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2278) dfplayer: RX OK\r\n[0m
+[0;32mI (2278) whistle: Volume 30 accepted[0m
+[0;32mI (2278) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2398) dfplayer: RX 4\r\n[0m
+[0;32mI (2398) whistle: Playable files found: 4[0m
+[0;32mI (2398) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3898) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3898) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3898) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3978) dfplayer: RX OK\r\n[0m
+[0;32mI (3978) whistle: File 2 play command accepted[0m
+[0;32mI (3978) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4038) dfplayer: RX H[0m
+[0;32mI (4038) whistle: File 2 name: Horn2.mp3[0m
+[0;32mI (4038) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4098) dfplayer: RX 5\r\n[0m
+[0;32mI (4098) whistle: File 2 duration: 5 s[0m
+[0;32mI (4598) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4658) dfplayer: RX 0\r\n[0m
+[0;32mI (5158) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5218) dfplayer: RX 1\r\n[0m
+[0;32mI (5718) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5778) dfplayer: RX 1\r\n[0m
+[0;32mI (6278) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6338) dfplayer: RX 2\r\n[0m
+[0;32mI (6838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6898) dfplayer: RX 2\r\n[0m
+[0;32mI (7398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7458) dfplayer: RX 3\r\n[0m
+[0;32mI (7958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8018) dfplayer: RX 4\r\n[0m
+[0;32mI (8518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8578) dfplayer: RX 4\r\n[0m
+[0;32mI (9078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9138) dfplayer: RX 5\r\n[0m
+[0;32mI (9638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9698) dfplayer: RX 5\r\n[0m
+[0;32mI (9698) whistle: File 2 finished[0m
+[0;32mI (9698) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (9778) dfplayer: RX OK\r\n[0m
+[0;32mI (9778) whistle: File 3 play command accepted[0m
+[0;32mI (9778) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (9838) dfplayer: RX H[0m
+[0;32mI (9838) whistle: File 3 name: Horn3.mp3[0m
+[0;32mI (9838) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (9898) dfplayer: RX 2\r\n[0m
+[0;32mI (9898) whistle: File 3 duration: 2 s[0m
+[0;32mI (10398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10458) dfplayer: RX 0\r\n[0m
+[0;32mI (10958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11018) dfplayer: RX 1\r\n[0m
+[0;32mI (11518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11578) dfplayer: RX 1\r\n[0m
+[0;32mI (12078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12138) dfplayer: RX 2\r\n[0m
+[0;32mI (12638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12698) dfplayer: RX 2\r\n[0m
+[0;32mI (12698) whistle: File 3 finished[0m
+[0;32mI (12698) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12778) dfplayer: RX OK\r\n[0m
+[0;32mI (12778) whistle: File 4 play command accepted[0m
+[0;32mI (12778) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12838) dfplayer: RX H[0m
+[0;32mI (12838) whistle: File 4 name: Horn4.mp3[0m
+[0;32mI (12838) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12898) dfplayer: RX 5\r\n[0m
+[0;32mI (12898) whistle: File 4 duration: 5 s[0m
+[0;32mI (13398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13458) dfplayer: RX 0\r\n[0m
+[0;32mI (13958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14018) dfplayer: RX 1\r\n[0m
+[0;32mI (14518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14578) dfplayer: RX 1\r\n[0m
+[0;32mI (15078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15138) dfplayer: RX 2\r\n[0m
+[0;32mI (15638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15698) dfplayer: RX 2\r\n[0m
+[0;32mI (16198) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16258) dfplayer: RX 3\r\n[0m
+[0;32mI (16758) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16818) dfplayer: RX 4\r\n[0m
+[0;32mI (17318) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17378) dfplayer: RX 4\r\n[0m
+[0;32mI (17878) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17938) dfplayer: RX 5\r\n[0m
+[0;32mI (18438) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18498) dfplayer: RX 5\r\n[0m
+[0;32mI (18498) whistle: File 4 finished[0m
+[0;32mI (18498) whistle: Playback summary[0m
+[0;32mI (18498) whistle: Files reported: 4[0m
+[0;32mI (18498) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (18498) whistle: Play commands accepted: 3[0m
+[0;32mI (18498) whistle: Play commands rejected: 1[0m
+[0;32mI (18498) whistle: Filenames retrieved: 3[0m
+[0;32mI (18498) whistle: Files finished: 3[0m
+[0;32mI (18498) whistle: Errors recorded: 1[0m
+[0;32mI (18498) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (18498) whistle: File 2: play accepted, name Horn2.mp3, duration 5 s, finished[0m
+[0;32mI (18508) whistle: File 3: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (18508) whistle: File 4: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (18508) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (18508) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2098) dfplayer: TX AT\r\n[0m
+[0;32mI (2158) dfplayer: RX OK\r\n[0m
+[0;32mI (2158) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2158) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2218) dfplayer: RX OK\r\n[0m
+[0;32mI (2218) whistle: Amplifier accepted[0m
+[0;32mI (2218) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2278) dfplayer: RX OK\r\n[0m
+[0;32mI (2278) whistle: Volume 30 accepted[0m
+[0;32mI (2278) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2398) dfplayer: RX 4\r\n[0m
+[0;32mI (2398) whistle: Playable files found: 4[0m
+[0;32mI (2398) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3898) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3898) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3898) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3978) dfplayer: RX OK\r\n[0m
+[0;32mI (3978) whistle: File 2 play command accepted[0m
+[0;32mI (3978) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4038) dfplayer: RX H[0m
+[0;32mI (4038) whistle: File 2 name: Horn2.mp3[0m
+[0;32mI (4038) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4098) dfplayer: RX 5\r\n[0m
+[0;32mI (4098) whistle: File 2 duration: 5 s[0m
+[0;32mI (4598) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4658) dfplayer: RX 0\r\n[0m
+[0;32mI (5158) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5218) dfplayer: RX 1\r\n[0m
+[0;32mI (5718) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5778) dfplayer: RX 1\r\n[0m
+[0;32mI (6278) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6338) dfplayer: RX 2\r\n[0m
+[0;32mI (6838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6898) dfplayer: RX 2\r\n[0m
+[0;32mI (7398) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7458) dfplayer: RX 3\r\n[0m
+[0;32mI (7958) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8018) dfplayer: RX 4\r\n[0m
+[0;32mI (8518) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8578) dfplayer: RX 4\r\n[0m
+[0;32mI (9078) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9138) dfplayer: RX 5\r\n[0m
+[0;32mI (9638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9698) dfplayer: RX 5\r\n[0m
+[0;32mI (9698) whistle: File 2 finished[0m
+[0;32mI (9698) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (9768) dfplayer: RX OK\r\n[0m
+[0;32mI (9768) whistle: File 3 play command accepted[0m
+[0;32mI (9768) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (9828) dfplayer: RX H[0m
+[0;32mI (9828) whistle: File 3 name: Horn3.mp3[0m
+[0;32mI (9828) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (9888) dfplayer: RX 2\r\n[0m
+[0;32mI (9888) whistle: File 3 duration: 2 s[0m
+[0;32mI (10388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10448) dfplayer: RX 0\r\n[0m
+[0;32mI (10948) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11008) dfplayer: RX 1\r\n[0m
+[0;32mI (11508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11568) dfplayer: RX 1\r\n[0m
+[0;32mI (12068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12128) dfplayer: RX 2\r\n[0m
+[0;32mI (12628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12688) dfplayer: RX 2\r\n[0m
+[0;32mI (12688) whistle: File 3 finished[0m
+[0;32mI (12688) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12768) dfplayer: RX OK\r\n[0m
+[0;32mI (12768) whistle: File 4 play command accepted[0m
+[0;32mI (12768) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12828) dfplayer: RX H[0m
+[0;32mI (12828) whistle: File 4 name: Horn4.mp3[0m
+[0;32mI (12828) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12888) dfplayer: RX 5\r\n[0m
+[0;32mI (12888) whistle: File 4 duration: 5 s[0m
+[0;32mI (13388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13448) dfplayer: RX 0\r\n[0m
+[0;32mI (13948) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14008) dfplayer: RX 1\r\n[0m
+[0;32mI (14508) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14568) dfplayer: RX 1\r\n[0m
+[0;32mI (15068) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15128) dfplayer: RX 2\r\n[0m
+[0;32mI (15628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15688) dfplayer: RX 2\r\n[0m
+[0;32mI (16188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16248) dfplayer: RX 3\r\n[0m
+[0;32mI (16748) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16808) dfplayer: RX 4\r\n[0m
+[0;32mI (17308) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17368) dfplayer: RX 4\r\n[0m
+[0;32mI (17868) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17928) dfplayer: RX 5\r\n[0m
+[0;32mI (18428) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18488) dfplayer: RX 5\r\n[0m
+[0;32mI (18488) whistle: File 4 finished[0m
+[0;32mI (18488) whistle: Playback summary[0m
+[0;32mI (18488) whistle: Files reported: 4[0m
+[0;32mI (18488) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (18488) whistle: Play commands accepted: 3[0m
+[0;32mI (18488) whistle: Play commands rejected: 1[0m
+[0;32mI (18488) whistle: Filenames retrieved: 3[0m
+[0;32mI (18488) whistle: Files finished: 3[0m
+[0;32mI (18488) whistle: Errors recorded: 1[0m
+[0;32mI (18488) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (18498) whistle: File 2: play accepted, name Horn2.mp3, duration 5 s, finished[0m
+[0;32mI (18498) whistle: File 3: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (18498) whistle: File 4: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (18498) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (18498) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2108) dfplayer: TX AT\r\n[0m
+[0;32mI (2168) dfplayer: RX OK\r\n[0m
+[0;32mI (2168) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2168) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2228) dfplayer: RX OK\r\n[0m
+[0;32mI (2228) whistle: Amplifier accepted[0m
+[0;32mI (2228) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2288) dfplayer: RX OK\r\n[0m
+[0;32mI (2288) whistle: Volume 30 accepted[0m
+[0;32mI (2288) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2348) dfplayer: RX OK\r\n[0m
+[0;32mI (2348) whistle: Single-play mode accepted[0m
+[0;32mI (2348) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2408) dfplayer: RX 4\r\n[0m
+[0;32mI (2408) whistle: Playable files found: 4[0m
+[0;32mI (2408) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3908) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3908) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3908) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3988) dfplayer: RX OK\r\n[0m
+[0;32mI (3988) whistle: File 2 play command accepted[0m
+[0;32mI (3988) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4048) dfplayer: RX H[0m
+[0;32mI (4048) whistle: File 2 name: Horn2.mp3[0m
+[0;32mI (4048) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4108) dfplayer: RX 5\r\n[0m
+[0;32mI (4108) whistle: File 2 duration: 5 s[0m
+[0;32mI (4608) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4668) dfplayer: RX 0\r\n[0m
+[0;32mI (5168) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5228) dfplayer: RX 1\r\n[0m
+[0;32mI (5728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5788) dfplayer: RX 1\r\n[0m
+[0;32mI (6288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6348) dfplayer: RX 2\r\n[0m
+[0;32mI (6848) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6908) dfplayer: RX 2\r\n[0m
+[0;32mI (7408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7468) dfplayer: RX 3\r\n[0m
+[0;32mI (7968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8028) dfplayer: RX 4\r\n[0m
+[0;32mI (8528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8588) dfplayer: RX 4\r\n[0m
+[0;32mI (9088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9148) dfplayer: RX 5\r\n[0m
+[0;32mI (9648) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9708) dfplayer: RX 5\r\n[0m
+[0;32mI (9708) whistle: File 2 finished[0m
+[0;32mI (9708) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (9788) dfplayer: RX OK\r\n[0m
+[0;32mI (9788) whistle: File 3 play command accepted[0m
+[0;32mI (9788) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (9848) dfplayer: RX H[0m
+[0;32mI (9848) whistle: File 3 name: Horn3.mp3[0m
+[0;32mI (9848) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (9908) dfplayer: RX 2\r\n[0m
+[0;32mI (9908) whistle: File 3 duration: 2 s[0m
+[0;32mI (10408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10468) dfplayer: RX 0\r\n[0m
+[0;32mI (10968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11028) dfplayer: RX 1\r\n[0m
+[0;32mI (11528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11588) dfplayer: RX 1\r\n[0m
+[0;32mI (12088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12148) dfplayer: RX 2\r\n[0m
+[0;32mI (12648) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12708) dfplayer: RX 2\r\n[0m
+[0;32mI (12708) whistle: File 3 finished[0m
+[0;32mI (12708) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (12788) dfplayer: RX OK\r\n[0m
+[0;32mI (12788) whistle: File 4 play command accepted[0m
+[0;32mI (12788) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (12848) dfplayer: RX H[0m
+[0;32mI (12848) whistle: File 4 name: Horn4.mp3[0m
+[0;32mI (12848) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (12908) dfplayer: RX 5\r\n[0m
+[0;32mI (12908) whistle: File 4 duration: 5 s[0m
+[0;32mI (13408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13468) dfplayer: RX 0\r\n[0m
+[0;32mI (13968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14028) dfplayer: RX 1\r\n[0m
+[0;32mI (14528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14588) dfplayer: RX 1\r\n[0m
+[0;32mI (15088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15148) dfplayer: RX 2\r\n[0m
+[0;32mI (15648) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15708) dfplayer: RX 2\r\n[0m
+[0;32mI (16208) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16268) dfplayer: RX 3\r\n[0m
+[0;32mI (16768) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16828) dfplayer: RX 4\r\n[0m
+[0;32mI (17328) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17388) dfplayer: RX 4\r\n[0m
+[0;32mI (17888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17948) dfplayer: RX 5\r\n[0m
+[0;32mI (18448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18508) dfplayer: RX 5\r\n[0m
+[0;32mI (18508) whistle: File 4 finished[0m
+[0;32mI (18508) whistle: Playback summary[0m
+[0;32mI (18508) whistle: Files reported: 4[0m
+[0;32mI (18508) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (18508) whistle: Play commands accepted: 3[0m
+[0;32mI (18508) whistle: Play commands rejected: 1[0m
+[0;32mI (18508) whistle: Filenames retrieved: 3[0m
+[0;32mI (18508) whistle: Files finished: 3[0m
+[0;32mI (18508) whistle: Errors recorded: 1[0m
+[0;32mI (18508) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (18518) whistle: File 2: play accepted, name Horn2.mp3, duration 5 s, finished[0m
+[0;32mI (18518) whistle: File 3: play accepted, name Horn3.mp3, duration 2 s, finished[0m
+[0;32mI (18518) whistle: File 4: play accepted, name Horn4.mp3, duration 5 s, finished[0m
+[0;32mI (18518) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (18518) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2138) dfplayer: TX AT\r\n[0m
+[0;32mI (2188) dfplayer: RX OK\r\n[0m
+[0;32mI (2188) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2188) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2238) dfplayer: RX OK\r\n[0m
+[0;32mI (2238) whistle: Amplifier accepted[0m
+[0;32mI (2238) dfplayer: TX AT+VOL=30\r\n[0m
+[0;32mI (2288) dfplayer: RX OK\r\n[0m
+[0;32mI (2288) whistle: Volume 30 accepted[0m
+[0;32mI (2288) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2338) dfplayer: RX OK\r\n[0m
+[0;32mI (2338) whistle: Single-play mode accepted[0m
+[0;32mI (2338) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2398) dfplayer: RX 4\r\n[0m
+[0;32mI (2398) whistle: Playable files found: 4[0m
+[0;32mI (2398) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3898) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3898) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3898) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (3968) dfplayer: RX OK\r\n[0m
+[0;32mI (3968) whistle: File 2 play command accepted[0m
+[0;32mI (3968) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4028) dfplayer: RX H[0m
+[0;32mI (4028) whistle: File 2 name: Horn2.mp3[0m
+[0;32mI (4028) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4088) dfplayer: RX 5\r\n[0m
+[0;32mI (4088) whistle: File 2 duration: 5 s[0m
+[0;32mI (4588) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4638) dfplayer: RX 0\r\n[0m
+[0;32mI (5138) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5188) dfplayer: RX 1\r\n[0m
+[0;32mI (5688) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5748) dfplayer: RX 1\r\n[0m
+[0;32mI (6248) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6298) dfplayer: RX 2\r\n[0m
+[0;32mI (6798) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6848) dfplayer: RX 2\r\n[0m
+[0;32mI (7348) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7398) dfplayer: RX 3\r\n[0m
+[0;32mI (7898) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7948) dfplayer: RX 4\r\n[0m
+[0;32mI (8448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8498) dfplayer: RX 4\r\n[0m
+[0;32mI (8998) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9048) dfplayer: RX 5\r\n[0m
+[0;32mI (9548) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9598) dfplayer: RX 5\r\n[0m
+[0;32mI (9598) whistle: File 2 finished[0m
+[0;32mI (9598) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (9668) dfplayer: RX OK\r\n[0m
+[0;32mI (9668) whistle: File 3 play command accepted[0m
+[0;32mI (9668) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (9728) dfplayer: RX H[0m
+[0;32mI (9728) whistle: File 3 name: Horn3.mp3[0m
+[0;32mI (9728) dfplayer: TX AT+QUERY=4\r\n[0m

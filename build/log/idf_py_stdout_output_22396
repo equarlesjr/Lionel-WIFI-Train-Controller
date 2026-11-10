@@ -1,0 +1,155 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\Lionel-WIFI-Train-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM3'
+[0;32mI (131) esp_image: segment 1: paddr=0004bf00 vaddr=3fc98000 sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b97a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xde4
+load:0x403cb700,len:0x2f58
+entry 0x403c8904
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov  9 2026 18:52:45[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=3bed8h (245464) map[0m
+[0;32mI (131) esp_image: segment 1: paddr=0004bf00 vaddr=3fc98000 size=04118h ( 16664) load[0m
+[0;32mI (135) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=b68cch (747724) map[0m
+[0;32mI (272) esp_image: segment 3: paddr=001068f4 vaddr=3fc9c118 size=011fch (  4604) load[0m
+[0;32mI (273) esp_image: segment 4: paddr=00107af8 vaddr=40374000 size=13fc4h ( 81860) load[0m
+[0;32mI (294) esp_image: segment 5: paddr=0011bac4 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (304) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (304) boot: Disabling RNG early entropy source...[0m
+[0;32mI (314) cpu_start: Multicore app[0m
+[0;32mI (322) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (323) cpu_start: Pro cpu start user code[0m
+[0;32mI (323) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (325) app_init: Application information:[0m
+[0;32mI (328) app_init: Project name:     Lionel-WIFI-Train-Controller[0m
+[0;32mI (334) app_init: App version:      5fbbb61-dirty[0m
+[0;32mI (339) app_init: Compile time:     Nov  9 2026 18:50:13[0m
+[0;32mI (344) app_init: ELF file SHA256:  4c7827db8...[0m
+[0;32mI (348) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (352) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (356) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (360) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (364) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (370) heap_init: At 3FCA2590 len 00047180 (284 KiB): RAM[0m
+[0;32mI (375) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (380) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (385) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (392) spi_flash: detected chip: gd[0m
+[0;32mI (394) spi_flash: flash io: dio[0m
+[0;33mW (397) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (410) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (415) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (423) main_task: Started on CPU0[0m
+[0;32mI (423) main_task: Calling app_main()[0m
+[0;32mI (443) pp: pp rom version: e7ae62f[0m
+[0;32mI (443) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (453) wifi:wifi driver task: 3fcee8cc, prio:23, stack:6656, core=0[0m
+[0;32mI (453) wifi:wifi firmware version: e12a754[0m
+[0;32mI (453) wifi:wifi certification version: v7.0[0m
+[0;32mI (453) wifi:config NVS flash: enabled[0m
+[0;32mI (453) wifi:config nano formatting: disabled[0m
+[0;32mI (463) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (463) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (463) wifi:Init management short buffer num: 32[0m
+[0;32mI (473) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (473) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (483) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (483) wifi:Init static rx buffer num: 10[0m
+[0;32mI (493) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (493) wifi_init: rx ba win: 6[0m
+[0;32mI (493) wifi_init: accept mbox: 6[0m
+[0;32mI (493) wifi_init: tcpip mbox: 32[0m
+[0;32mI (503) wifi_init: udp mbox: 6[0m
+[0;32mI (503) wifi_init: tcp mbox: 6[0m
+[0;32mI (503) wifi_init: tcp tx win: 5760[0m
+[0;32mI (513) wifi_init: tcp rx win: 5760[0m
+[0;32mI (513) wifi_init: tcp mss: 1440[0m
+[0;32mI (513) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (523) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (523) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (533) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (573) wifi:mode : sta (28:84:85:bb:77:50)[0m
+[0;32mI (573) wifi:enable tsf[0m
+[0;32mI (573) wifi: joining "harmonicminor"[0m
+[0;32mI (583) wifi_button: Forget Wi-Fi: hold D8/GPIO7 to GND for 4000 ms[0m
+[0;32mI (583) train_pwm: PWM init on GPIO2, 10000 Hz, 10-bit, duty 0%[0m
+[0;32mI (583) speed_led: Speed LED init on GPIO1 (XIAO D0)[0m
+[0;32mI (593) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (593) train_control: Train control initialized: source=off, mode=off, percent=0[0m
+[0;32mI (753) example: Starting server on port: '80'[0m
+[0;32mI (753) example: Registering URI handlers[0m
+[0;32mI (753) train_http: Registering train control URI handlers[0m
+[0;32mI (1263) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1263) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1273) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1283) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1953) speed_led: System ready (3-flash signal complete)[0m
+[0;32mI (2333) wifi:connected with harmonicminor, aid = 39, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (2333) wifi:security: WPA2-PSK, phy: bgn, rssi: -79, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (2333) wifi:pm start, type: 1[0m
+
+[0;32mI (2343) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2343) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (2373) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2373) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (3423) esp_netif_handlers: sta ip: 192.168.7.221, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (3423) wifi: STA IP 192.168.7.221[0m
+[0;32mI (3423) wifi: closing setup AP; control page is at http://192.168.7.221/[0m
+[0;32mI (3583) mdns_mem: mDNS task will be created from internal RAM[0m
+[0;32mI (3583) whistle_find: mDNS client ready[0m
+[0;32mI (10983) whistle_find: Whistleblower verified at http://192.168.7.70[0m
+[0;32mI (16013) train_http: Serving train control page for /[0m
+[1;31mE (89303) esp-tls: [sock=60] select() timeout[0m
+[1;31mE (89303) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (89303) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (89303) whistle_find: Whistleblower unavailable[0m
+[0;32mI (96333) whistle_find: Whistleblower verified at http://192.168.7.70[0m
+[0;32mI (99103) train_http: Serving train control page for /[0m
+[0;32mI (772) train_control: Control source off -> knob; commanding OFF[0m
+[0;32mI (772) example: Starting server on port: '80'[0m
+[0;32mI (772) example: Registering URI handlers[0m
+[0;32mI (772) train_http: Registering train control URI handlers[0m
+[0;32mI (1292) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1292) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1292) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1302) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1972) speed_led: System ready (3-flash signal complete)[0m
+[0;32mI (3422) train_pwm: PWM duty set to 65% (raw=664)[0m
+[0;32mI (3422) train_control: Speed 1 (65%) source=knob[0m
+[0;32mI (3822) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (3822) train_control: Speed off (0%) source=knob[0m
+[0;32mI (4402) wifi:connected with harmonicminor, aid = 39, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (4402) wifi:security: WPA2-PSK, phy: bgn, rssi: -81, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (4402) wifi:pm start, type: 1[0m
+
+[0;32mI (4402) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (4412) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (4432) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (4482) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (6542) esp_netif_handlers: sta ip: 192.168.7.221, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (6542) wifi: STA IP 192.168.7.221[0m
+[0;32mI (6542) wifi: closing setup AP; control page is at http://192.168.7.221/[0m
+[0;32mI (6602) mdns_mem: mDNS task will be created from internal RAM[0m
+[0;32mI (6602) whistle_find: mDNS client ready[0m
+[0;32mI (8012) train_http: Serving train control page for /[0m
+[0;32mI (16872) train_http: Serving train control page for /[0m
+[0;32mI (18102) train_http: Serving train control page for /[0m
+[0;32mI (18872) train_http: Serving train control page for /[0m
+[0;32mI (20062) train_http: Serving train control page for /[0m
+[0;32mI (23332) train_http: Serving train control page for /[0m

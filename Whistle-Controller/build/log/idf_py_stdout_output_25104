@@ -1,0 +1,200 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\Whistle-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM6'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40378ee2
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1548
+load:0x403c8700,len:0xdac
+load:0x403cb700,len:0x2f60
+entry 0x403c8900
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov  3 2026 18:38:44[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (29) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (30) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (31) boot: Enabling RNG early entropy source...[0m
+[0;32mI (32) boot: Partition Table:[0m
+[0;32mI (33) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (35) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (36) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (37) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (38) boot: End of partition table[0m
+[0;32mI (38) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=0b780h ( 46976) map[0m
+[0;32mI (48) esp_image: segment 1: paddr=0001b7a8 vaddr=3fc90f00 size=03158h ( 12632) load[0m
+[0;32mI (52) esp_image: segment 2: paddr=0001e908 vaddr=40374000 size=01710h (  5904) load[0m
+[0;32mI (53) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=15b78h ( 88952) map[0m
+[0;32mI (70) esp_image: segment 4: paddr=00035ba0 vaddr=40375710 size=0b72ch ( 46892) load[0m
+[0;32mI (81) esp_image: segment 5: paddr=000412d4 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (87) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (87) boot: Disabling RNG early entropy source...[0m
+[0;32mI (88) cpu_start: Multicore app[0m
+[0;32mI (97) cpu_start: Pro cpu start user code[0m
+[0;32mI (97) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (97) app_init: Application information:[0m
+[0;32mI (99) app_init: Project name:     Whistle-Controller[0m
+[0;32mI (99) app_init: App version:      5fbbb61[0m
+[0;32mI (101) app_init: Compile time:     Nov  3 2026 19:09:03[0m
+[0;32mI (102) app_init: ELF file SHA256:  376139ebe...[0m
+[0;32mI (103) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (104) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (104) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (106) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (107) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (109) heap_init: At 3FC96FB0 len 00052760 (329 KiB): RAM[0m
+[0;32mI (109) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (110) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (111) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (113) spi_flash: detected chip: gd[0m
+[0;32mI (113) spi_flash: flash io: dio[0m
+[0;33mW (114) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (116) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (117) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (118) main_task: Started on CPU0[0m
+[0;32mI (118) main_task: Calling app_main()[0m
+[0;32mI (118) whistle: Whistleblower sprint 1 starting[0m
+[0;32mI (118) whistle: Logs use USB Serial/JTAG. DFPlayer UART is UART1 on GPIO43 (TX) and GPIO44 (RX).[0m
+[0;32mI (118) dfplayer: UART1 ready: TX GPIO43, RX GPIO44, 115200 baud, 8N1[0m
+[0;32mI (118) whistle: UART init accepted[0m
+[0;32mI (118) whistle: Waiting 2000 ms for the DFPlayer to finish starting[0m
+[0;32mI (2128) dfplayer: TX AT\r\n[0m
+[0;33mW (3128) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3128) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3428) dfplayer: TX AT\r\n[0m
+[0;33mW (4428) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4428) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (4728) dfplayer: TX AT\r\n[0m
+[0;33mW (5728) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (5728) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (6028) dfplayer: TX AT\r\n[0m
+[0;33mW (7028) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (7028) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7328) dfplayer: TX AT\r\n[0m
+[0;33mW (8328) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8328) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8328) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8328) whistle: Idle. Reset the board to run the sequence again.[0m
+[0;32mI (2138) dfplayer: TX AT\r\n[0m
+[0;32mI (2188) dfplayer: RX OK\r\n[0m
+[0;32mI (2188) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2188) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2248) dfplayer: RX OK\r\n[0m
+[0;32mI (2248) whistle: Amplifier accepted[0m
+[0;32mI (2248) dfplayer: TX AT+VOL=10\r\n[0m
+[0;32mI (2308) dfplayer: RX OK\r\n[0m
+[0;32mI (2308) whistle: Volume 10 accepted[0m
+[0;32mI (2308) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2368) dfplayer: RX OK\r\n[0m
+[0;32mI (2368) whistle: Single-play mode accepted[0m
+[0;32mI (2368) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2428) dfplayer: RX 4\r\n[0m
+[0;32mI (2428) whistle: Playable files found: 4[0m
+[0;32mI (2428) dfplayer: TX AT+PLAYNUM=1\r\n[0m
+[0;33mW (3928) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (3928) whistle: File 1 play command rejected: no response before timeout. Response: [0m
+[0;32mI (3928) dfplayer: TX AT+PLAYNUM=2\r\n[0m
+[0;32mI (4008) dfplayer: RX OK\r\n[0m
+[0;32mI (4008) whistle: File 2 play command accepted[0m
+[0;32mI (4008) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (4068) dfplayer: RX H[0m
+[0;32mI (4068) whistle: File 2 name: HORN    .MP3[0m
+[0;32mI (4068) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4128) dfplayer: RX 3\r\n[0m
+[0;32mI (4128) whistle: File 2 duration: 3 s[0m
+[0;32mI (4628) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4678) dfplayer: RX 0\r\n[0m
+[0;32mI (5178) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5228) dfplayer: RX 1\r\n[0m
+[0;32mI (5728) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (5778) dfplayer: RX 1\r\n[0m
+[0;32mI (6278) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6328) dfplayer: RX 2\r\n[0m
+[0;32mI (6828) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (6878) dfplayer: RX 2\r\n[0m
+[0;32mI (7378) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7428) dfplayer: RX 3\r\n[0m
+[0;32mI (7928) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (7978) dfplayer: RX 3\r\n[0m
+[0;32mI (7978) whistle: File 2 finished[0m
+[0;32mI (7978) dfplayer: TX AT+PLAYNUM=3\r\n[0m
+[0;32mI (8068) dfplayer: RX OK\r\n[0m
+[0;32mI (8068) whistle: File 3 play command accepted[0m
+[0;32mI (8068) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (8128) dfplayer: RX B[0m
+[0;32mI (8128) whistle: File 3 name: BEEP    .MP3[0m
+[0;32mI (8128) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (8188) dfplayer: RX 5\r\n[0m
+[0;32mI (8188) whistle: File 3 duration: 5 s[0m
+[0;32mI (8688) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8738) dfplayer: RX 0\r\n[0m
+[0;32mI (9238) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9298) dfplayer: RX 1\r\n[0m
+[0;32mI (9798) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9848) dfplayer: RX 1\r\n[0m
+[0;32mI (10348) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10408) dfplayer: RX 2\r\n[0m
+[0;32mI (10908) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10968) dfplayer: RX 2\r\n[0m
+[0;32mI (11468) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11518) dfplayer: RX 3\r\n[0m
+[0;32mI (12018) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12078) dfplayer: RX 4\r\n[0m
+[0;32mI (12578) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12628) dfplayer: RX 4\r\n[0m
+[0;32mI (13128) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13178) dfplayer: RX 4\r\n[0m
+[0;32mI (13678) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13728) dfplayer: RX 4\r\n[0m
+[0;32mI (14228) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14278) dfplayer: RX 4\r\n[0m
+[1;31mE (14278) whistle: File 3 did not finish cleanly: elapsed clock stopped before the reported duration[0m
+[0;32mI (14278) dfplayer: TX AT+PLAYNUM=4\r\n[0m
+[0;32mI (14368) dfplayer: RX OK\r\n[0m
+[0;32mI (14368) whistle: File 4 play command accepted[0m
+[0;32mI (14368) dfplayer: TX AT+QUERY=5\r\n[0m
+[0;32mI (14428) dfplayer: RX B[0m
+[0;32mI (14428) whistle: File 4 name: BEEP    .MP3[0m
+[0;32mI (14428) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (14488) dfplayer: RX 5\r\n[0m
+[0;32mI (14488) whistle: File 4 duration: 5 s[0m
+[0;32mI (14988) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15038) dfplayer: RX 0\r\n[0m
+[0;32mI (15538) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15588) dfplayer: RX 1\r\n[0m
+[0;32mI (16088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16138) dfplayer: RX 1\r\n[0m
+[0;32mI (16638) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16688) dfplayer: RX 2\r\n[0m
+[0;32mI (17188) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17238) dfplayer: RX 2\r\n[0m
+[0;32mI (17738) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (17788) dfplayer: RX 3\r\n[0m
+[0;32mI (18288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18338) dfplayer: RX 4\r\n[0m
+[0;32mI (18838) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (18888) dfplayer: RX 4\r\n[0m
+[0;32mI (19388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19438) dfplayer: RX 4\r\n[0m
+[0;32mI (19938) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (19988) dfplayer: RX 4\r\n[0m
+[0;32mI (20488) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (20538) dfplayer: RX 4\r\n[0m
+[1;31mE (20538) whistle: File 4 did not finish cleanly: elapsed clock stopped before the reported duration[0m
+[0;32mI (20538) whistle: Playback summary[0m
+[0;32mI (20538) whistle: Files reported: 4[0m
+[0;32mI (20538) whistle: File numbers attempted: 1 through 4[0m
+[0;32mI (20538) whistle: Play commands accepted: 3[0m
+[0;32mI (20538) whistle: Play commands rejected: 1[0m
+[0;32mI (20538) whistle: Filenames retrieved: 3[0m
+[0;32mI (20538) whistle: Files finished: 1[0m
+[0;32mI (20538) whistle: Errors recorded: 3[0m
+[0;32mI (20538) whistle: File 1: play rejected, name <unavailable>, duration -1 s, not finished, AT+PLAYNUM=1 rejected: no response before timeout[0m
+[0;32mI (20538) whistle: File 2: play accepted, name HORN    .MP3, duration 3 s, finished[0m
+[0;32mI (20548) whistle: File 3: play accepted, name BEEP    .MP3, duration 5 s, not finished, elapsed clock stopped before the reported duration[0m
+[0;32mI (20548) whistle: File 4: play accepted, name BEEP    .MP3, duration 5 s, not finished, elapsed clock stopped before the reported duration[0m
+[0;32mI (20548) whistle: Sequence complete. Playback will not restart until the next reset.[0m
+[0;32mI (20548) whistle: Idle. Reset the board to run the sequence again.[0m

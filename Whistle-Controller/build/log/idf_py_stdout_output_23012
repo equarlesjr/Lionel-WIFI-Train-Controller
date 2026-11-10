@@ -1,0 +1,618 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\Whistle-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM6'
+[0;32mI (998) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, profESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b80a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1548
+load:0x403c8700,len:0xdac
+load:0x403cb700,len:0x2f60
+entry 0x403c8900
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov  3 2026 18:38:44[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (27) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (28) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (29) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (30) boot: Enabling RNG early entropy source...[0m
+[0;32mI (31) boot: Partition Table:[0m
+[0;32mI (32) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (34) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (35) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (36) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (37) boot: End of partition table[0m
+[0;32mI (37) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=26634h (157236) map[0m
+[0;32mI (68) esp_image: segment 1: paddr=0003665c vaddr=3fc98900 size=05180h ( 20864) load[0m
+[0;32mI (73) esp_image: segment 2: paddr=0003b7e4 vaddr=40374000 size=04834h ( 18484) load[0m
+[0;32mI (77) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=a51d4h (676308) map[0m
+[0;32mI (201) esp_image: segment 4: paddr=000e51fc vaddr=40378834 size=0fffch ( 65532) load[0m
+[0;32mI (216) esp_image: segment 5: paddr=000f5200 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (225) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (226) boot: Disabling RNG early entropy source...[0m
+[0;32mI (227) cpu_start: Multicore app[0m
+[0;32mI (236) cpu_start: Pro cpu start user code[0m
+[0;32mI (236) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (236) app_init: Application information:[0m
+[0;32mI (237) app_init: Project name:     Whistle-Controller[0m
+[0;32mI (238) app_init: App version:      5fbbb61-dirty[0m
+[0;32mI (239) app_init: Compile time:     Nov  9 2026 18:15:23[0m
+[0;32mI (240) app_init: ELF file SHA256:  8dc6be687...[0m
+[0;32mI (241) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (242) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (243) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (244) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (245) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (247) heap_init: At 3FCA2E60 len 000468B0 (282 KiB): RAM[0m
+[0;32mI (247) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (248) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (249) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (251) spi_flash: detected chip: gd[0m
+[0;32mI (251) spi_flash: flash io: dio[0m
+[0;33mW (252) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (255) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (255) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (256) main_task: Started on CPU0[0m
+[0;32mI (256) main_task: Calling app_main()[0m
+[0;32mI (256) whistle: Logs use USB Serial/JTAG. DFPlayer UART is UART1 on GPIO43 (TX) and GPIO44 (RX).[0m
+[0;32mI (256) catalog: Loaded 3 sounds. Default horn is Horn3.mp3[0m
+[0;32mI (256) catalog:   [0] Horn3.mp3 -> /Horn3.mp3[0m
+[0;32mI (256) catalog:   [1] Horn4.mp3 -> /Horn4.mp3[0m
+[0;32mI (256) catalog:   [2] Horn1.mp3 -> /Horn1.mp3[0m
+[0;32mI (276) pp: pp rom version: e7ae62f[0m
+[0;32mI (276) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (286) wifi:wifi driver task: 3fcee718, prio:23, stack:6656, core=0[0m
+[0;32mI (286) wifi:wifi firmware version: e12a754[0m
+[0;32mI (286) wifi:wifi certification version: v7.0[0m
+[0;32mI (286) wifi:config NVS flash: enabled[0m
+[0;32mI (286) wifi:config nano formatting: disabled[0m
+[0;32mI (286) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (286) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (286) wifi:Init management short buffer num: 32[0m
+[0;32mI (296) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (296) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (296) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (296) wifi:Init static rx buffer num: 10[0m
+[0;32mI (296) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (296) wifi_init: rx ba win: 6[0m
+[0;32mI (296) wifi_init: accept mbox: 6[0m
+[0;32mI (296) wifi_init: tcpip mbox: 32[0m
+[0;32mI (296) wifi_init: udp mbox: 6[0m
+[0;32mI (296) wifi_init: tcp mbox: 6[0m
+[0;32mI (306) wifi_init: tcp tx win: 5760[0m
+[0;32mI (306) wifi_init: tcp rx win: 5760[0m
+[0;32mI (306) wifi_init: tcp mss: 1440[0m
+[0;32mI (306) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (306) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (306) wifi: DHCP hostname whistleblower[0m
+[0;32mI (306) wifi: mDNS is not in this ESP-IDF tree and the train controller does not advertise it[0m
+[0;33mW (316) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (316) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (356) wifi:mode : sta (f0:9e:9e:21:db:14)[0m
+[0;32mI (356) wifi:enable tsf[0m
+[0;32mI (356) wifi: joining "harmonicminor"[0m
+[0;32mI (356) mdns_mem: mDNS task will be created from internal RAM[0m
+[0;32mI (356) whistle_mdns: Advertising _whistleblower._tcp on port 80 as whistleblower.local[0m
+[0;32mI (366) whistle_http: HTTP server listening on port 80[0m
+[0;32mI (366) dfplayer: UART1 ready: TX GPIO43, RX GPIO44, 115200 baud, 8N1[0m
+[0;32mI (366) whistle: UART init accepted[0m
+[0;32mI (366) whistle: Waiting 2000 ms for the DFPlayer to finish starting[0m
+[0;32mI (1036) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1036) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1046) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1066) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1096) wifi:connected with harmonicminor, aid = 11, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (1096) wifi:security: WPA2-PSK, phy: bgn, rssi: -75, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1096) wifi:pm start, type: 1[0m
+
+[0;32mI (1096) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1096) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1106) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1166) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2136) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (2136) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (2136) wifi: setup AP closed[0m
+[0;32mI (2366) dfplayer: TX AT\r\n[0m
+[0;33mW (3366) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3366) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3666) dfplayer: TX AT\r\n[0m
+[0;33mW (4666) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4666) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (4966) dfplayer: TX AT\r\n[0m
+[0;33mW (5966) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (5966) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (6266) dfplayer: TX AT\r\n[0m
+[0;33mW (7266) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (7266) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7566) dfplayer: TX AT\r\n[0m
+[0;33mW (8566) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8566) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8566) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8566) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;33mW (9566) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (9566) whistle: Amplifier failed: no response before timeout. Response: [0m
+[0;32mI (9566) dfplayer: TX AT+VOL=20\r\n[0m
+[0;33mW (10566) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (10566) whistle: Volume 20 failed: no response before timeout. Response: [0m
+[0;32mI (10566) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;33mW (11576) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (11576) whistle: Single-play mode failed: no response before timeout. Response: [0m
+[0;32mI (11576) whistle: Horn button ready on GPIO1[0m
+[0;32mI (1103) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1103) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1113) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1123) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (2213) wifi:connected with harmonicminor, aid = 11, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (2223) wifi:security: WPA2-PSK, phy: bgn, rssi: -77, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (2223) wifi:pm start, type: 1[0m
+
+[0;32mI (2223) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (2223) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (2233) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (2263) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2383) dfplayer: TX AT\r\n[0m
+[0;33mW (3383) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3383) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3403) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (3403) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (3403) wifi: setup AP closed[0m
+[0;32mI (3683) dfplayer: TX AT\r\n[0m
+[0;33mW (4683) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4683) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (4983) dfplayer: TX AT\r\n[0m
+[0;33mW (5983) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (5983) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (6283) dfplayer: TX AT\r\n[0m
+[0;33mW (7283) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (7283) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7583) dfplayer: TX AT\r\n[0m
+[0;33mW (8583) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8583) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8583) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8583) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;33mW (9583) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (9583) whistle: Amplifier failed: no response before timeout. Response: [0m
+[0;32mI (9583) dfplayer: TX AT+VOL=20\r\n[0m
+[0;33mW (10583) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (10583) whistle: Volume 20 failed: no response before timeout. Response: [0m
+[0;32mI (10583) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;33mW (11593) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (11593) whistle: Single-play mode failed: no response before timeout. Response: [0m
+[0;32mI (11593) whistle: Horn button ready on GPIO1[0m
+[0;32mI (15163) whistle_http: HTTP horn request[0m
+[0;33mW (15163) whistle_http: HTTP horn rejected: ESP_FAIL[0m
+[0;32mI (18543) whistle_http: HTTP horn request[0m
+[0;33mW (18543) whistle_http: HTTP horn rejected: ESP_FAIL[0m
+[0;32mI (19493) whistle_http: HTTP horn request[0m
+[0;33mW (19493) whistle_http: HTTP horn rejected: ESP_FAIL[0m
+[0;32mI (22553) whistle_http: HTTP horn request[0m
+[0;33mW (22553) whistle_http: HTTP horn rejected: ESP_FAIL[0m
+[0;32mI (26663) whistle_http: HTTP play request name="Horn3.mp3"[0m
+[0;33mW (26663) whistle_http: HTTP play rejected: ESP_FAIL[0m
+[0;32mI (1028) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1128) wifi:connected with harmonicminor, aid = 11, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (1128) wifi:security: WPA2-PSK, phy: bgn, rssi: -76, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1128) wifi:pm start, type: 1[0m
+
+[0;32mI (1128) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1128) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1158) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1178) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2318) dfplayer: TX AT\r\n[0m
+[0;32mI (2348) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (2348) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (2348) wifi: setup AP closed[0m
+[0;32mI (2378) dfplayer: RX OK\r\n[0m
+[0;32mI (2378) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2378) whistle: DFPlayer connected[0m
+[0;32mI (2378) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2438) dfplayer: RX 4\r\n[0m
+[0;32mI (2438) whistle: DFPlayer reports 4 files; catalog lists 3 configured names[0m
+[0;32mI (2438) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2498) dfplayer: RX OK\r\n[0m
+[0;32mI (2498) whistle: Amplifier accepted[0m
+[0;32mI (2498) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2558) dfplayer: RX OK\r\n[0m
+[0;32mI (2558) whistle: Volume 20 accepted[0m
+[0;32mI (2558) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2618) dfplayer: RX OK\r\n[0m
+[0;32mI (2618) whistle: Single-play mode accepted[0m
+[0;32mI (2618) whistle: Horn button ready on GPIO1[0m
+[0;32mI (8238) whistle: Playing /Horn3.mp3[0m
+[0;32mI (8238) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (8238) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (8238) whistle: Button pressed[0m
+[0;32mI (8238) whistle: Button released[0m
+[0;32mI (8328) dfplayer: RX OK\r\n[0m
+[0;32mI (8328) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (8328) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (8388) dfplayer: RX 2\r\n[0m
+[0;32mI (8888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8948) dfplayer: RX 0\r\n[0m
+[0;32mI (9448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (9508) dfplayer: RX 1\r\n[0m
+[0;32mI (10008) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10068) dfplayer: RX 1\r\n[0m
+[0;32mI (10568) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10628) dfplayer: RX 2\r\n[0m
+[0;32mI (11128) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11188) dfplayer: RX 2\r\n[0m
+[0;32mI (11188) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (13898) whistle_http: HTTP horn request[0m
+[0;32mI (13898) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (13898) whistle: Playing /Horn3.mp3[0m
+[0;32mI (13898) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (14018) dfplayer: RX OK\r\nOK\r\n[0m
+[0;32mI (14018) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (14018) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (14078) dfplayer: RX 2\r\n[0m
+[0;32mI (14578) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (14638) dfplayer: RX 0\r\n[0m
+[0;32mI (15138) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15198) dfplayer: RX 1\r\n[0m
+[0;32mI (15698) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (15758) dfplayer: RX 1\r\n[0m
+[0;32mI (16258) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16318) dfplayer: RX 2\r\n[0m
+[0;32mI (16818) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (16878) dfplayer: RX 2\r\n[0m
+[0;32mI (16878) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (992838) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1022898) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1037938) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1083068) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1128198) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1158298) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1203418) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1263608) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1323768) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1383938) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1444018) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1504188) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1564358) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1624538) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1684698) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1744878) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1805168) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1865228) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1925408) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2000508) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2045638) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2105818) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2166088) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2226158) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2286328) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2346518) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2406588) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2466748) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2526928) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2587098) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2647268) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2707458) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2767608) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2827788) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2887998) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2948028) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3008208) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3038288) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3053338) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3098488) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3113508) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3158638) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3173788) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3218818) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3233858) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3278988) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3294028) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3339158) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3354198) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3399428) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3414368) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3459398) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3474448) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3519568) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3534718) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3579748) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3594788) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3639918) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3654968) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3700098) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3715148) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (4936658) whistle_http: HTTP horn request[0m
+[0;32mI (4936658) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (4936658) whistle: Playing /Horn3.mp3[0m
+[0;32mI (4936658) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (4936768) dfplayer: RX OK\r\nOK\r\n[0m
+[0;32mI (4936768) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (4936768) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4936828) dfplayer: RX 2\r\n[0m
+[0;32mI (4937328) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4937388) dfplayer: RX 0\r\n[0m
+[0;32mI (4937888) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4937948) dfplayer: RX 1\r\n[0m
+[0;32mI (4938448) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4938508) dfplayer: RX 1\r\n[0m
+[0;32mI (4939008) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4939068) dfplayer: RX 2\r\n[0m
+[0;32mI (4939568) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4939628) dfplayer: RX 2\r\n[0m
+[0;32mI (4939628) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (4945158) whistle_http: HTTP horn request[0m
+[0;32mI (4945158) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (4945158) whistle: Playing /Horn3.mp3[0m
+[0;32mI (4945158) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (4945238) dfplayer: RX OK\r\n[0m
+[0;32mI (4945238) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (4945238) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4945298) dfplayer: RX 2\r\n[0m
+[0;32mI (4945798) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4945858) dfplayer: RX 0\r\n[0m
+[0;32mI (4946358) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4946418) dfplayer: RX 1\r\n[0m
+[0;32mI (4946918) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4946978) dfplayer: RX 1\r\n[0m
+[0;32mI (4947478) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4947538) dfplayer: RX 2\r\n[0m
+[0;32mI (4948038) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4948098) dfplayer: RX 2\r\n[0m
+[0;32mI (4948098) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (4972068) whistle_http: HTTP horn request[0m
+[0;32mI (4972068) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (4972068) whistle: Playing /Horn3.mp3[0m
+[0;32mI (4972068) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (4972148) dfplayer: RX OK\r\n[0m
+[0;32mI (4972148) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (4972148) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4972208) dfplayer: RX 2\r\n[0m
+[0;32mI (4972708) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4972768) dfplayer: RX 0\r\n[0m
+[0;32mI (4973268) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4973328) dfplayer: RX 1\r\n[0m
+[0;32mI (4973828) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4973888) dfplayer: RX 1\r\n[0m
+[0;32mI (4974388) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4974448) dfplayer: RX 2\r\n[0m
+[0;32mI (4974948) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4975008) dfplayer: RX 2\r\n[0m
+[0;32mI (4975008) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (4979158) catalog: Selected horn is Horn4.mp3[0m
+[0;32mI (4980638) whistle_http: HTTP horn request[0m
+[0;32mI (4980638) whistle: Playback queued: Horn4.mp3[0m
+[0;32mI (4980638) whistle: Playing /Horn4.mp3[0m
+[0;32mI (4980638) dfplayer: TX AT+PLAYFILE=/Horn4.mp3\r\n[0m
+[0;32mI (4980728) dfplayer: RX OK\r\n[0m
+[0;32mI (4980728) whistle: DFPlayer accepted Horn4.mp3[0m
+[0;32mI (4980728) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (4980788) dfplayer: RX 5\r\n[0m
+[0;32mI (4981288) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4981348) dfplayer: RX 0\r\n[0m
+[0;32mI (4981848) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4981908) dfplayer: RX 1\r\n[0m
+[0;32mI (4982408) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4982468) dfplayer: RX 1\r\n[0m
+[0;32mI (4982968) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4983028) dfplayer: RX 2\r\n[0m
+[0;32mI (4983528) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4983588) dfplayer: RX 2\r\n[0m
+[0;32mI (4984088) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (4984148) dfplayer: RX 3\r\n[0m
+[0;32mI (1663) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1663) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1673) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1683) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1723) wifi:connected with harmonicminor, aid = 7, channel 11, BW20, bssid = 7e:45:58:2a:d0:79[0m
+[0;32mI (1723) wifi:security: WPA2-PSK, phy: bgn, rssi: -61, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1723) wifi:pm start, type: 1[0m
+
+[0;32mI (1733) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1733) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1803) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2363) dfplayer: TX AT\r\n[0m
+[0;32mI (2423) dfplayer: RX OK\r\n[0m
+[0;32mI (2423) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2423) whistle: DFPlayer connected[0m
+[0;32mI (2423) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2483) dfplayer: RX 4\r\n[0m
+[0;32mI (2483) whistle: DFPlayer reports 4 files; catalog lists 3 configured names[0m
+[0;32mI (2483) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2543) dfplayer: RX OK\r\n[0m
+[0;32mI (2543) whistle: Amplifier accepted[0m
+[0;32mI (2543) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2603) dfplayer: RX OK\r\n[0m
+[0;32mI (2603) whistle: Volume 20 accepted[0m
+[0;32mI (2603) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2663) dfplayer: RX OK\r\n[0m
+[0;32mI (2663) whistle: Single-play mode accepted[0m
+[0;32mI (2663) whistle: Horn button ready on GPIO1[0m
+[0;32mI (2853) wifi:<ba-add>idx:0 (ifx:0, 7e:45:58:2a:d0:79), tid:0, ssn:1, winSize:64[0m
+[0;32mI (3853) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (3853) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (3853) wifi: setup AP closed[0m
+[0;32mI (5693) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (20733) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1053) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1053) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1063) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1073) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1113) wifi:connected with harmonicminor, aid = 42, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (1113) wifi:security: WPA2-PSK, phy: bgn, rssi: -71, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1113) wifi:pm start, type: 1[0m
+
+[0;32mI (1113) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1123) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1123) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1193) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2183) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (2183) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (2183) wifi: setup AP closed[0m
+[0;32mI (2383) dfplayer: TX AT\r\n[0m
+[0;32mI (2433) dfplayer: RX OK\r\n[0m
+[0;32mI (2433) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2433) whistle: DFPlayer connected[0m
+[0;32mI (2433) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2483) dfplayer: RX 4\r\n[0m
+[0;32mI (2483) whistle: DFPlayer reports 4 files; catalog lists 3 configured names[0m
+[0;32mI (2483) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2533) dfplayer: RX OK\r\n[0m
+[0;32mI (2533) whistle: Amplifier accepted[0m
+[0;32mI (2533) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2583) dfplayer: RX OK\r\n[0m
+[0;32mI (2583) whistle: Volume 20 accepted[0m
+[0;32mI (2583) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2633) dfplayer: RX OK\r\n[0m
+[0;32mI (2633) whistle: Single-play mode accepted[0m
+[0;32mI (2633) whistle: Horn button ready on GPIO1[0m
+[0;32mI (58203) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (75313) whistle_http: HTTP horn request[0m
+[0;32mI (75313) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (75313) whistle: Playing /Horn3.mp3[0m
+[0;32mI (75323) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (75403) dfplayer: RX OK\r\n[0m
+[0;32mI (75403) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (75403) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (75463) dfplayer: RX 2\r\n[0m
+[0;32mI (75963) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (76023) dfplayer: RX 0\r\n[0m
+[0;32mI (76523) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (76583) dfplayer: RX 1\r\n[0m
+[0;32mI (77083) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (77133) dfplayer: RX 1\r\n[0m
+[0;32mI (77633) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (77683) dfplayer: RX 2\r\n[0m
+[0;32mI (78183) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (78233) dfplayer: RX 2\r\n[0m
+[0;32mI (78233) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (85483) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (118393) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (133833) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1123) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1123) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1133) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1163) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1193) wifi:connected with harmonicminor, aid = 41, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (1193) wifi:security: WPA2-PSK, phy: bgn, rssi: -74, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1193) wifi:pm start, type: 1[0m
+
+[0;32mI (1193) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1193) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1213) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1253) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2383) dfplayer: TX AT\r\n[0m
+[0;32mI (2433) dfplayer: RX OK\r\n[0m
+[0;32mI (2433) whistle: AT contact succeeded on attempt 1[0m
+[0;32mI (2433) whistle: DFPlayer connected[0m
+[0;32mI (2433) dfplayer: TX AT+QUERY=2\r\n[0m
+[0;32mI (2483) dfplayer: RX 4\r\n[0m
+[0;32mI (2483) whistle: DFPlayer reports 4 files; catalog lists 3 configured names[0m
+[0;32mI (2483) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;32mI (2533) dfplayer: RX OK\r\n[0m
+[0;32mI (2533) whistle: Amplifier accepted[0m
+[0;32mI (2533) dfplayer: TX AT+VOL=20\r\n[0m
+[0;32mI (2583) dfplayer: RX OK\r\n[0m
+[0;32mI (2583) whistle: Volume 20 accepted[0m
+[0;32mI (2583) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;32mI (2633) dfplayer: RX OK\r\n[0m
+[0;32mI (2633) whistle: Single-play mode accepted[0m
+[0;32mI (2633) whistle: Horn button ready on GPIO1[0m
+[0;32mI (3303) esp_netif_handlers: sta ip: 192.168.7.70, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (3303) wifi: STA connected ssid="harmonicminor" ip=192.168.7.70 open http://192.168.7.70/ hostname=whistleblower.local[0m
+[0;32mI (3303) wifi: setup AP closed[0m
+[0;32mI (34013) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (64103) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (93163) whistle_http: HTTP horn request[0m
+[0;32mI (93163) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (93163) whistle: Playing /Horn3.mp3[0m
+[0;32mI (93163) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (93273) dfplayer: RX OK\r\nOK\r\n[0m
+[0;32mI (93273) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (93273) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (93333) dfplayer: RX 2\r\n[0m
+[0;32mI (93833) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (93893) dfplayer: RX 0\r\n[0m
+[0;32mI (94393) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (94443) dfplayer: RX 1\r\n[0m
+[0;32mI (94943) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (94993) dfplayer: RX 1\r\n[0m
+[0;32mI (95493) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (95543) dfplayer: RX 2\r\n[0m
+[0;32mI (96043) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (96093) dfplayer: RX 2\r\n[0m
+[0;32mI (96093) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (100023) whistle_http: HTTP horn request[0m
+[0;32mI (100023) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (100023) whistle: Playing /Horn3.mp3[0m
+[0;32mI (100023) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (100103) dfplayer: RX OK\r\n[0m
+[0;32mI (100103) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (100103) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (100153) dfplayer: RX 2\r\n[0m
+[0;32mI (100653) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (100703) dfplayer: RX 0\r\n[0m
+[0;32mI (101203) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (101253) dfplayer: RX 1\r\n[0m
+[0;32mI (101753) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (101803) dfplayer: RX 1\r\n[0m
+[0;32mI (102303) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (102353) dfplayer: RX 2\r\n[0m
+[0;32mI (102853) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (102903) dfplayer: RX 2\r\n[0m
+[0;32mI (102903) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (106173) whistle_http: HTTP horn request[0m
+[0;32mI (106173) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (106173) whistle: Playing /Horn3.mp3[0m
+[0;32mI (106173) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (106253) dfplayer: RX OK\r\n[0m
+[0;32mI (106253) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (106253) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (106303) dfplayer: RX 2\r\n[0m
+[0;32mI (106803) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (106853) dfplayer: RX 0\r\n[0m
+[0;32mI (107353) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (107403) dfplayer: RX 1\r\n[0m
+[0;32mI (107903) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (107953) dfplayer: RX 1\r\n[0m
+[0;32mI (108453) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (108503) dfplayer: RX 2\r\n[0m
+[0;32mI (109003) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (109053) dfplayer: RX 2\r\n[0m
+[0;32mI (109053) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (118773) whistle_http: HTTP horn request[0m
+[0;32mI (118773) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (118773) whistle: Playing /Horn3.mp3[0m
+[0;32mI (118773) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (118883) dfplayer: RX OK\r\nOK\r\n[0m
+[0;32mI (118883) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (118883) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (118943) dfplayer: RX 2\r\n[0m
+[0;32mI (119443) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (119503) dfplayer: RX 0\r\n[0m
+[0;32mI (120003) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (120053) dfplayer: RX 1\r\n[0m
+[0;32mI (120553) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (120603) dfplayer: RX 1\r\n[0m
+[0;32mI (121103) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (121153) dfplayer: RX 2\r\n[0m
+[0;32mI (121653) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (121703) dfplayer: RX 2\r\n[0m
+[0;32mI (121703) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (131583) whistle_http: HTTP horn request[0m
+[0;32mI (131583) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (131583) whistle: Playing /Horn3.mp3[0m
+[0;32mI (131583) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (131693) dfplayer: RX OK\r\nOK\r\n[0m
+[0;32mI (131693) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (131693) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (131743) dfplayer: RX 2\r\n[0m
+[0;32mI (132243) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (132293) dfplayer: RX 0\r\n[0m
+[0;32mI (132793) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (132853) dfplayer: RX 1\r\n[0m
+[0;32mI (133353) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (133403) dfplayer: RX 1\r\n[0m
+[0;32mI (133903) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (133963) dfplayer: RX 2\r\n[0m
+[0;32mI (134463) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (134513) dfplayer: RX 2\r\n[0m
+[0;32mI (134513) whistle: Playback completed (elapsed clock; the module has no finished event)[0m

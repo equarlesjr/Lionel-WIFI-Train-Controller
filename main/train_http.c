@@ -7,6 +7,7 @@
 
 #include "esp_log.h"
 #include "train_control.h"
+#include "whistle_discovery.h"
 #include "wifi.h"
 
 static const char *TAG = "train_http";
@@ -95,6 +96,18 @@ static const char TRAIN_INDEX_HTML[] =
     "box-shadow:0 3px 0 #6f1020,inset 0 0 0 2px var(--gold);"
     "}"
     "button:disabled{opacity:.45;cursor:not-allowed;box-shadow:none;transform:none;}"
+    ".horn-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;}"
+    "select{"
+    "width:100%;padding:16px 12px;font-size:1.05rem;font-weight:bold;"
+    "font-family:Arial,Helvetica,sans-serif;color:var(--ink);"
+    "border:2px solid #5a6470;border-radius:10px;background:#fff;"
+    "}"
+    "select:disabled{opacity:.45;}"
+    "#horn{min-width:7.5rem;}"
+    ".horn-note{"
+    "margin:10px 0 0;min-height:1.2em;text-align:center;font-size:.9rem;color:var(--blue);"
+    "font-family:Arial,Helvetica,sans-serif;"
+    "}"
     ".status{"
     "margin:18px 0 0;padding:12px 14px;text-align:center;"
     "font-size:1.15rem;font-weight:bold;"
@@ -135,6 +148,13 @@ static const char TRAIN_INDEX_HTML[] =
     "<button type=\"button\" data-mode=\"6\">6</button>"
     "</div>"
     "<p id=\"status\" class=\"status\">Train speed: --</p>"
+    "<p class=\"controls-label\" style=\"margin-top:22px\">Horn</p>"
+    "<p id=\"horn-link\" class=\"source\">Connecting…</p>"
+    "<div class=\"horn-row\">"
+    "<select id=\"horn-sound\" disabled><option>No sounds</option></select>"
+    "<button type=\"button\" id=\"horn\" disabled>Horn</button>"
+    "</div>"
+    "<p id=\"horn-note\" class=\"horn-note\"></p>"
     "</section>"
     "<footer class=\"footer\">Lionel O Gauge &middot; Wi-Fi Throttle &middot; <a href=\"/wifi\">Wi-Fi setup</a></footer>"
     "</div>"
@@ -174,6 +194,116 @@ static const char TRAIN_INDEX_HTML[] =
     "});"
     "refreshStatus();"
     "setInterval(refreshStatus,400);"
+    "const hornBtn=document.getElementById('horn');"
+    "const hornSel=document.getElementById('horn-sound');"
+    "const hornLink=document.getElementById('horn-link');"
+    "const hornNote=document.getElementById('horn-note');"
+    "let wbBase='';"
+    "let wbOk=false;"
+    "let shown='';"
+    "let selectionBusy=false;"
+    "let pollBusy=false;"
+    "function setHorn(on,label,extra){"
+    "hornLink.textContent=label;"
+    "hornLink.className='source'+(extra?(' '+extra):'');"
+    "hornBtn.disabled=!on;"
+    "hornSel.disabled=!on;"
+    "}"
+    "async function wbFetch(path,opts){"
+    "const ctrl=new AbortController();"
+    "const timer=setTimeout(function(){ctrl.abort();},4000);"
+    "try{return await fetch(wbBase+path,Object.assign({signal:ctrl.signal,cache:'no-store'},opts||{}));}"
+    "finally{clearTimeout(timer);}"
+    "}"
+    "async function loadCatalog(){"
+    "const sounds=await wbFetch('/api/sounds');"
+    "const sel=await wbFetch('/api/selection');"
+    "if(!sounds.ok||!sel.ok){throw new Error('catalog');}"
+    "const catalog=await sounds.json();"
+    "const choice=await sel.json();"
+    "const list=catalog.sounds||[];"
+    "hornSel.innerHTML='';"
+    "list.forEach(function(item){"
+    "const option=document.createElement('option');"
+    "option.value=item.name;"
+    "option.textContent=item.name;"
+    "hornSel.appendChild(option);"
+    "});"
+    "if(choice.selected){hornSel.value=choice.selected;}"
+    "shown=hornSel.value;"
+    "}"
+    "async function syncSelection(){"
+    "if(!wbOk||selectionBusy){return;}"
+    "const response=await wbFetch('/api/selection');"
+    "if(!response.ok){return;}"
+    "const choice=await response.json();"
+    "if(choice.selected&&choice.selected!==hornSel.value){"
+    "hornSel.value=choice.selected;"
+    "shown=hornSel.value;"
+    "}"
+    "}"
+    "async function pollWhistle(){"
+    "if(pollBusy){return;}"
+    "pollBusy=true;"
+    "try{"
+    "const response=await fetch('/api/whistleblower',{cache:'no-store'});"
+    "if(!response.ok){throw new Error('lookup');}"
+    "const info=await response.json();"
+    "if(!info.available||!info.base_url){"
+    "wbOk=false;wbBase='';"
+    "setHorn(false,'Whistleblower unavailable','source-off');"
+    "pollBusy=false;"
+    "return;"
+    "}"
+    "const changed=wbBase!==info.base_url||!wbOk;"
+    "wbBase=info.base_url;"
+    "if(changed){"
+    "wbOk=false;"
+    "setHorn(false,'Connecting…','');"
+    "await loadCatalog();"
+    "wbOk=true;"
+    "setHorn(true,'Whistleblower connected','');"
+    "hornNote.textContent='';"
+    "}else{await syncSelection();}"
+    "}catch(err){"
+    "wbOk=false;wbBase='';"
+    "setHorn(false,'Whistleblower unavailable','source-off');"
+    "}"
+    "pollBusy=false;"
+    "}"
+    "hornBtn.addEventListener('click',async function(){"
+    "if(hornBtn.disabled||!wbOk){return;}"
+    "hornNote.textContent='Sending horn…';"
+    "try{"
+    "const response=await wbFetch('/api/horn',{method:'POST'});"
+    "if(response.status===202){hornNote.textContent='Horn accepted';}"
+    "else if(response.status===409){hornNote.textContent='Horn is already playing';}"
+    "else{hornNote.textContent='Horn was not accepted';}"
+    "}catch(err){hornNote.textContent='Whistleblower unavailable';}"
+    "});"
+    "hornSel.addEventListener('change',async function(){"
+    "if(!wbOk){return;}"
+    "const next=hornSel.value;"
+    "const prev=shown;"
+    "selectionBusy=true;"
+    "try{"
+    "const response=await wbFetch('/api/selection',{"
+    "method:'POST',"
+    "headers:{'Content-Type':'application/json'},"
+    "body:JSON.stringify({name:next})"
+    "});"
+    "if(!response.ok){hornSel.value=prev;hornNote.textContent='Could not change the horn';}"
+    "else{"
+    "const choice=await response.json();"
+    "if(choice.selected){hornSel.value=choice.selected;}"
+    "shown=hornSel.value;"
+    "hornNote.textContent='';"
+    "}"
+    "}catch(err){hornSel.value=prev;hornNote.textContent='Could not change the horn';}"
+    "selectionBusy=false;"
+    "});"
+    "pollWhistle();"
+    "setInterval(pollWhistle,2000);"
     "</script>"
     "</body>"
     "</html>";
@@ -274,6 +404,24 @@ static esp_err_t train_status_get_handler(httpd_req_t *req)
     return send_status_json(req);
 }
 
+static esp_err_t whistle_get_handler(httpd_req_t *req)
+{
+    whistle_discovery_info_t info;
+    char body[128];
+
+    whistle_discovery_get(&info);
+    if (!info.available || info.base_url[0] == '\0') {
+        snprintf(body, sizeof(body), "{\"available\":false}");
+    } else {
+        snprintf(body, sizeof(body),
+                 "{\"available\":true,\"service\":\"whistleblower\",\"base_url\":\"%s\"}",
+                 info.base_url);
+    }
+    httpd_resp_set_type(req, "application/json");
+    httpd_resp_set_hdr(req, "Cache-Control", "no-store");
+    return httpd_resp_send(req, body, HTTPD_RESP_USE_STRLEN);
+}
+
 static const httpd_uri_t train_index = {
     .uri = "/",
     .method = HTTP_GET,
@@ -308,6 +456,12 @@ static const httpd_uri_t train_status = {
     .uri = "/status",
     .method = HTTP_GET,
     .handler = train_status_get_handler,
+};
+
+static const httpd_uri_t train_whistle = {
+    .uri = "/api/whistleblower",
+    .method = HTTP_GET,
+    .handler = whistle_get_handler,
 };
 
 extern const uint8_t wifi_setup_html_start[] asm("_binary_wifi_setup_html_start");
@@ -577,6 +731,7 @@ void train_http_register_uri_handlers(httpd_handle_t server)
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_image));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_speed));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_status));
+    ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_whistle));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &train_favicon));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &wifi_page));
     ESP_ERROR_CHECK(httpd_register_uri_handler(server, &wifi_status));

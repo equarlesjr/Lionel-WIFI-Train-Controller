@@ -987,131 +987,14 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 # Example Configuration
 #
+CONFIG_EXAMPLE_BASIC_AUTH=y
 # default:
-# CONFIG_EXAMPLE_BASIC_AUTH is not set
+CONFIG_EXAMPLE_BASIC_AUTH_USERNAME="ESP32"
+# default:
+CONFIG_EXAMPLE_BASIC_AUTH_PASSWORD="ESP32Webserver"
 # default:
 # CONFIG_EXAMPLE_ENABLE_SSE_HANDLER is not set
 # end of Example Configuration
-
-#
-# Ethernet Configuration
-#
-# default:
-CONFIG_ENV_GPIO_RANGE_MIN=0
-# default:
-CONFIG_ENV_GPIO_RANGE_MAX=48
-# default:
-CONFIG_ENV_GPIO_IN_RANGE_MAX=48
-# default:
-CONFIG_ENV_GPIO_OUT_RANGE_MAX=48
-# default:
-CONFIG_ETHERNET_INIT_OVERRIDE_DISABLE=y
-# default:
-CONFIG_ETHERNET_SOC_EMAC_SUPPORTED=0
-# default:
-CONFIG_ETHERNET_SOC_EMAC_SUPPORT_1000M=0
-# default:
-CONFIG_ETHERNET_SPI_USE_DM9051=0
-# default:
-CONFIG_ETHERNET_SPI_USE_KSZ8851SNL=0
-# default:
-CONFIG_ETHERNET_SPI_USE_W5500=0
-# default:
-CONFIG_ETHERNET_SPI_USE_W6100=0
-# default:
-CONFIG_ETHERNET_SPI_USE_CH390=0
-# default:
-CONFIG_ETHERNET_SPI_USE_ENC28J60=0
-# default:
-CONFIG_ETHERNET_SPI_USE_LAN865X=0
-# default:
-CONFIG_ETHERNET_PHY_USE_IP101=0
-# default:
-CONFIG_ETHERNET_PHY_USE_LAN87XX=0
-# default:
-CONFIG_ETHERNET_PHY_USE_LAN867X=0
-# default:
-CONFIG_ETHERNET_PHY_USE_DP83848=0
-# default:
-CONFIG_ETHERNET_PHY_USE_KSZ80XX=0
-# default:
-CONFIG_ETHERNET_PHY_USE_RTL8201=0
-# default:
-CONFIG_ETHERNET_PHY_USE_VSC8541=0
-# default:
-CONFIG_ETHERNET_PHY_USE_YT8531=0
-# default:
-CONFIG_ETHERNET_DEFAULT_EVENT_HANDLER=y
-# end of Ethernet Configuration
-
-#
-# Example Connection Configuration
-#
-# default:
-CONFIG_EXAMPLE_CONNECT_WIFI=y
-# default:
-# CONFIG_EXAMPLE_WIFI_SSID_PWD_FROM_STDIN is not set
-# default:
-CONFIG_EXAMPLE_PROVIDE_WIFI_CONSOLE_CMD=y
-# default:
-CONFIG_EXAMPLE_WIFI_SSID="myssid"
-# default:
-CONFIG_EXAMPLE_WIFI_PASSWORD="mypassword"
-# default:
-CONFIG_EXAMPLE_WIFI_CONN_MAX_RETRY=6
-# default:
-# CONFIG_EXAMPLE_WIFI_SCAN_METHOD_FAST is not set
-# default:
-CONFIG_EXAMPLE_WIFI_SCAN_METHOD_ALL_CHANNEL=y
-
-#
-# WiFi Scan threshold
-#
-# default:
-CONFIG_EXAMPLE_WIFI_SCAN_RSSI_THRESHOLD=-127
-# default:
-CONFIG_EXAMPLE_WIFI_AUTH_OPEN=y
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WEP is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA2_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA_WPA2_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA2_ENTERPRISE is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA3_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WPA2_WPA3_PSK is not set
-# default:
-# CONFIG_EXAMPLE_WIFI_AUTH_WAPI_PSK is not set
-# end of WiFi Scan threshold
-
-# default:
-CONFIG_EXAMPLE_WIFI_CONNECT_AP_BY_SIGNAL=y
-# default:
-# CONFIG_EXAMPLE_WIFI_CONNECT_AP_BY_SECURITY is not set
-# default:
-# CONFIG_EXAMPLE_CONNECT_ETHERNET is not set
-# default:
-CONFIG_EXAMPLE_DISABLE_ETHERNET_CONFIG=y
-# default:
-# CONFIG_EXAMPLE_CONNECT_PPP is not set
-# default:
-CONFIG_EXAMPLE_CONNECT_IPV4=y
-# default:
-CONFIG_EXAMPLE_CONNECT_IPV6=y
-# default:
-CONFIG_EXAMPLE_CONNECT_IPV6_PREF_LOCAL_LINK=y
-# default:
-# CONFIG_EXAMPLE_CONNECT_IPV6_PREF_GLOBAL is not set
-# default:
-# CONFIG_EXAMPLE_CONNECT_IPV6_PREF_SITE_LOCAL is not set
-# default:
-# CONFIG_EXAMPLE_CONNECT_IPV6_PREF_UNIQUE_LOCAL is not set
-# end of Example Connection Configuration
 
 #
 # Compiler options
@@ -1248,6 +1131,19 @@ CONFIG_ESP_TLS_DYN_BUF_STRATEGY_SUPPORTED=y
 # end of ESP-TLS
 
 #
+# ADC and ADC Calibration
+#
+# default:
+# CONFIG_ADC_ONESHOT_CTRL_FUNC_IN_IRAM is not set
+# default:
+# CONFIG_ADC_CONTINUOUS_ISR_IRAM_SAFE is not set
+# default:
+# CONFIG_ADC_CONTINUOUS_FORCE_USE_ADC2_ON_C3_S3 is not set
+# default:
+# CONFIG_ADC_ENABLE_DEBUG_LOG is not set
+# end of ADC and ADC Calibration
+
+#
 # Wireless Coexistence
 #
 # default:
@@ -1353,6 +1249,27 @@ CONFIG_ESP_EVENT_POST_FROM_ISR_SIZE=4
 # default:
 CONFIG_ESP_EVENT_POST_FROM_IRAM_ISR=y
 # end of Event Loop Library
+
+#
+# ESP HTTP client
+#
+# default:
+CONFIG_ESP_HTTP_CLIENT_ENABLE_HTTPS=y
+# default:
+# CONFIG_ESP_HTTP_CLIENT_ENABLE_BASIC_AUTH is not set
+# default:
+# CONFIG_ESP_HTTP_CLIENT_ENABLE_DIGEST_AUTH is not set
+# default:
+# CONFIG_ESP_HTTP_CLIENT_ENABLE_CUSTOM_TRANSPORT is not set
+# default:
+# CONFIG_ESP_HTTP_CLIENT_ENABLE_GET_CONTENT_RANGE is not set
+# default:
+CONFIG_ESP_HTTP_CLIENT_EVENT_POST_TIMEOUT=2000
+# default:
+# CONFIG_ESP_HTTP_CLIENT_SAVE_RESPONSE_HEADERS is not set
+# default:
+CONFIG_ESP_HTTP_CLIENT_STRICT_HEADER_BUFFER=y
+# end of ESP HTTP client
 
 #
 # HTTP Server
@@ -3175,23 +3092,6 @@ CONFIG_MBEDTLS_PKCS1_V21=y
 # end of NVS
 
 #
-# OpenThread
-#
-# default:
-# CONFIG_OPENTHREAD_ENABLED is not set
-
-#
-# OpenThread Spinel
-#
-# default:
-# CONFIG_OPENTHREAD_SPINEL_ONLY is not set
-# end of OpenThread Spinel
-
-# default:
-# CONFIG_OPENTHREAD_DEBUG is not set
-# end of OpenThread
-
-#
 # PThreads
 #
 # default:
@@ -3338,6 +3238,22 @@ CONFIG_SPI_FLASH_ENABLE_ENCRYPTED_READ_WRITE=y
 # end of SPI Flash driver
 
 #
+# TCP Transport
+#
+
+#
+# Websocket
+#
+# default:
+CONFIG_WS_TRANSPORT=y
+# default:
+CONFIG_WS_BUFFER_SIZE=1024
+# default:
+# CONFIG_WS_DYNAMIC_BUFFER is not set
+# end of Websocket
+# end of TCP Transport
+
+#
 # Virtual file system
 #
 # default:
@@ -3367,6 +3283,68 @@ CONFIG_VFS_SEMIHOSTFS_MAX_MOUNT_POINTS=1
 # default:
 CONFIG_VFS_INITIALIZE_DEV_NULL=y
 # end of Virtual file system
+
+#
+# mDNS
+#
+# default:
+CONFIG_MDNS_MAX_INTERFACES=3
+# default:
+CONFIG_MDNS_MAX_SERVICES=10
+# default:
+CONFIG_MDNS_TASK_PRIORITY=1
+# default:
+CONFIG_MDNS_ACTION_QUEUE_LEN=16
+# default:
+CONFIG_MDNS_TASK_STACK_SIZE=4096
+# default:
+# CONFIG_MDNS_TASK_AFFINITY_NO_AFFINITY is not set
+# default:
+CONFIG_MDNS_TASK_AFFINITY_CPU0=y
+# default:
+# CONFIG_MDNS_TASK_AFFINITY_CPU1 is not set
+# default:
+CONFIG_MDNS_TASK_AFFINITY=0x0
+
+#
+# MDNS Memory Configuration
+#
+# default:
+CONFIG_MDNS_TASK_CREATE_FROM_INTERNAL=y
+# default:
+CONFIG_MDNS_MEMORY_ALLOC_INTERNAL=y
+# default:
+# CONFIG_MDNS_MEMORY_CUSTOM_IMPL is not set
+# end of MDNS Memory Configuration
+
+# default:
+CONFIG_MDNS_SERVICE_ADD_TIMEOUT_MS=2000
+# default:
+CONFIG_MDNS_TIMER_PERIOD_MS=100
+# default:
+# CONFIG_MDNS_NETWORKING_SOCKET is not set
+# default:
+# CONFIG_MDNS_SKIP_SUPPRESSING_OWN_QUERIES is not set
+# default:
+# CONFIG_MDNS_ENABLE_DEBUG_PRINTS is not set
+# default:
+CONFIG_MDNS_ENABLE_CONSOLE_CLI=y
+# default:
+# CONFIG_MDNS_RESPOND_REVERSE_QUERIES is not set
+# default:
+CONFIG_MDNS_MULTIPLE_INSTANCE=y
+
+#
+# MDNS Predefined interfaces
+#
+# default:
+CONFIG_MDNS_PREDEF_NETIF_STA=y
+# default:
+CONFIG_MDNS_PREDEF_NETIF_AP=y
+# default:
+CONFIG_MDNS_PREDEF_NETIF_ETH=y
+# end of MDNS Predefined interfaces
+# end of mDNS
 # end of Component config
 
 # default:

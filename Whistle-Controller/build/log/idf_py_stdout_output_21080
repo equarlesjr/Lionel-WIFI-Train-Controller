@@ -1,0 +1,162 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM6 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\Whistle-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\Whistle-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM6'
+[0;32mI (179) esp_image: segment 3: paddr=000c8f18 vaddr=3fc9896c sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b80a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1548
+load:0x403c8700,len:0xdac
+load:0x403cb700,len:0x2f60
+entry 0x403c8900
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov  3 2026 18:38:44[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (26) boot: chip revision: v0.2[0m
+[0;32mI (27) boot: efuse block revision: v1.3[0m
+[0;32mI (28) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (28) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (30) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (31) boot: Enabling RNG early entropy source...[0m
+[0;32mI (32) boot: Partition Table:[0m
+[0;32mI (32) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (34) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (35) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (36) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (37) boot: End of partition table[0m
+[0;32mI (38) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=1ff84h (130948) map[0m
+[0;32mI (64) esp_image: segment 1: paddr=0002ffac vaddr=3fc98900 size=0006ch (   108) load[0m
+[0;32mI (64) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=98ef0h (626416) map[0m
+[0;32mI (179) esp_image: segment 3: paddr=000c8f18 vaddr=3fc9896c size=050e4h ( 20708) load[0m
+[0;32mI (184) esp_image: segment 4: paddr=000ce004 vaddr=40374000 size=14830h ( 84016) load[0m
+[0;32mI (203) esp_image: segment 5: paddr=000e283c vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (212) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (212) boot: Disabling RNG early entropy source...[0m
+[0;32mI (213) cpu_start: Multicore app[0m
+[0;32mI (222) cpu_start: Pro cpu start user code[0m
+[0;32mI (222) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (223) app_init: Application information:[0m
+[0;32mI (223) app_init: Project name:     Whistle-Controller[0m
+[0;32mI (224) app_init: App version:      5fbbb61[0m
+[0;32mI (225) app_init: Compile time:     Nov  3 2026 19:09:03[0m
+[0;32mI (226) app_init: ELF file SHA256:  7cef92f1b...[0m
+[0;32mI (227) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (228) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (229) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (230) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (231) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (234) heap_init: At 3FCA1E00 len 00047910 (286 KiB): RAM[0m
+[0;32mI (234) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (234) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (235) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (237) spi_flash: detected chip: gd[0m
+[0;32mI (237) spi_flash: flash io: dio[0m
+[0;33mW (238) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (241) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (242) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (243) main_task: Started on CPU0[0m
+[0;32mI (243) main_task: Calling app_main()[0m
+[0;32mI (243) whistle: Logs use USB Serial/JTAG. DFPlayer UART is UART1 on GPIO43 (TX) and GPIO44 (RX).[0m
+[0;32mI (253) pp: pp rom version: e7ae62f[0m
+[0;32mI (253) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (273) wifi:wifi driver task: 3fcee700, prio:23, stack:6656, core=0[0m
+[0;32mI (273) wifi:wifi firmware version: e12a754[0m
+[0;32mI (273) wifi:wifi certification version: v7.0[0m
+[0;32mI (273) wifi:config NVS flash: enabled[0m
+[0;32mI (273) wifi:config nano formatting: disabled[0m
+[0;32mI (273) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (273) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (273) wifi:Init management short buffer num: 32[0m
+[0;32mI (273) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (283) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (283) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (283) wifi:Init static rx buffer num: 10[0m
+[0;32mI (283) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (283) wifi_init: rx ba win: 6[0m
+[0;32mI (283) wifi_init: accept mbox: 6[0m
+[0;32mI (283) wifi_init: tcpip mbox: 32[0m
+[0;32mI (283) wifi_init: udp mbox: 6[0m
+[0;32mI (283) wifi_init: tcp mbox: 6[0m
+[0;32mI (283) wifi_init: tcp tx win: 5760[0m
+[0;32mI (293) wifi_init: tcp rx win: 5760[0m
+[0;32mI (293) wifi_init: tcp mss: 1440[0m
+[0;32mI (293) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (293) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (293) wifi: DHCP hostname whistleblower[0m
+[0;32mI (293) wifi: mDNS is not in this ESP-IDF tree and the train controller does not advertise it[0m
+[0;32mI (293) wifi: no saved network[0m
+[0;32mI (363) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (413) wifi:mode : sta (f0:9e:9e:21:db:14) + softAP (f0:9e:9e:21:db:15)[0m
+[0;32mI (413) wifi:enable tsf[0m
+[0;32mI (413) wifi:Total power save buffer number: 16[0m
+[0;32mI (413) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (413) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (413) wifi: setup AP "Whistleblower-DB14" password "whistlesetup" open http://192.168.4.1[0m
+[0;32mI (413) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (423) whistle_http: HTTP server ready[0m
+[0;32mI (423) dfplayer: UART1 ready: TX GPIO43, RX GPIO44, 115200 baud, 8N1[0m
+[0;32mI (423) whistle: UART init accepted[0m
+[0;32mI (423) whistle: Waiting 2000 ms for the DFPlayer to finish starting[0m
+[0;32mI (2423) dfplayer: TX AT\r\n[0m
+[0;33mW (3423) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (3423) whistle: AT attempt 1 of 5 failed: no response before timeout[0m
+[0;32mI (3723) dfplayer: TX AT\r\n[0m
+[0;33mW (4723) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (4723) whistle: AT attempt 2 of 5 failed: no response before timeout[0m
+[0;32mI (5023) dfplayer: TX AT\r\n[0m
+[0;33mW (6023) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (6023) whistle: AT attempt 3 of 5 failed: no response before timeout[0m
+[0;32mI (6323) dfplayer: TX AT\r\n[0m
+[0;33mW (7323) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (7323) whistle: AT attempt 4 of 5 failed: no response before timeout[0m
+[0;32mI (7623) dfplayer: TX AT\r\n[0m
+[0;33mW (8623) dfplayer: RX timeout after 1000 ms[0m
+[0;33mW (8623) whistle: AT attempt 5 of 5 failed: no response before timeout[0m
+[1;31mE (8623) whistle: DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover (GPIO43 to module RX, GPIO44 to module TX).[0m
+[0;32mI (8623) dfplayer: TX AT+AMP=ON\r\n[0m
+[0;33mW (9623) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (9623) whistle: Amplifier failed: no response before timeout. Response: [0m
+[0;32mI (9623) dfplayer: TX AT+VOL=20\r\n[0m
+[0;33mW (10623) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (10623) whistle: Volume 20 failed: no response before timeout. Response: [0m
+[0;32mI (10623) dfplayer: TX AT+PLAYMODE=3\r\n[0m
+[0;33mW (11633) dfplayer: RX timeout after 1000 ms[0m
+[1;31mE (11633) whistle: Single-play mode failed: no response before timeout. Response: [0m
+[0;32mI (11633) whistle: Horn button ready on GPIO1[0m
+[0;32mI (22283) whistle: Button pressed[0m
+[0;32mI (22283) whistle: Playing /Horn3.mp3[0m
+[0;32mI (22283) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (22283) whistle: Button released[0m
+[0;33mW (23783) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (23783) whistle: Play command failed: no response before timeout. Response: [0m
+[0;32mI (32863) whistle: Button pressed[0m
+[0;32mI (32863) whistle: Playing /Horn3.mp3[0m
+[0;32mI (32863) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (32863) whistle: Button released[0m
+[0;33mW (34363) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (34363) whistle: Play command failed: no response before timeout. Response: [0m
+[0;32mI (126873) whistle: Button pressed[0m
+[0;32mI (126873) whistle: Playing /Horn3.mp3[0m
+[0;32mI (126873) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (126873) whistle: Button released[0m
+[0;32mI (127093) whistle: Button released[0m
+[0;33mW (128373) dfplayer: RX timeout after 1500 ms[0m
+[1;31mE (128373) whistle: Play command failed: no response before timeout. Response: [0m
+[0;32mI (136333) whistle: Provisioning requested[0m
+[0;32mI (136333) wifi:Total power save buffer number: 16[0m
+[0;32mI (136333) wifi: setup AP "Whistleblower-DB14" password "whistlesetup" open http://192.168.4.1[0m
+[0;32mI (136333) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (137593) whistle: Button released[0m
+[0;32mI (172863) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<0,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (172863) wifi:station: da:47:6d:dc:ea:91 join, AID=1, bgn, 20[0m
+[0;32mI (172973) wifi: phone joined setup AP[0m
+[0;32mI (173053) wifi:<ba-add>idx:2 (ifx:1, da:47:6d:dc:ea:91), tid:0, ssn:0, winSize:64[0m
+[0;32mI (173163) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (174413) whistle_http: setup page /[0m
+[0;32mI (192993) whistle_http: setup page /[0m
+[0;33mW (193123) httpd_uri: httpd_uri: URI '/favicon.ico' not found[0m
+[0;32mI (193133) whistle_http: setup page /[0m
+[0;33mW (326683) httpd_txrx: httpd_sock_err: error in recv : 104[0m
+[0;32mI (403553) wifi:station: da:47:6d:dc:ea:91 leave, AID = 1, reason = 3, bss_flags is 691299, bss:0x3fcb5b88[0m
+[0;32mI (403553) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (403553) wifi:new:<1,1>, old:<1,0>, ap:<1,1>, sta:<0,0>, prof:1, snd_ch_cfg:0x0[0m

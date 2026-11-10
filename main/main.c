@@ -35,7 +35,11 @@
 #include "speed_led.h"
 #include "train_control.h"
 #include "train_http.h"
+#if !CONFIG_IDF_TARGET_LINUX
+#include "whistle_discovery.h"
+#endif
 #include "manual_control.h"
+#include "horn_button.h"
 #include "wifi.h"
 #include "wifi_button.h"
 #endif  // !CONFIG_IDF_TARGET_LINUX
@@ -481,6 +485,8 @@ void app_main(void)
      * even before a station IP exists.
      */
     ESP_ERROR_CHECK(wifi_init());
+    whistle_discovery_start();
+    horn_button_init();
     wifi_button_init();
     train_pwm_init();
     speed_led_init();

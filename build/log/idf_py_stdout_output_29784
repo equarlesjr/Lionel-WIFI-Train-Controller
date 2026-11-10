@@ -1,0 +1,2015 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\Lionel-WIFI-Train-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM4'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b11e
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v0.2[0m
+[0;32mI (34) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (48) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (57) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (79) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (94) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (143) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (270) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (327) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (335) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (342) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (348) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (358) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (363) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (368) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (380) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (386) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (392) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (398) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (426) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (451) main_task: Started on CPU0[0m
+[0;32mI (461) main_task: Calling app_main()[0m
+[0;32mI (461) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (461) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (481) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (481) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (481) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (491) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- 05 -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- 1a -- -- -- -- --
+20: -- -- -- 23 -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+33mW (413) spi_flash: Detected size(8192k) larger than the size 00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- 14 -- -- -- -- -- -- 1b -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+[0;32mI (124751) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (124751) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;31mE (125761) BMP280: Failed to configure BMP280: ESP_ERR_TIMEOUT[0m
+_ERROR_CHECK failed: esp_err_t 0x107 (ESP_ERR_TIMEOUT) at 0x4200c6ec
+file: "./main/app_main.c" line 623
+func: app_main
+expression: bmp280_configure()
+
+abort() was called at PC 0x4037d793 on core 0
+
+
+Backtrace: 0x40375c3a:0x3fca7400 0x4037d79d:0x3fca7420 0x40385b2d:0x3fca7440 0x4037d793:0x3fca74b0 0x4200c6ec:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (480) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- 64 -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (98820) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (98830) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (98840) BMP280: BMP280 configured successfully.[0m
+[0;32mI (98850) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (98850) example_connect: Start example_connect.[0m
+[0;32mI (98860) pp: pp rom version: e7ae62f[0m
+[0;32mI (98860) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (98880) wifi:wifi driver task: 3fcad924, prio:23, stack:6656, core=0[0m
+[0;32mI (98880) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (98880) wifi:wifi certification version: v7.0[0m
+[0;32mI (98880) wifi:config NVS flash: enabled[0m
+[0;32mI (98880) wifi:config nano formating: disabled[0m
+[0;32mI (98890) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (98890) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (98900) wifi:Init management short buffer num: 32[0m
+[0;32mI (98900) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (98910) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (98910) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (98910) wifi:Init static rx buffer num: 10[0m
+[0;32mI (98920) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (98920) wifi_init: rx ba win: 6[0m
+[0;32mI (98930) wifi_init: accept mbox: 6[0m
+[0;32mI (98930) wifi_init: tcpip mbox: 32[0m
+[0;32mI (98930) wifi_init: udp mbox: 6[0m
+[0;32mI (98940) wifi_init: tcp mbox: 6[0m
+[0;32mI (98940) wifi_init: tcp tx win: 5760[0m
+[0;32mI (98950) wifi_init: tcp rx win: 5760[0m
+[0;32mI (98950) wifi_init: tcp mss: 1440[0m
+[0;32mI (98950) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (98960) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (98970) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (99020) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (99020) wifi:enable tsf[0m
+[0;32mI (99020) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (99020) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (99030) example_connect: Waiting for IP(s)[0m
+[0;32mI (101910) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (101910) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (101920) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (101950) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (102030) wifi:connected with harmonicminor, aid = 14, channel 11, BW20, bssid = 7e:45:58:2a:d0:79[0m
+[0;32mI (102030) wifi:security: WPA2-PSK, phy: bgn, rssi: -47[0m
+[0;32mI (102040) wifi:pm start, type: 1[0m
+
+[0;32mI (102040) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (102050) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (102060) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (103230) wifi:<ba-add>idx:0 (ifx:0, 7e:45:58:2a:d0:79), tid:0, ssn:1, winSize:64[0m
+[0;32mI (103470) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:f29e:9eff:fe21:db10, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (104060) esp_netif_handlers: example_netif_sta ip: 192.168.7.243, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (104060) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 192.168.7.243[0m
+[0;32mI (104070) example_common: Connected to example_netif_sta[0m
+[0;32mI (104070) example_common: - IPv4 address: 192.168.7.243,[0m
+[0;32mI (104080) example_common: - IPv6 address: fe80:0000:0000:0000:f29e:9eff:fe21:db10, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (104090) MQTT_SENSORS: Initializing SNTP...[0m
+[0;32mI (104090) MQTT_SENSORS: Waiting for NTP sync... (1/10)[0m
+[0;32mI (104630) wifi:<ba-add>idx:1 (ifx:0, 7e:45:58:2a:d0:79), tid:1, ssn:0, winSize:64[0m
+[0;32mI (104800) MQTT_SENSORS: Time synchronized: 1791382963[0m
+[0;32mI (106100) MQTT_SENSORS: Time synchronized: Wed Oct  7 14:22:44 2026
+[0m
+[0;31mE (107100) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (107100) BMP280: Failed to read BMP280.[0m
+[0;31mE (108100) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (108100) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (108100) MQTT_SENSORS: Starting MQTT Client![0m
+[0;32mI (108100) MQTT_SENSORS: ℹ️ Other MQTT event: 7[0m
+[0;32mI (108110) MQTT_SENSORS: Getting Shadow State![0m
+[0;31mE (109150) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (109150) SHT31: Failed to read SHT31-D.[0m
+[0;31mE (109150) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (109150) BMP280: Failed to read BMP280.[0m
+[0;32mI (109540) MQTT_SENSORS: ✅ MQTT Connected![0m
+[0;32mI (109540) MQTT_SENSORS: 📌 Subscribed to LED Control Topic: device/F09E9E21DB10/led_control[0m
+[0;32mI (109540) MQTT_SENSORS: 📌 Subscribed to device/F09E9E21DB10/sensor-request[0m
+[0;32mI (109550) MQTT_SENSORS: 📌 Subscribed to device/F09E9E21DB10/commands[0m
+[0;32mI (109560) MQTT_SENSORS: 📌 Subscribed to AWS IoT Shadow Delta Updates: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta[0m
+[0;32mI (109570) MQTT_SENSORS: 📌 Subscribed to Shadow Get Accepted: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/get/accepted[0m
+[0;32mI (109580) MQTT_SENSORS: 📌 Subscribed to Shadow Update Accepted: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted[0m
+[0;32mI (109600) MQTT_SENSORS: 📌 Subscribed to Shadow Update Rejected: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/rejected[0m
+[0;32mI (109610) MQTT_SENSORS: 📢 Requested Shadow State: $aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/get, Return Code: 8382[0m
+[0;32mI (109620) MQTT_SENSORS: 📢 Requested Shadow State: $aws/things/F09E9E21DB10/shadow/get, Return Code: 19649[0m
+[0;32mI (109630) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (109640) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791382968}[0m
+[0;32mI (109650) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (109660) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (109660) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (109670) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (109660) main_task: Returned from app_main()[0m
+[0;32mI (109690) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=64126)[0m
+[0;32mI (109690) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (109710) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (109710) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (109720) MQTT: 📢 Message Published! msg_id=8382[0m
+[0;32mI (109730) MQTT: 📢 Message Published! msg_id=19649[0m
+[0;32mI (109730) MQTT: 📢 Message Published! msg_id=63610[0m
+[0;32mI (109740) MQTT_SENSORS: ℹ️ Other MQTT event: 3[0m
+[0;32mI (109770) MQTT: 📢 Message Published! msg_id=64126[0m
+[0;32mI (109950) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/get/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"off"},"delta":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791382723},"led_2":{"timestamp":1791382723}}},"version":727,"timestamp":1791382968}'[0m
+[0;32mI (109970) MQTT_SENSORS: 🚀 Shadow GET Response Received![0m
+[0;32mI (109970) MQTT_SENSORS: 🔍 Raw Shadow Data: {"state":{"desired":{"led_1":"on","led_2":"off"},"delta":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791382723},"led_2":{"timestamp":1791382723}}},"version":727,"timestamp":1791382968}[0m
+[0;32mI (110000) MQTT_SENSORS: 🔎 Parsed Desired LED State: LED1=1, LED2=0[0m
+[0;32mI (110010) MQTT_SENSORS: 💡 Restored LED1 to ON[0m
+[0;32mI (110010) MQTT_SENSORS: 💡 Restored LED2 to OFF[0m
+[0;32mI (110020) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (110020) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (110040) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=62192)[0m
+[0;32mI (110110) MQTT: 📢 Message Published! msg_id=62192[0m
+[0;32mI (126310) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (186510) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (246660) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (276780) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (306830) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (367010) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (381550) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "off"}'[0m
+[0;32mI (381550) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "off"}[0m
+[0;31mE (382560) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (382560) BMP280: Failed to read BMP280.[0m
+[0;31mE (383560) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (383560) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (383560) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791383242}[0m
+[0;32mI (383570) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF[0m
+[0;32mI (383580) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (383590) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (383600) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=52142)[0m
+[0;32mI (383610) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":728,"timestamp":1791383240,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383240},"led_2":{"timestamp":1791383240}}}'[0m
+[0;32mI (383640) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (383640) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (383650) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":728,"timestamp":1791383240,"state":{"led_1":"off","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383240},"led_2":{"timestamp":1791383240}}}[0m
+[0;32mI (383670) MQTT_SENSORS: 💡 LED1: OFF, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (383670) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (383680) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (383700) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=8735)[0m
+[0;32mI (383710) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791383240},"led_2":{"timestamp":1791383240}}},"version":728,"timestamp":1791383240}'[0m
+[0;32mI (383730) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (383750) MQTT: 📢 Message Published! msg_id=41189[0m
+[0;32mI (383750) MQTT: 📢 Message Published! msg_id=52142[0m
+[0;32mI (383750) MQTT: 📢 Message Published! msg_id=8735[0m
+[0;32mI (391360) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "off"}'[0m
+[0;32mI (391360) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "off"}[0m
+[0;31mE (392370) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (392370) BMP280: Failed to read BMP280.[0m
+[0;31mE (393370) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (393370) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (393370) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791383251}[0m
+[0;32mI (393380) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF[0m
+[0;32mI (393390) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (393400) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (393410) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=9778)[0m
+[0;32mI (393420) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791383249},"led_2":{"timestamp":1791383249}}},"version":729,"timestamp":1791383249}'[0m
+[0;32mI (393450) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (393460) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":729,"timestamp":1791383249,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383249},"led_2":{"timestamp":1791383249}}}'[0m
+[0;32mI (393480) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (393490) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (393490) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":729,"timestamp":1791383249,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383249},"led_2":{"timestamp":1791383249}}}[0m
+[0;32mI (393510) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (393520) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (393530) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (393540) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=63760)[0m
+[0;32mI (393550) MQTT: 📢 Message Published! msg_id=46741[0m
+[0;32mI (393560) MQTT: 📢 Message Published! msg_id=9778[0m
+[0;32mI (393580) MQTT: 📢 Message Published! msg_id=63760[0m
+[0;32mI (397710) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (397710) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;31mE (398720) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (398720) BMP280: Failed to read BMP280.[0m
+[0;31mE (399720) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (399720) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (399720) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791383258}[0m
+[0;32mI (399730) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (399740) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (399750) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (399760) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=2451)[0m
+[0;32mI (399770) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":730,"timestamp":1791383256,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791383256},"led_2":{"timestamp":1791383256}}}'[0m
+[0;32mI (399790) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (399800) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (399810) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":730,"timestamp":1791383256,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791383256},"led_2":{"timestamp":1791383256}}}[0m
+[0;32mI (399830) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (399830) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (399840) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (399860) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=17873)[0m
+[0;32mI (399870) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791383256},"led_2":{"timestamp":1791383256}}},"version":730,"timestamp":1791383256}'[0m
+[0;32mI (399890) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (399900) MQTT: 📢 Message Published! msg_id=62388[0m
+[0;32mI (399910) MQTT: 📢 Message Published! msg_id=2451[0m
+[0;32mI (399920) MQTT: 📢 Message Published! msg_id=17873[0m
+[0;32mI (404260) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "off"}'[0m
+[0;32mI (404260) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "off"}[0m
+[0;31mE (405270) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (405270) BMP280: Failed to read BMP280.[0m
+[0;31mE (406270) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (406270) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (406270) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791383264}[0m
+[0;32mI (406280) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF[0m
+[0;32mI (406290) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (406300) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (406310) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=36207)[0m
+[0;32mI (406320) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":731,"timestamp":1791383262,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383262},"led_2":{"timestamp":1791383262}}}'[0m
+[0;32mI (406340) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (406350) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (406360) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":731,"timestamp":1791383262,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383262},"led_2":{"timestamp":1791383262}}}[0m
+[0;32mI (406380) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (406380) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (406390) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (406410) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=5135)[0m
+[0;32mI (406420) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791383262},"led_2":{"timestamp":1791383262}}},"version":731,"timestamp":1791383262}'[0m
+[0;32mI (406440) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (406450) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (406460) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;31mE (407470) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (407470) BMP280: Failed to read BMP280.[0m
+[0;31mE (408470) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (408470) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (408470) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791383267}[0m
+[0;32mI (408480) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (408490) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (408500) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (408510) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=13579)[0m
+[0;32mI (408520) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791383263},"led_2":{"timestamp":1791383263}}},"version":732,"timestamp":1791383263}'[0m
+[0;32mI (408550) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (408560) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":732,"timestamp":1791383263,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791383263},"led_2":{"timestamp":1791383263}}}'[0m
+[0;32mI (408580) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (408590) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (408590) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":732,"timestamp":1791383263,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791383263},"led_2":{"timestamp":1791383263}}}[0m
+[0;32mI (408610) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (408620) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (408630) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (408640) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=10505)[0m
+[0;32mI (408650) MQTT: 📢 Message Published! msg_id=14004[0m
+[0;32mI (408660) MQTT: 📢 Message Published! msg_id=36207[0m
+[0;32mI (408660) MQTT: 📢 Message Published! msg_id=5135[0m
+[0;32mI (408670) MQTT: 📢 Message Published! msg_id=33925[0m
+[0;32mI (408670) MQTT: 📢 Message Published! msg_id=13579[0m
+[0;32mI (408760) MQTT: 📢 Message Published! msg_id=10505[0m
+[0;32mI (412550) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":733,"timestamp":1791383271,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383271},"led_2":{"timestamp":1791383271}}}'[0m
+[0;32mI (412570) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (412570) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (412580) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":733,"timestamp":1791383271,"state":{"led_1":"on","led_2":"off"},"metadata":{"led_1":{"timestamp":1791383271},"led_2":{"timestamp":1791383271}}}[0m
+[0;32mI (412600) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF (Recovered from Shadow Delta)[0m
+[0;32mI (412610) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (412610) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (412630) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=43781)[0m
+[0;32mI (412640) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "off"}'[0m
+[0;32mI (412650) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "off"}[0m
+[0;31mE (413660) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (413660) BMP280: Failed to read BMP280.[0m
+[0;31mE (414660) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (414660) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (414660) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791383273}[0m
+[0;32mI (414670) MQTT_SENSORS: 💡 LED1: ON, LED2: OFF[0m
+[0;32mI (414680) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (414690) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"off","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (414700) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=56757)[0m
+[0;32mI (414710) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"off"}},"metadata":{"desired":{"led_1":{"timestamp":1791383271},"led_2":{"timestamp":1791383271}}},"version":733,"timestamp":1791383271}'[0m
+[0;32mI (414740) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (414750) MQTT: 📢 Message Published! msg_id=43781[0m
+[0;32mI (414770) MQTT: 📢 Message Published! msg_id=48869[0m
+[0;32mI (414790) MQTT: 📢 Message Published! msg_id=56757[0m
+[0;32mI (427090) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (487260) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (547420) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (577500) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (607590) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (667770) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (727950) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (788130) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (848280) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (878370) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (908480) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (968530) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1028740) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1088870) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1149070) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1179060) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1209220) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1238490) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (1238490) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;31mE (1239500) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (1239500) BMP280: Failed to read BMP280.[0m
+[0;31mE (1240500) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (1240500) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (1240500) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791384099}[0m
+[0;32mI (1240510) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (1240520) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1240530) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1240540) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=25531)[0m
+[0;32mI (1240550) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791384096},"led_2":{"timestamp":1791384096}}},"version":734,"timestamp":1791384096}'[0m
+[0;32mI (1240580) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (1240590) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":734,"timestamp":1791384096,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384096},"led_2":{"timestamp":1791384096}}}'[0m
+[0;32mI (1240610) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (1240620) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (1240620) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":734,"timestamp":1791384096,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384096},"led_2":{"timestamp":1791384096}}}[0m
+[0;32mI (1240640) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (1240650) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1240660) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1240680) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=30350)[0m
+[0;32mI (1240680) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "on"}'[0m
+[0;32mI (1240690) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "on"}[0m
+[0;31mE (1241700) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (1241700) BMP280: Failed to read BMP280.[0m
+[0;31mE (1242700) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (1242700) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (1242700) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791384101}[0m
+[0;32mI (1242710) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON[0m
+[0;32mI (1242720) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1242730) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1242740) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=19506)[0m
+[0;32mI (1242760) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":735,"timestamp":1791384097,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384097},"led_2":{"timestamp":1791384097}}}'[0m
+[0;32mI (1242780) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (1242780) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (1242790) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":735,"timestamp":1791384097,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384097},"led_2":{"timestamp":1791384097}}}[0m
+[0;32mI (1242810) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (1242820) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1242820) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1242840) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=35770)[0m
+[0;32mI (1242850) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791384097},"led_2":{"timestamp":1791384097}}},"version":735,"timestamp":1791384097}'[0m
+[0;32mI (1242870) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (1242890) MQTT: 📢 Message Published! msg_id=25257[0m
+[0;32mI (1242890) MQTT: 📢 Message Published! msg_id=25531[0m
+[0;32mI (1242890) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (1242900) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;31mE (1243910) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (1243910) BMP280: Failed to read BMP280.[0m
+[0;31mE (1244910) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (1244910) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (1244910) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791384103}[0m
+[0;32mI (1244920) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (1244930) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1244940) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1244950) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=28120)[0m
+[0;32mI (1244970) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":736,"timestamp":1791384099,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384099},"led_2":{"timestamp":1791384099}}}'[0m
+[0;32mI (1244990) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (1244990) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (1245000) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":736,"timestamp":1791384099,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384099},"led_2":{"timestamp":1791384099}}}[0m
+[0;32mI (1245020) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (1245030) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1245030) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1245050) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=34525)[0m
+[0;32mI (1245060) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791384099},"led_2":{"timestamp":1791384099}}},"version":736,"timestamp":1791384099}'[0m
+[0;32mI (1245080) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (1245090) MQTT: 📢 Message Published! msg_id=30350[0m
+[0;32mI (1245100) MQTT: 📢 Message Published! msg_id=64470[0m
+[0;32mI (1245100) MQTT: 📢 Message Published! msg_id=19506[0m
+[0;32mI (1245110) MQTT: 📢 Message Published! msg_id=35770[0m
+[0;32mI (1245120) MQTT: 📢 Message Published! msg_id=12526[0m
+[0;32mI (1245150) MQTT: 📢 Message Published! msg_id=28120[0m
+[0;32mI (1245180) MQTT: 📢 Message Published! msg_id=34525[0m
+[0;32mI (1253330) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "off", "led_2": "on"}'[0m
+[0;32mI (1253330) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "off", "led_2": "on"}[0m
+[0;31mE (1254340) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (1254340) BMP280: Failed to read BMP280.[0m
+[0;31mE (1255340) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (1255340) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (1255340) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791384113}[0m
+[0;32mI (1255350) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON[0m
+[0;32mI (1255360) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1255370) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1255380) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=5575)[0m
+[0;32mI (1255390) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":737,"timestamp":1791384111,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384111},"led_2":{"timestamp":1791384111}}}'[0m
+[0;32mI (1255420) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (1255420) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (1255430) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":737,"timestamp":1791384111,"state":{"led_1":"off","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384111},"led_2":{"timestamp":1791384111}}}[0m
+[0;32mI (1255450) MQTT_SENSORS: 💡 LED1: OFF, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (1255460) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1255460) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"off","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1255480) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=37811)[0m
+[0;32mI (1255490) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"off","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791384111},"led_2":{"timestamp":1791384111}}},"version":737,"timestamp":1791384111}'[0m
+[0;32mI (1255510) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (1255530) MQTT_SENSORS: 🔍 Received MQTT Data: topic='device/F09E9E21DB10/led_control' | payload='{"led_1": "on", "led_2": "on"}'[0m
+[0;32mI (1255530) MQTT_SENSORS: 🔍 Processing Direct LED Control: {"led_1": "on", "led_2": "on"}[0m
+[0;31mE (1256540) BMP280: Failed to read BMP280 data: ESP_ERR_TIMEOUT[0m
+[0;31mE (1256540) BMP280: Failed to read BMP280.[0m
+[0;31mE (1257540) SHT31: Failed to send SHT31 measurement command: ESP_ERR_TIMEOUT[0m
+[0;31mE (1257540) SHT31: Failed to read SHT31-D.[0m
+[0;32mI (1257540) MQTT_SENSORS: Published Sensor Data to device/F09E9E21DB10/sensors: {"device_id":"F09E9E21DB10","temperature":"","humidity":"","pressure":"","received_at":1791384116}[0m
+[0;32mI (1257550) MQTT_SENSORS: 💡 LED1: ON, LED2: ON[0m
+[0;32mI (1257560) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1257570) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1257580) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=18972)[0m
+[0;32mI (1257600) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/delta' | payload='{"version":738,"timestamp":1791384113,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384113},"led_2":{"timestamp":1791384113}}}'[0m
+[0;32mI (1257620) MQTT_SENSORS: 🔍 Received Shadow Delta Update![0m
+[0;32mI (1257620) MQTT_SENSORS: 🛠️ Debugging Shadow Delta...[0m
+[0;32mI (1257630) MQTT_SENSORS: 🔍 Raw Delta Payload: {"version":738,"timestamp":1791384113,"state":{"led_1":"on","led_2":"on"},"metadata":{"led_1":{"timestamp":1791384113},"led_2":{"timestamp":1791384113}}}[0m
+[0;32mI (1257650) MQTT_SENSORS: 💡 LED1: ON, LED2: ON (Recovered from Shadow Delta)[0m
+[0;32mI (1257660) MQTT_SENSORS: 🌡️ Adding Sensor Data: Temp=, Humidity=, Pressure=[0m
+[0;32mI (1257660) MQTT_SENSORS: 📢 Publishing Shadow Update: {"state":{"reported":{"led_1":"on","led_2":"on","sensors":{"temperature":"","humidity":"","pressure":""}}}}[0m
+[0;32mI (1257680) MQTT_SENSORS: ✅ Shadow Update Sent (msg_id=55317)[0m
+[0;32mI (1257690) MQTT_SENSORS: 🔍 Received MQTT Data: topic='$aws/things/QiQi-AWS-IOT-01/shadow/name/F09E9E21DB10/update/accepted' | payload='{"state":{"desired":{"led_1":"on","led_2":"on"}},"metadata":{"desired":{"led_1":{"timestamp":1791384113},"led_2":{"timestamp":1791384113}}},"version":738,"timestamp":1791384113}'[0m
+[0;32mI (1257710) MQTT_SENSORS: ✅ Shadow update was ACCEPTED![0m
+[0;32mI (1257720) MQTT: 📢 Message Published! msg_id=35304[0m
+[0;32mI (1257730) MQTT: 📢 Message Published! msg_id=5575[0m
+[0;32mI (1257730) MQTT: 📢 Message Published! msg_id=37811[0m
+[0;32mI (1257740) MQTT: 📢 Message Published! msg_id=33017[0m
+[0;32mI (1257750) MQTT: 📢 Message Published! msg_id=18972[0m
+[0;32mI (1257760) MQTT: 📢 Message Published! msg_id=55317[0m
+[0;32mI (1269400) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+ header(2048k). Using the size in the binary image header.[0m
+[0;32mI (3611) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3621) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3641) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4641) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (4651) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4651) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4651) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5661) wifi:state: auth -> init (0x200)[0m
+[0;32mI (5661) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5661) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (8081) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10491) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10491) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (10501) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (11501) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (11501) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (11501) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (13921) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (16331) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16331) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (16341) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (17341) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (17341) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17341) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17351) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (17411) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (18411) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (18421) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (18421) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (20831) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (23241) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (23251) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (23251) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (24251) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (24251) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (24261) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad924, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;33mW (720) phy_init: saving new calibration data because of checksum failure, mode(0)[0m
+[0;32mI (730) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (740) wifi:enable tsf[0m
+[0;32mI (740) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (740) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (750) example_connect: Waiting for IP(s)[0m
+[0;32mI (3630) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3630) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3640) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4640) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (4640) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4640) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (7060) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (9470) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (9470) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (9500) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (10500) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (10500) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10500) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (12920) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (15330) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (15330) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (15340) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (16340) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (16340) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16340) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (18760) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (18760) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (19760) wifi:state: auth -> init (0x200)[0m
+[0;32mI (19760) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19760) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (22180) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (720) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m
+[0;32mI (3610) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3620) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4620) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (4620) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4620) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4630) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5630) wifi:state: auth -> init (0x200)[0m
+[0;32mI (5640) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5640) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (8050) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10460) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10470) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (10480) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (11480) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (11480) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (11480) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (11490) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (12490) wifi:state: auth -> init (0x200)[0m
+[0;32mI (12490) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12490) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (14910) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (17320) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17320) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (17380) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (18380) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (18380) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (18380) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (18390) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (19390) wifi:state: auth -> init (0x200)[0m
+[0;32mI (19390) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19390) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (21810) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (24220) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (24220) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (24230) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (25240) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (25240) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (25240) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (25240) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (26250) wifi:state: auth -> init (0x200)[0m
+[0;32mI (26250) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (26250) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+I (720) wifi:mode : sta (f0:9e:9e:21:db:10)
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m
+[0;32mI (3610) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3620) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3680) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (6730) wifi:state: run -> init (0xf00)[0m
+[0;32mI (6730) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6730) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6740) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (7740) wifi:state: auth -> init (0x200)[0m
+[0;32mI (7740) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7740) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10160) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (12570) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12570) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (12580) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (13580) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (13580) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13580) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13590) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (13640) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (14650) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (14650) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (14650) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (17060) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (19470) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19480) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (19490) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (19550) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (22600) wifi:state: run -> init (0xf00)[0m
+[0;32mI (22600) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22600) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (22650) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (23650) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (23650) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (23650) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (26070) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (28480) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (28480) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (28490) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (29490) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (29490) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (29490) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (720) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m
+[0;32mI (3610) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3620) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3640) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (6690) wifi:state: run -> init (0xf00)[0m
+[0;32mI (6690) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6690) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6700) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (6780) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (7780) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (7780) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7780) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10200) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (12610) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (12620) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (13620) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (13620) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13620) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (16040) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (18450) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (18450) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (18470) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (18500) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (21530) wifi:state: run -> init (0xf00)[0m
+[0;32mI (21530) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (21530) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (21540) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (22540) wifi:state: auth -> init (0x200)[0m
+[0;32mI (22540) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22540) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (24960) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (27370) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (27370) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (27380) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (27420) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (30470) wifi:state: run -> init (0xf00)[0m
+[0;32mI (30470) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (30470) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (30480) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (31480) wifi:state: auth -> init (0x200)[0m
+[0;32mI (31480) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (31480) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (720) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m
+[0;32mI (3610) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3630) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4630) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (4630) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4630) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4640) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5640) wifi:state: auth -> init (0x200)[0m
+[0;32mI (5640) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5640) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (8060) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10470) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10470) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (10480) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (10520) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (13560) wifi:state: run -> init (0xf00)[0m
+[0;32mI (13560) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13560) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (15980) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (18390) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (18390) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (18400) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (19400) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (19400) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19400) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19410) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (20410) wifi:state: auth -> init (0x200)[0m
+[0;32mI (20410) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (20420) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (22830) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (25240) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (25240) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (25250) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (26250) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (26250) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (26260) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (26260) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (26290) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (27290) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (27290) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (27300) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (720) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m
+[0;32mI (3610) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3640) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4640) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (4640) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4640) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4650) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (5650) wifi:state: auth -> init (0x200)[0m
+[0;32mI (5650) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (5650) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (8070) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10480) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10480) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (10500) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (10550) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (13600) wifi:state: run -> init (0xf00)[0m
+[0;32mI (13600) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13600) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (14610) wifi:state: auth -> init (0x200)[0m
+[0;32mI (14610) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (14610) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (17030) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (19440) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (19440) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (19450) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (20450) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (20450) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (20450) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (20460) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (21460) wifi:state: auth -> init (0x200)[0m
+[0;32mI (21460) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (21470) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (23880) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (26290) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (26290) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (26320) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (26370) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (29550) wifi:state: run -> init (0xf00)[0m
+[0;32mI (29550) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (29550) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (29560) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (30560) wifi:state: auth -> init (0x200)[0m
+[0;32mI (30560) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (30560) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (720) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m
+[0;32mI (3610) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3630) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4630) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (4630) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4630) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (7050) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7050) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (8050) wifi:state: auth -> init (0x200)[0m
+[0;32mI (8050) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (8050) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10470) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (12880) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12880) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (12890) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (13890) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (13890) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (13890) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (16310) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16310) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (17310) wifi:state: auth -> init (0x200)[0m
+[0;32mI (17310) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17310) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (19730) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (22140) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22140) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (22150) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (23150) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (23150) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (23160) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (23160) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (24170) wifi:state: auth -> init (0x200)[0m
+[0;32mI (24170) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (24170) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (710) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m
+[0;32mI (3610) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (3610) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3610) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3670) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (6700) wifi:state: run -> init (0xf00)[0m
+[0;32mI (6700) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6700) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6710) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (7710) wifi:state: auth -> init (0x200)[0m
+[0;32mI (7720) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7720) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (10130) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (12540) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (12550) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (12560) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (12620) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (15670) wifi:state: run -> init (0xf00)[0m
+[0;32mI (15670) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (15670) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (15680) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (16680) wifi:state: auth -> init (0x200)[0m
+[0;32mI (16680) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16680) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (19100) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (21510) wifi:new:<11,0>, old:<6,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (21510) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (21520) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (22520) wifi:state: assoc -> init (0x2700)[0m
+[0;32mI (22520) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (22520) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (24940) wifi:new:<6,0>, old:<11,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (24940) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (25940) wifi:state: auth -> init (0x200)[0m
+[0;32mI (25940) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (25940) example_connect: Wi-Fi disconnected, trying to reconnect...[0m
+[0;32mI (28360) example_connect: WiFi Connect failed 7 times, stop reconnect.[0m
+
+assert failed: spinlock_acquire spinlock.h:140 (lock->count == 0)
+
+
+Backtrace: 0x40375c3a:0x3fca7130 0x4037d79d:0x3fca7150 0x40385c69:0x3fca7170 0x4037e572:0x3fca7290 0x4037e118:0x3fca72c0 0x4200da21:0x3fca7300 0x4200dc3f:0x3fca7320 0x4200d49f:0x3fca74c0 0x4200c706:0x3fca74e0 0x420aa2f3:0x3fca7510 0x4037e2e9:0x3fca7540
+
+
+
+
+ELF file SHA256: 7e119a3e6
+
+Rebooting...
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0xc (RTC_SW_CPU_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40375b74
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2810,len:0x178c
+load:0x403c8700,len:0x4
+load:0x403c8704,len:0xcb8
+load:0x403cb700,len:0x2db0
+entry 0x403c8914
+[0;32mI (26) boot: ESP-IDF v5.3.1 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Feb 14 2025 14:00:46[0m
+[0;32mI (26) boot: Multicore bootloader[0m
+[0;32mI (29) boot: chip revision: v0.2[0m
+[0;32mI (33) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (38) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (43) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (47) boot: Enabling RNG early entropy source...[0m
+[0;32mI (53) boot: Partition Table:[0m
+[0;32mI (56) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (64) boot:  0 esp_secure_cert  unknown          3f 06 0000d000 00002000[0m
+[0;32mI (71) boot:  1 nvs              WiFi data        01 02 0000f000 00009000[0m
+[0;32mI (78) boot:  2 phy_init         RF data          01 01 00018000 00001000[0m
+[0;32mI (86) boot:  3 factory          factory app      00 00 00020000 00100000[0m
+[0;32mI (93) boot: End of partition table[0m
+[0;32mI (98) esp_image: segment 0: paddr=00020020 vaddr=3c0b0020 size=2b634h (177716) map[0m
+[0;32mI (138) esp_image: segment 1: paddr=0004b65c vaddr=3fc9aa00 size=049bch ( 18876) load[0m
+[0;32mI (142) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=ab288h (701064) map[0m
+[0;32mI (269) esp_image: segment 3: paddr=000fb2b0 vaddr=3fc9f3bc size=0010ch (   268) load[0m
+[0;32mI (270) esp_image: segment 4: paddr=000fb3c4 vaddr=40374000 size=1693ch ( 92476) load[0m
+[0;32mI (305) boot: Loaded app from partition at offset 0x20000[0m
+[0;32mI (305) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) cpu_start: Multicore app[0m
+[0;32mI (326) cpu_start: Pro cpu start user code[0m
+[0;32mI (326) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (326) app_init: Application information:[0m
+[0;32mI (329) app_init: Project name:     tls_mutual_auth[0m
+[0;32mI (334) app_init: App version:      202406.01-LTS-release-2-gcd1bd3[0m
+[0;32mI (341) app_init: Compile time:     Mar  5 2025 18:45:20[0m
+[0;32mI (347) app_init: ELF file SHA256:  7e119a3e6...[0m
+[0;32mI (353) app_init: ESP-IDF:          v5.3.1[0m
+[0;32mI (357) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (362) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (367) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (372) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (379) heap_init: At 3FCA37B0 len 00045F60 (279 KiB): RAM[0m
+[0;32mI (385) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (391) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (397) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM[0m
+[0;32mI (405) spi_flash: detected chip: gd[0m
+[0;32mI (408) spi_flash: flash io: dio[0m
+[0;33mW (412) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (425) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (436) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (443) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (450) main_task: Started on CPU0[0m
+[0;32mI (460) main_task: Calling app_main()[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Startup..[0m
+[0;32mI (460) MQTT_SENSORS: [APP] Free memory: 327160 bytes[0m
+[0;32mI (470) MQTT_SENSORS: Globally Unique Device ID: F09E9E21DB10
+[0m
+[0;32mI (480) I2C_BMP280_SHT31: Initializing I2C master...[0m
+[0;32mI (480) I2C_BMP280_SHT31: I2C master initialized successfully.[0m
+[0;32mI (490) I2C_BMP280_SHT31: Scanning I2C bus for devices...[0m
+     0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+00: -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+40: -- -- -- -- 44 -- -- -- -- -- -- -- -- -- -- --
+50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
+70: -- -- -- -- -- -- 76 -- -- -- -- -- -- -- --
+[0;32mI (530) gpio: GPIO[1]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (540) gpio: GPIO[8]| InputEn: 0| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (550) BMP280: BMP280 configured successfully.[0m
+[0;32mI (560) BMP280: BMP280 calibration data loaded.[0m
+[0;32mI (560) example_connect: Start example_connect.[0m
+[0;32mI (570) pp: pp rom version: e7ae62f[0m
+[0;32mI (570) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (590) wifi:wifi driver task: 3fcad8a0, prio:23, stack:6656, core=0[0m
+[0;32mI (590) wifi:wifi firmware version: ccaebfa[0m
+[0;32mI (590) wifi:wifi certification version: v7.0[0m
+[0;32mI (590) wifi:config NVS flash: enabled[0m
+[0;32mI (590) wifi:config nano formating: disabled[0m
+[0;32mI (600) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (600) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (610) wifi:Init management short buffer num: 32[0m
+[0;32mI (610) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (620) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (620) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (620) wifi:Init static rx buffer num: 10[0m
+[0;32mI (630) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (630) wifi_init: rx ba win: 6[0m
+[0;32mI (640) wifi_init: accept mbox: 6[0m
+[0;32mI (640) wifi_init: tcpip mbox: 32[0m
+[0;32mI (640) wifi_init: udp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp mbox: 6[0m
+[0;32mI (650) wifi_init: tcp tx win: 5760[0m
+[0;32mI (660) wifi_init: tcp rx win: 5760[0m
+[0;32mI (660) wifi_init: tcp mss: 1440[0m
+[0;32mI (660) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (670) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (670) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10[0m
+[0;32mI (720) wifi:mode : sta (f0:9e:9e:21:db:10)[0m
+[0;32mI (720) wifi:enable tsf[0m
+[0;32mI (720) example_connect: Connecting to harmonicminor...[0m
+[0;33mW (720) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (730) example_connect: Waiting for IP(s)[0m

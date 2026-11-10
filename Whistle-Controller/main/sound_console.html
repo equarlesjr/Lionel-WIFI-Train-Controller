@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whistleblower</title>
+  <style>
+    :root {
+      --bg: #14120e;
+      --bg-2: #1e1a15;
+      --card: #262119;
+      --ink: #f6f0e6;
+      --muted: #b3a89a;
+      --line: #3d3428;
+      --horn: #e39b2b;
+      --horn-2: #c45a22;
+      --ok: #8fce6a;
+      --ok-bg: #24321c;
+      --warn: #e3b34a;
+      --warn-bg: #3a2e14;
+      --bad: #e07a68;
+      --bad-bg: #3a201c;
+      --info: #8eb4d6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background:
+        radial-gradient(900px 420px at 10% -10%, rgba(227, 155, 43, 0.16), transparent 60%),
+        var(--bg);
+      color: var(--ink);
+    }
+    header, main { max-width: 880px; margin: 0 auto; padding: 1.25rem 1.1rem; }
+    header { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; }
+    h1 { margin: 0; font-size: 1.8rem; letter-spacing: -0.03em; }
+    .sub { margin: 0.3rem 0 0; color: var(--muted); }
+    a { color: var(--horn); font-weight: 650; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.9rem; }
+    .chip {
+      border-radius: 999px;
+      padding: 0.28rem 0.7rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: var(--bg-2);
+      color: var(--muted);
+      border: 1px solid var(--line);
+    }
+    .chip.ok { background: var(--ok-bg); color: var(--ok); }
+    .chip.warn { background: var(--warn-bg); color: var(--warn); }
+    .chip.bad { background: var(--bad-bg); color: var(--bad); }
+    .grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 1rem 1.05rem 1.15rem;
+      margin-bottom: 1rem;
+    }
+    h2 { margin: 0 0 0.7rem; font-size: 0.95rem; color: var(--muted); font-weight: 650; }
+    .horn {
+      width: 100%;
+      border: 0;
+      border-radius: 16px;
+      padding: 1.35rem 1rem;
+      font-size: 1.45rem;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+      color: #1a1208;
+      cursor: pointer;
+      background: linear-gradient(180deg, var(--horn), var(--horn-2));
+      box-shadow: 0 10px 24px rgba(196, 90, 34, 0.28);
+    }
+    .horn:active { transform: translateY(1px); }
+    .caption { margin: 0.45rem 0 0; color: var(--muted); font-size: 0.82rem; }
+    button.secondary, button.ghost {
+      font: inherit;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.65rem 0.85rem;
+      cursor: pointer;
+    }
+    button.secondary { border: 0; background: #3d3428; color: var(--ink); }
+    button.ghost { border: 1px solid var(--line); background: transparent; color: var(--muted); }
+    .row { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.75rem; }
+    .sounds { display: flex; flex-direction: column; gap: 0.4rem; }
+    .sound {
+      text-align: left;
+      width: 100%;
+      border: 1px solid var(--line);
+      background: var(--bg-2);
+      color: var(--ink);
+      border-radius: 12px;
+      padding: 0.7rem 0.8rem;
+      cursor: pointer;
+      font: inherit;
+    }
+    .sound strong { display: block; }
+    .sound span { color: var(--muted); font-size: 0.82rem; }
+    .sound.selected { border-color: var(--horn); box-shadow: inset 0 0 0 1px var(--horn); }
+    label { display: block; margin: 0.85rem 0 0.3rem; font-size: 0.85rem; color: var(--muted); }
+    input {
+      width: 100%;
+      font: inherit;
+      color: var(--ink);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.65rem 0.75rem;
+    }
+    .now { font-size: 1.25rem; margin: 0; }
+    .meta { color: var(--muted); margin: 0.35rem 0 0; }
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: Consolas, ui-monospace, monospace;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+    .entry { padding: 0.7rem 0; border-top: 1px solid var(--line); }
+    .entry:first-child { border-top: 0; padding-top: 0; }
+    .entry .top { display: flex; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.3rem; }
+    .code { font-weight: 750; }
+    .code.ok { color: var(--ok); }
+    .code.warn { color: var(--warn); }
+    .code.bad { color: var(--bad); }
+    @media (max-width: 740px) {
+      .grid { grid-template-columns: 1fr; }
+      header { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Whistleblower</h1>
+      <p class="sub">Exercise the sound API from this page. Buttons send the real requests.</p>
+      <div class="chips" id="chips">
+        <span class="chip">Health …</span>
+      </div>
+    </div>
+    <a href="/wifi">Wi-Fi setup</a>
+  </header>
+  <main>
+    <div class="grid">
+      <section class="card">
+        <h2>POST /api/horn</h2>
+        <button class="horn" type="button" id="horn">Play horn</button>
+        <p class="caption">Plays the current session horn. Press again while it is playing. The second request should come back 409. Choosing a sound below uses POST /api/sounds/play and does not change the session horn.</p>
+        <h2 style="margin-top:1.1rem">POST /api/sounds/play</h2>
+        <div class="sounds" id="sounds">Loading sounds…</div>
+        <div class="row">
+          <button class="secondary" type="button" id="play">Play selected</button>
+          <button class="ghost" type="button" id="reload">GET /api/sounds</button>
+        </div>
+        <label for="custom">Try another name</label>
+        <input id="custom" value="missing.mp3" autocomplete="off">
+        <div class="row">
+          <button class="secondary" type="button" id="play-custom">Play this name</button>
+        </div>
+      </section>
+      <section>
+        <div class="card">
+          <h2>GET /api/status</h2>
+          <p class="now" id="now">Idle</p>
+          <p class="meta" id="err">Last error: none</p>
+        </div>
+        <div class="card">
+          <div class="row" style="margin-top:0; justify-content:space-between; align-items:center;">
+            <h2 style="margin:0">Requests</h2>
+            <button class="ghost" type="button" id="clear">Clear</button>
+          </div>
+          <div id="log" style="margin-top:0.8rem"><p class="meta">Tap a control. Each call is listed here with its status code.</p></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script>
+    let selected = "";
+    const logEl = document.getElementById("log");
+    let logged = false;
+
+    function chip(text, kind) {
+      return `<span class="chip ${kind || ""}">${text}</span>`;
+    }
+
+    function pretty(text) {
+      try { return JSON.stringify(JSON.parse(text), null, 2); }
+      catch (e) { return text || "(empty)"; }
+    }
+
+    function addLog(method, url, status, text) {
+      if (!logged) {
+        logEl.innerHTML = "";
+        logged = true;
+      }
+      const kind = status >= 200 && status < 300 ? "ok" : status === 409 ? "warn" : "bad";
+      const entry = document.createElement("div");
+      entry.className = "entry";
+      entry.innerHTML =
+        `<div class="top"><span>${method} ${url}</span><span class="code ${kind}">${status || "fail"}</span></div>` +
+        `<pre></pre>`;
+      entry.querySelector("pre").textContent = pretty(text);
+      logEl.prepend(entry);
+    }
+
+    async function call(method, url, body, record) {
+      const opts = { method, cache: "no-store" };
+      if (body !== undefined) {
+        opts.headers = { "Content-Type": "application/json" };
+        opts.body = JSON.stringify(body);
+      }
+      try {
+        const res = await fetch(url, opts);
+        const text = await res.text();
+        if (record) addLog(method, url, res.status, text);
+        let data = null;
+        try { data = JSON.parse(text); } catch (e) {}
+        return { ok: res.ok, status: res.status, data, text };
+      } catch (e) {
+        if (record) addLog(method, url, 0, String(e.message || e));
+        return { ok: false, status: 0, data: null, text: "" };
+      }
+    }
+
+    async function refreshHealth() {
+      const r = await call("GET", "/api/health");
+      const box = document.getElementById("chips");
+      if (!r.data) {
+        box.innerHTML = chip("Health unreachable", "bad");
+        return;
+      }
+      const h = r.data;
+      box.innerHTML =
+        chip(h.service || "whistleblower", "ok") +
+        chip(h.wifi_connected ? "Wi-Fi connected" : "Wi-Fi down", h.wifi_connected ? "ok" : "bad") +
+        chip(h.dfplayer_connected ? "DFPlayer connected" : "DFPlayer down", h.dfplayer_connected ? "ok" : "bad");
+    }
+
+    async function refreshStatus() {
+      const r = await call("GET", "/api/status");
+      if (!r.data) return;
+      const s = r.data;
+      document.getElementById("now").textContent = s.playing
+        ? "Playing " + (s.current_sound || "a sound")
+        : "Idle";
+      document.getElementById("err").textContent = "Last error: " + (s.last_error || "none");
+    }
+
+    function renderSounds(data) {
+      const box = document.getElementById("sounds");
+      const sounds = (data && data.sounds) || [];
+      const count = data && data.module_file_count;
+      if (!sounds.length) {
+        box.textContent = "The catalog is empty.";
+        return;
+      }
+      if (!selected) selected = sounds[0].name;
+      box.innerHTML = sounds.map((s) =>
+        `<button type="button" class="sound ${s.name === selected ? "selected" : ""}" data-name="${s.name}">
+           <strong>${s.name}</strong>
+           <span>${s.path}</span>
+         </button>`
+      ).join("");
+      const note = document.createElement("p");
+      note.className = "caption";
+      note.textContent = "Catalog source: " + (data.source || "configured") +
+        ". Default horn: " + (data.default_sound || sounds[0].name) +
+        ". Module file count at boot: " + (count === null || count === undefined ? "unknown" : count) +
+        ". That count is not a file list.";
+      box.appendChild(note);
+      box.querySelectorAll(".sound").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          selected = btn.dataset.name;
+          renderSounds(data);
+        });
+      });
+    }
+
+    async function loadSounds(record) {
+      const r = await call("GET", "/api/sounds", undefined, record);
+      if (r.data) renderSounds(r.data);
+    }
+
+    document.getElementById("horn").addEventListener("click", async () => {
+      await call("POST", "/api/horn", undefined, true);
+      refreshStatus();
+    });
+    document.getElementById("play").addEventListener("click", async () => {
+      if (!selected) return;
+      await call("POST", "/api/sounds/play", { name: selected }, true);
+      refreshStatus();
+    });
+    document.getElementById("play-custom").addEventListener("click", async () => {
+      const name = document.getElementById("custom").value.trim();
+      await call("POST", "/api/sounds/play", { name }, true);
+      refreshStatus();
+    });
+    document.getElementById("reload").addEventListener("click", () => loadSounds(true));
+    document.getElementById("clear").addEventListener("click", () => {
+      logged = false;
+      logEl.innerHTML = `<p class="meta">Tap a control. Each call is listed here with its status code.</p>`;
+    });
+
+    refreshHealth();
+    refreshStatus();
+    loadSounds(false);
+    setInterval(() => { refreshHealth(); refreshStatus(); }, 1000);
+  </script>
+</body>
+</html>
