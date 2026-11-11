@@ -18,8 +18,8 @@
 #define BOARD_DFPLAYER_BOOT_DELAY_MS    2000
 #define BOARD_DFPLAYER_CMD_TIMEOUT_MS   1000
 #define BOARD_DFPLAYER_PLAY_TIMEOUT_MS  1500
-#define BOARD_DFPLAYER_AT_RETRIES       5
-#define BOARD_DFPLAYER_RETRY_GAP_MS     300
+/* Startup keeps retrying AT. This only caps the wait between full attempts. */
+#define BOARD_DFPLAYER_RETRY_MAX_MS     15000
 
 #define BOARD_DFPLAYER_VOLUME           20
 #define BOARD_DFPLAYER_SINGLE_PLAY_MODE 3

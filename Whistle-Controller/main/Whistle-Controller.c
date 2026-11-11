@@ -48,27 +48,63 @@ static dfplayer_err_t setup_link(void)
     return dfplayer_pro_init(&config);
 }
 
-static bool contact_module(void)
-{
-    for (int attempt = 1; attempt <= BOARD_DFPLAYER_AT_RETRIES; attempt++) {
-        dfplayer_err_t err = dfplayer_pro_at_test(s_response, sizeof(s_response),
-                                                  BOARD_DFPLAYER_CMD_TIMEOUT_MS);
-        if (err == DFPLAYER_OK) {
-            ESP_LOGI(TAG, "AT contact succeeded on attempt %d", attempt);
-            return true;
-        }
+static bool command_ok(const char *what, dfplayer_err_t err);
+static int query_seconds(int query_code);
 
-        ESP_LOGW(TAG, "AT attempt %d of %d failed: %s",
-                 attempt, BOARD_DFPLAYER_AT_RETRIES, dfplayer_pro_err_str(err));
-        if (attempt < BOARD_DFPLAYER_AT_RETRIES) {
-            vTaskDelay(pdMS_TO_TICKS(BOARD_DFPLAYER_RETRY_GAP_MS));
-        }
+static int longer_delay(int delay_ms)
+{
+    if (delay_ms >= BOARD_DFPLAYER_RETRY_MAX_MS / 2) {
+        return BOARD_DFPLAYER_RETRY_MAX_MS;
+    }
+    return delay_ms * 2;
+}
+
+/* One pass of the startup sequence. The playback task repeats it until it succeeds. */
+static bool initialize_audio(int attempt, int *file_count)
+{
+    dfplayer_err_t err;
+    int files;
+
+    ESP_LOGI(TAG, "DFPlayer handshake attempt %d", attempt);
+    err = dfplayer_pro_at_test(s_response, sizeof(s_response), BOARD_DFPLAYER_CMD_TIMEOUT_MS);
+    if (err == DFPLAYER_ERR_TIMEOUT) {
+        ESP_LOGW(TAG, "DFPlayer handshake timeout");
+        return false;
+    }
+    if (err != DFPLAYER_OK) {
+        ESP_LOGW(TAG, "DFPlayer handshake failed: %s", dfplayer_pro_err_str(err));
+        return false;
+    }
+    ESP_LOGI(TAG, "DFPlayer handshake OK");
+
+    files = query_seconds(2);
+    if (files < 0) {
+        ESP_LOGE(TAG, "DFPlayer initialization failed: file-count query");
+        return false;
     }
 
-    ESP_LOGE(TAG, "DFPlayer did not answer AT. Check power, ground, and the TX/RX crossover "
-                  "(GPIO%d to module RX, GPIO%d to module TX).",
-             BOARD_DFPLAYER_TX_GPIO, BOARD_DFPLAYER_RX_GPIO);
-    return false;
+    err = dfplayer_pro_set_amplifier(true, s_response, sizeof(s_response), BOARD_DFPLAYER_CMD_TIMEOUT_MS);
+    if (!command_ok("Amplifier", err)) {
+        ESP_LOGE(TAG, "DFPlayer initialization failed: amplifier");
+        return false;
+    }
+
+    err = dfplayer_pro_set_volume(BOARD_DFPLAYER_VOLUME, s_response, sizeof(s_response),
+                                  BOARD_DFPLAYER_CMD_TIMEOUT_MS);
+    if (!command_ok("Volume 20", err)) {
+        ESP_LOGE(TAG, "DFPlayer initialization failed: volume");
+        return false;
+    }
+
+    err = dfplayer_pro_set_play_mode(BOARD_DFPLAYER_SINGLE_PLAY_MODE, s_response, sizeof(s_response),
+                                     BOARD_DFPLAYER_CMD_TIMEOUT_MS);
+    if (!command_ok("Single-play mode", err)) {
+        ESP_LOGE(TAG, "DFPlayer initialization failed: play mode");
+        return false;
+    }
+
+    *file_count = files;
+    return true;
 }
 
 static bool command_ok(const char *what, dfplayer_err_t err)
@@ -113,7 +149,7 @@ static int query_seconds(int query_code)
  * delay applied to every file. The per-file wait also stops at
  * BOARD_DFPLAYER_MAX_FILE_MS.
  */
-static bool wait_for_file(int duration_s, char *note, size_t note_len)
+static bool wait_for_file(int duration_s, char *note, size_t note_len, bool *link_down)
 {
     int64_t started_us = esp_timer_get_time();
     int64_t last_change_us = started_us;
@@ -122,6 +158,8 @@ static bool wait_for_file(int duration_s, char *note, size_t note_len)
     bool tracking = false;
     bool saw_progress = false;
     int failed_polls = 0;
+
+    *link_down = false;
 
     while (true) {
         int waited_ms = (int)((esp_timer_get_time() - started_us) / 1000);
@@ -138,6 +176,7 @@ static bool wait_for_file(int duration_s, char *note, size_t note_len)
         if (position < 0) {
             failed_polls++;
             if (failed_polls >= 5) {
+                *link_down = true;
                 note_copy(note, note_len, "elapsed-time query failed");
                 return false;
             }
@@ -205,11 +244,12 @@ static void set_idle(const char *error)
     xSemaphoreGive(s_state_lock);
 }
 
-static void run_playback(const sound_catalog_entry_t *sound)
+static bool run_playback(const sound_catalog_entry_t *sound)
 {
     dfplayer_err_t err;
     int duration = -1;
     char note[80];
+    bool link_down = false;
 
     note[0] = '\0';
     ESP_LOGI(TAG, "Playing %s", sound->path);
@@ -218,7 +258,7 @@ static void run_playback(const sound_catalog_entry_t *sound)
     if (err != DFPLAYER_OK) {
         ESP_LOGE(TAG, "Play command failed: %s. Response: %s", dfplayer_pro_err_str(err), s_response);
         set_idle(dfplayer_pro_err_str(err));
-        return;
+        return err == DFPLAYER_ERR_TIMEOUT || err == DFPLAYER_ERR_UART || err == DFPLAYER_ERR_NOT_READY;
     }
     ESP_LOGI(TAG, "DFPlayer accepted %s", sound->name);
 
@@ -232,25 +272,87 @@ static void run_playback(const sound_catalog_entry_t *sound)
         ESP_LOGW(TAG, "Duration query failed. Waiting on the elapsed-time clock instead.");
     }
 
-    if (!wait_for_file(duration, note, sizeof(note))) {
+    if (!wait_for_file(duration, note, sizeof(note), &link_down)) {
         ESP_LOGW(TAG, "Playback ended: %s", note[0] != '\0' ? note : "incomplete");
         set_idle(note[0] != '\0' ? note : "incomplete");
-        return;
+        return link_down;
     }
 
     ESP_LOGI(TAG, "Playback completed (elapsed clock; the module has no finished event)");
     set_idle(NULL);
+    return false;
 }
 
 static void playback_task(void *arg)
 {
+    int attempt = 0;
+    int delay_ms = BOARD_DFPLAYER_BOOT_DELAY_MS;
+    bool ever_ready = false;
+
     (void)arg;
     while (true) {
+        if (!whistle_dfplayer_connected()) {
+            const sound_catalog_entry_t *stale = NULL;
+            int files = -1;
+            dfplayer_err_t link_err = DFPLAYER_OK;
+
+            while (xQueueReceive(s_play_queue, &stale, 0) == pdTRUE) {
+                ESP_LOGW(TAG, "Dropped a queued horn; audio is not ready");
+                set_idle("audio_not_ready");
+            }
+            (void)stale;
+
+            if (!dfplayer_pro_is_ready()) {
+                link_err = setup_link();
+                if (link_err != DFPLAYER_OK) {
+                    ESP_LOGE(TAG, "DFPlayer initialization failed: UART");
+                    vTaskDelay(pdMS_TO_TICKS(delay_ms));
+                    delay_ms = longer_delay(delay_ms);
+                    continue;
+                }
+            }
+
+            ESP_LOGI(TAG, "Waiting %d ms for the DFPlayer to finish starting", delay_ms);
+            vTaskDelay(pdMS_TO_TICKS(delay_ms));
+            attempt++;
+            if (!initialize_audio(attempt, &files)) {
+                whistle_set_dfplayer_ready(false);
+                delay_ms = longer_delay(delay_ms);
+                continue;
+            }
+
+            whistle_set_module_file_count(files);
+            whistle_set_dfplayer_ready(true);
+            whistle_mdns_set_horn_ready(true);
+            if (ever_ready) {
+                ESP_LOGI(TAG, "DFPlayer audio recovered");
+            } else {
+                ESP_LOGI(TAG, "DFPlayer audio ready");
+            }
+            ever_ready = true;
+            attempt = 0;
+            delay_ms = BOARD_DFPLAYER_BOOT_DELAY_MS;
+            {
+                size_t catalog_count = 0;
+                sound_catalog_entries(&catalog_count);
+                ESP_LOGI(TAG, "DFPlayer reports %d files; catalog lists %u configured names",
+                         files, (unsigned)catalog_count);
+            }
+            continue;
+        }
+
         const sound_catalog_entry_t *sound = NULL;
         if (xQueueReceive(s_play_queue, &sound, portMAX_DELAY) != pdTRUE || sound == NULL) {
             continue;
         }
-        run_playback(sound);
+        if (run_playback(sound)) {
+            whistle_set_dfplayer_ready(false);
+            whistle_set_module_file_count(-1);
+            whistle_mdns_set_horn_ready(false);
+            attempt = 0;
+            delay_ms = BOARD_DFPLAYER_BOOT_DELAY_MS;
+            ESP_LOGW(TAG, "DFPlayer communication lost");
+        }
     }
 }
 
@@ -264,7 +366,7 @@ esp_err_t whistle_playback_start(void)
     if (s_state_lock == NULL || s_play_queue == NULL) {
         return ESP_ERR_NO_MEM;
     }
-    if (xTaskCreate(playback_task, "playback", 6144, NULL, 5, NULL) != pdPASS) {
+    if (xTaskCreate(playback_task, "playback", 8192, NULL, 5, NULL) != pdPASS) {
         return ESP_ERR_NO_MEM;
     }
     return ESP_OK;
@@ -415,6 +517,8 @@ static void button_loop(void)
                         esp_err_t play_err = whistle_play_default();
                         if (play_err == ESP_OK) {
                             ESP_LOGI(TAG, "Button pressed");
+                        } else if (!whistle_dfplayer_connected()) {
+                            ESP_LOGW(TAG, "Button press ignored; audio is not ready");
                         } else if (play_err == ESP_FAIL && !sound_catalog_ready()) {
                             ESP_LOGW(TAG, "Button press ignored; sound catalog is unavailable");
                         } else if (play_err == ESP_FAIL) {
@@ -484,9 +588,7 @@ static void init_network(void)
 
 void app_main(void)
 {
-    dfplayer_err_t link_err;
     esp_err_t gpio_err;
-    bool dfplayer_ready = false;
     gpio_config_t button = {
         .pin_bit_mask = 1ULL << BOARD_HORN_BUTTON_GPIO,
         .mode = GPIO_MODE_INPUT,
@@ -510,43 +612,6 @@ void app_main(void)
         ESP_LOGE(TAG, "Button GPIO%d configuration failed: %s", BOARD_HORN_BUTTON_GPIO, esp_err_to_name(gpio_err));
     }
 
-    link_err = setup_link();
-    if (!command_ok("UART init", link_err)) {
-        ESP_LOGE(TAG, "DFPlayer UART is unavailable. Button presses will be logged and will fail.");
-        ESP_LOGI(TAG, "Horn button ready on GPIO%d", BOARD_HORN_BUTTON_GPIO);
-        button_loop();
-    }
-
-    ESP_LOGI(TAG, "Waiting %d ms for the DFPlayer to finish starting", BOARD_DFPLAYER_BOOT_DELAY_MS);
-    vTaskDelay(pdMS_TO_TICKS(BOARD_DFPLAYER_BOOT_DELAY_MS));
-
-    if (contact_module()) {
-        size_t catalog_count = 0;
-        int files;
-
-        ESP_LOGI(TAG, "DFPlayer connected");
-        dfplayer_ready = true;
-        files = query_seconds(2);
-        whistle_set_module_file_count(files);
-        sound_catalog_entries(&catalog_count);
-        if (files >= 0) {
-            ESP_LOGI(TAG, "DFPlayer reports %d files; catalog lists %u configured names",
-                     files, (unsigned)catalog_count);
-        }
-    }
-
-    link_err = dfplayer_pro_set_amplifier(true, s_response, sizeof(s_response), BOARD_DFPLAYER_CMD_TIMEOUT_MS);
-    command_ok("Amplifier", link_err);
-
-    link_err = dfplayer_pro_set_volume(BOARD_DFPLAYER_VOLUME, s_response, sizeof(s_response),
-                                       BOARD_DFPLAYER_CMD_TIMEOUT_MS);
-    command_ok("Volume 20", link_err);
-
-    link_err = dfplayer_pro_set_play_mode(BOARD_DFPLAYER_SINGLE_PLAY_MODE, s_response, sizeof(s_response),
-                                          BOARD_DFPLAYER_CMD_TIMEOUT_MS);
-    command_ok("Single-play mode", link_err);
-
-    whistle_set_dfplayer_ready(dfplayer_ready);
     ESP_LOGI(TAG, "Horn button ready on GPIO%d", BOARD_HORN_BUTTON_GPIO);
     button_loop();
 }

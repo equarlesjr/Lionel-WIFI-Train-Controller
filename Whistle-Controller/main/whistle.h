@@ -15,7 +15,9 @@ typedef struct {
 /* Create the single playback task. Call before the HTTP server starts. */
 esp_err_t whistle_playback_start(void);
 
-/* True after the startup AT handshake. A later play failure does not clear it. */
+/* True only after AT, the file-count query, amplifier, volume, and play mode all succeed.
+ * A later UART timeout clears it. The playback task then repeats that sequence.
+ */
 void whistle_set_dfplayer_ready(bool ready);
 
 bool whistle_dfplayer_connected(void);
@@ -28,8 +30,8 @@ int whistle_module_file_count(void);
 /*
  * Queue one catalogued sound. Returns when the request is accepted or rejected.
  * ESP_OK means accepted. ESP_ERR_INVALID_STATE means one is already active.
- * ESP_ERR_NOT_FOUND means the name is not in the catalog. ESP_FAIL means the
- * DFPlayer did not answer at startup. Playback itself runs on the playback task.
+ * ESP_ERR_NOT_FOUND means the name is not in the catalog. ESP_FAIL means audio
+ * is not ready or the catalog did not load. Playback itself runs on the playback task.
  */
 esp_err_t whistle_request_play(const char *name);
 

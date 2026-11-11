@@ -10,6 +10,7 @@
 #include "freertos/queue.h"
 #include "freertos/task.h"
 #include "whistle_discovery.h"
+#include "wifi.h"
 
 static const char *TAG = "horn_button";
 
@@ -32,33 +33,45 @@ static void post_horn(void)
     esp_err_t err;
     int status;
 
+    wifi_status_t wifi = {0};
+
     whistle_discovery_get(&info);
     if (!info.available || info.base_url[0] == '\0') {
-        ESP_LOGW(TAG, "Horn press ignored; Whistleblower is not available");
+        ESP_LOGW(TAG, "Horn destination is not yet known");
+        return;
+    }
+    if (wifi_get_status(&wifi) != ESP_OK || !wifi.sta_connected) {
+        ESP_LOGW(TAG, "Horn HTTP request failed: station is disconnected");
+        ESP_LOGW(TAG, "Retaining cached Whistleblower endpoint");
         return;
     }
     snprintf(url, sizeof(url), "%s/api/horn", info.base_url);
     config.url = url;
+    ESP_LOGI(TAG, "POST /api/horn to cached endpoint");
     client = esp_http_client_init(&config);
     if (client == NULL) {
-        ESP_LOGE(TAG, "Horn request was not sent");
+        ESP_LOGW(TAG, "Horn HTTP request failed: HTTP client was not created");
+        ESP_LOGW(TAG, "Retaining cached Whistleblower endpoint");
         return;
     }
     err = esp_http_client_perform(client);
     status = esp_http_client_get_status_code(client);
     esp_http_client_cleanup(client);
     if (err != ESP_OK) {
-        ESP_LOGW(TAG, "Horn request failed: %s", esp_err_to_name(err));
+        ESP_LOGW(TAG, "Horn HTTP request failed: %s", esp_err_to_name(err));
+        ESP_LOGW(TAG, "Retaining cached Whistleblower endpoint");
+        whistle_discovery_note_transport_failure(info.base_url);
         return;
     }
+    whistle_discovery_note_success(info.base_url);
     if (status == 202) {
-        ESP_LOGI(TAG, "Horn accepted");
+        ESP_LOGI(TAG, "HTTP 202 accepted");
     } else if (status == 409) {
-        ESP_LOGW(TAG, "Whistleblower is already playing");
+        ESP_LOGW(TAG, "HTTP 409 Whistleblower is busy");
     } else if (status == 503) {
-        ESP_LOGW(TAG, "Whistleblower unavailable");
+        ESP_LOGW(TAG, "HTTP 503 reported");
     } else {
-        ESP_LOGW(TAG, "Horn request returned HTTP %d", status);
+        ESP_LOGW(TAG, "HTTP %d reported", status);
     }
 }
 
@@ -82,7 +95,7 @@ static void queue_press(void)
         ESP_LOGW(TAG, "Horn press ignored; a request is already queued");
         return;
     }
-    ESP_LOGI(TAG, "Horn pressed");
+    ESP_LOGI(TAG, "Horn button pressed");
 }
 
 static void horn_button_task(void *arg)

@@ -431,3 +431,43 @@ entry 0x403c8900
 [0;32mI (8333) dfplayer: TX AT+QUERY=3\r\n[0m
 [0;32mI (8383) dfplayer: RX 2\r\n[0m
 [0;32mI (8883) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (8933) dfplayer: RX 2\r\n[0m
+[0;32mI (8933) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (10173) whistle_http: HTTP horn request[0m
+[0;32mI (10173) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (10173) whistle: Playing /Horn3.mp3[0m
+[0;32mI (10173) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (10263) dfplayer: RX OK\r\n[0m
+[0;32mI (10263) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (10263) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (10313) dfplayer: RX 2\r\n[0m
+[0;32mI (10813) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (10863) dfplayer: RX 0\r\n[0m
+[0;32mI (11363) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11413) dfplayer: RX 1\r\n[0m
+[0;32mI (11913) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (11963) dfplayer: RX 1\r\n[0m
+[0;32mI (12463) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (12513) dfplayer: RX 2\r\n[0m
+[0;32mI (13013) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (13063) dfplayer: RX 2\r\n[0m
+[0;32mI (13063) whistle: Playback completed (elapsed clock; the module has no finished event)[0m
+[0;32mI (255123) whistle_http: HTTP horn request[0m
+[0;32mI (255123) whistle: Playback queued: Horn3.mp3[0m
+[0;32mI (255123) whistle: Playing /Horn3.mp3[0m
+[0;32mI (255123) dfplayer: TX AT+PLAYFILE=/Horn3.mp3\r\n[0m
+[0;32mI (255203) dfplayer: RX OK\r\n[0m
+[0;32mI (255203) whistle: DFPlayer accepted Horn3.mp3[0m
+[0;32mI (255203) dfplayer: TX AT+QUERY=4\r\n[0m
+[0;32mI (255263) dfplayer: RX 2\r\n[0m
+[0;32mI (255763) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (255823) dfplayer: RX 0\r\n[0m
+[0;32mI (256323) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (256383) dfplayer: RX 1\r\n[0m
+[0;32mI (256883) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (256943) dfplayer: RX 1\r\n[0m
+[0;32mI (257443) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (257503) dfplayer: RX 2\r\n[0m
+[0;32mI (258003) dfplayer: TX AT+QUERY=3\r\n[0m
+[0;32mI (258063) dfplayer: RX 2\r\n[0m
+[0;32mI (258063) whistle: Playback completed (elapsed clock; the module has no finished event)[0m

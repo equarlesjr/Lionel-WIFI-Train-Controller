@@ -124,7 +124,7 @@ Center OFF on the switch is a **software** zero-PWM command, not a physical powe
 3. Pick your house network, enter its password, and wait until the page shows the train’s LAN IP. Rejoin the house Wi-Fi and open `http://<board-ip>/`.
 4. Put the switch in **WEB** and use the throttle buttons, or **KNOB** and turn the pot (fully CCW first if you just switched into KNOB).
 5. The page shows **WEB / OFF / KNOB**, polls `/status` about every 400 ms, and greys out the buttons when the switch is not WEB.
-6. The same page has a **Horn** button and a sound list. The D7 button does the same thing: one press sends one `POST /api/horn` to Whistleblower, which plays the sound selected in the browser. Holding D7 does not repeat. Those controls talk to the separate Whistleblower board. Speed still works when that board is off. `GET /api/whistleblower` only reports an address after this controller has found `_whistleblower._tcp` and read `service: whistleblower` from its `/api/health`. For a bench test without mDNS, put a dotted IPv4 in `TRAIN_WHISTLE_FALLBACK_IP` in `main/whistle_discovery.h` and rebuild. Leave that string empty for normal use.
+6. The same page has a **Horn** button and a sound list. The D7 button does the same thing: one press sends one `POST /api/horn` to Whistleblower, which plays the sound selected in the browser. Holding D7 does not repeat. Those controls talk to the separate Whistleblower board. Speed still works when that board is off. `GET /api/whistleblower` reports the address verified once at discovery. The controller does not poll `/api/health` after that. A Horn timeout does not remove the address. A station reconnect to the same network and IP keeps it. A different network or station IP clears it and discovery runs again. For a bench test without mDNS, put a dotted IPv4 in `TRAIN_WHISTLE_FALLBACK_IP` in `main/whistle_discovery.h` and rebuild. Leave that string empty for normal use.
 7. To change networks later, hold the D8 button to GND for about 4 seconds (or use **Forget network** on `/wifi`). The setup AP comes back.
 
 When the LED flashes three times, the HTTP server is up (including on the setup AP, before the house LAN is joined). WEB/OFF/KNOB still work with no house Wi-Fi.
@@ -140,7 +140,7 @@ The page is enough for day-to-day use. These endpoints are what it calls:
 | `GET /` | Control page |
 | `GET /speed?mode=off` or `1`–`6` | Set speed; only allowed in WEB. JSON includes `control_source`, `mode`, `percent`. HTTP 403 if the switch is OFF or KNOB. |
 | `GET /status` | `{ "control_source": "web"\|"off"\|"knob", "mode": "...", "percent": ... }` |
-| `GET /api/whistleblower` | Cached Whistleblower address after an mDNS lookup and a successful `/api/health` check. `{"available":false}` until that check passes. |
+| `GET /api/whistleblower` | Whistleblower address verified once after mDNS. No periodic health check. `{"available":false}` until that first check succeeds. |
 | `GET /train.jpg` | Embedded header image |
 | `GET /wifi` | Phone setup page: scan nearby SSIDs and save a network |
 | `GET /wifi/status` | Setup/join state JSON (`ap_ssid`, `sta_ssid`, `ip`, …) |

@@ -1,0 +1,220 @@
+Command: C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe C:\esp\v6.1-rc1\esp-idf\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\Lionel-WIFI-Train-Controller.elf C:\Users\ernest\Desktop\Train-HTTPServer\Lionel-WIFI-Train-Controller\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.1-rc1\venv\Scripts\python.exe' 'C:\esp\v6.1-rc1\esp-idf\tools\idf.py' '-p' 'COM3'
+[0;32mI (214) esp_image: segment 3: paddr=00106630 vaddr=3fc9bdc0 sizeESP-ROM:esp32s3-20210327[0m
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4037b96a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1548
+load:0x403c8700,len:0xdac
+load:0x403cb700,len:0x2f60
+entry 0x403c8900
+[0;32mI (24) boot: ESP-IDF v6.1-rc1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Nov 10 2026 10:34:03[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (25) boot: efuse block revision: v1.4[0m
+[0;32mI (25) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (26) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (26) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (26) boot: Enabling RNG early entropy source...[0m
+[0;32mI (26) boot: Partition Table:[0m
+[0;32mI (26) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (27) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (27) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (28) boot:  2 factory          factory app      00 00 00010000 00177000[0m
+[0;32mI (28) boot: End of partition table[0m
+[0;32mI (28) esp_image: segment 0: paddr=00010020 vaddr=3c0c0020 size=3c230h (246320) map[0m
+[0;32mI (74) esp_image: segment 1: paddr=0004c258 vaddr=3fc98000 size=03dc0h ( 15808) load[0m
+[0;32mI (77) esp_image: segment 2: paddr=00050020 vaddr=42000020 size=b6608h (747016) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=00106630 vaddr=3fc9bdc0 size=01404h (  5124) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=00107a3c vaddr=40374000 size=13fb4h ( 81844) load[0m
+[0;32mI (235) esp_image: segment 5: paddr=0011b9f8 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (244) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (244) boot: Disabling RNG early entropy source...[0m
+[0;32mI (245) cpu_start: Multicore app[0m
+[0;32mI (254) cpu_start: Pro cpu start user code[0m
+[0;32mI (254) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (254) app_init: Application information:[0m
+[0;32mI (254) app_init: Project name:     Lionel-WIFI-Train-Controller[0m
+[0;32mI (255) app_init: App version:      4216f8c-dirty[0m
+[0;32mI (255) app_init: Compile time:     Nov 11 2026 01:13:10[0m
+[0;32mI (255) app_init: ELF file SHA256:  c2e660f61...[0m
+[0;32mI (255) app_init: ESP-IDF:          v6.1-rc1[0m
+[0;32mI (255) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (255) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (256) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (256) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (256) heap_init: At 3FCA2460 len 000472B0 (284 KiB): RAM[0m
+[0;32mI (256) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (257) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (257) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (258) spi_flash: detected chip: gd[0m
+[0;32mI (258) spi_flash: flash io: dio[0m
+[0;33mW (258) spi_flash: Detected size(8192k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (260) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (260) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (261) main_task: Started on CPU0[0m
+[0;32mI (261) main_task: Calling app_main()[0m
+[0;32mI (271) pp: pp rom version: e7ae62f[0m
+[0;32mI (271) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (281) wifi:wifi driver task: 3fcee8cc, prio:23, stack:6656, core=0[0m
+[0;32mI (281) wifi:wifi firmware version: e12a754[0m
+[0;32mI (281) wifi:wifi certification version: v7.0[0m
+[0;32mI (281) wifi:config NVS flash: enabled[0m
+[0;32mI (281) wifi:config nano formatting: disabled[0m
+[0;32mI (281) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (281) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (281) wifi:Init management short buffer num: 32[0m
+[0;32mI (281) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (281) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (281) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (281) wifi:Init static rx buffer num: 10[0m
+[0;32mI (281) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (281) wifi_init: rx ba win: 6[0m
+[0;32mI (281) wifi_init: accept mbox: 6[0m
+[0;32mI (281) wifi_init: tcpip mbox: 32[0m
+[0;32mI (291) wifi_init: udp mbox: 6[0m
+[0;32mI (291) wifi_init: tcp mbox: 6[0m
+[0;32mI (291) wifi_init: tcp tx win: 5760[0m
+[0;32mI (291) wifi_init: tcp rx win: 5760[0m
+[0;32mI (291) wifi_init: tcp mss: 1440[0m
+[0;32mI (291) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (291) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (291) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (291) phy_init: phy_version 712,87e8c20e,Apr 13 2026,18:51:10[0m
+[0;32mI (331) wifi:mode : sta (28:84:85:bb:77:50)[0m
+[0;32mI (331) wifi:enable tsf[0m
+[0;32mI (331) wifi: joining "harmonicminor"[0m
+[0;32mI (331) horn_button: Horn button ready on D7/GPIO44[0m
+[0;32mI (331) wifi_button: Forget Wi-Fi: hold D8/GPIO7 to GND for 4000 ms[0m
+[0;32mI (331) train_pwm: PWM init on GPIO2, 10000 Hz, 10-bit, duty 0%[0m
+[0;32mI (341) speed_led: Speed LED init on GPIO1 (XIAO D0)[0m
+[0;32mI (341) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (341) train_control: Train control initialized: source=off, mode=off, percent=0[0m
+[0;32mI (491) train_control: Control source off -> knob; commanding OFF[0m
+[0;32mI (491) example: Starting server on port: '80'[0m
+[0;32mI (491) example: Registering URI handlers[0m
+[0;32mI (491) train_http: Registering train control URI handlers[0m
+[0;32mI (1011) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1011) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1021) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1031) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1061) wifi:connected with harmonicminor, aid = 33, channel 6, BW20, bssid = f6:9f:c2:27:4b:71[0m
+[0;32mI (1061) wifi:security: WPA2-PSK, phy: bgn, rssi: -71, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (1061) wifi:pm start, type: 1[0m
+
+[0;32mI (1061) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1061) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1081) wifi:<ba-add>idx:0 (ifx:0, f6:9f:c2:27:4b:71), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1101) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1691) speed_led: System ready (3-flash signal complete)[0m
+[0;32mI (2111) esp_netif_handlers: sta ip: 192.168.7.221, mask: 255.255.255.0, gw: 192.168.7.254[0m
+[0;32mI (2111) wifi: STA IP 192.168.7.221[0m
+[0;32mI (2111) wifi: closing setup AP; control page is at http://192.168.7.221/[0m
+[0;32mI (2331) mdns_mem: mDNS task will be created from internal RAM[0m
+[0;32mI (2331) whistle_find: mDNS client ready[0m
+[0;32mI (2331) whistle_find: Whistleblower discovery starting[0m
+[0;33mW (4431) whistle_find: Whistleblower was not verified; retrying discovery in 2000 ms[0m
+[0;33mW (8531) whistle_find: Whistleblower was not verified; retrying discovery in 4000 ms[0m
+[0;32mI (14321) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;33mW (14631) whistle_find: Whistleblower was not verified; retrying discovery in 8000 ms[0m
+[0;33mW (24731) whistle_find: Whistleblower was not verified; retrying discovery in 15000 ms[0m
+[0;32mI (41831) whistle_find: mDNS discovered Whistleblower at 192.168.7.70[0m
+[0;32mI (42771) whistle_find: Whistleblower identity verified[0m
+[0;32mI (42771) whistle_find: Cached Whistleblower endpoint: http://192.168.7.70[0m
+[0;32mI (42771) whistle_find: Discovery complete; periodic health polling disabled[0m
+[0;32mI (173371) train_http: Serving train control page for /[0m
+[0;32mI (179651) horn_button: Horn button pressed[0m
+[0;32mI (179651) horn_button: POST /api/horn to cached endpoint[0m
+[0;32mI (180251) horn_button: HTTP 202 accepted[0m
+[0;32mI (182151) horn_button: Horn button pressed[0m
+[0;32mI (182151) horn_button: POST /api/horn to cached endpoint[0m
+[0;33mW (182521) horn_button: HTTP 409 Whistleblower is busy[0m
+[0;32mI (189181) horn_button: Horn button pressed[0m
+[0;32mI (189181) horn_button: POST /api/horn to cached endpoint[0m
+[0;32mI (189651) horn_button: HTTP 202 accepted[0m
+[0;32mI (269741) train_control: Control source knob -> off; commanding OFF[0m
+[0;32mI (270091) train_control: Control source off -> web; commanding OFF[0m
+[0;32mI (276191) train_pwm: PWM duty set to 65% (raw=664)[0m
+[0;32mI (276191) train_control: Speed 1 (65%) source=web[0m
+[0;32mI (278341) train_pwm: PWM duty set to 0% (raw=0)[0m
+[0;32mI (278341) train_control: Speed off (0%) source=web[0m
+[0;32mI (286031) horn_button: Horn button pressed[0m
+[0;32mI (286031) horn_button: POST /api/horn to cached endpoint[0m
+[0;32mI (286321) horn_button: HTTP 202 accepted[0m
+[0;32mI (390191) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (435321) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (495491) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (570711) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (615731) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (675911) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (736081) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (796261) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (856431) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (916601) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (976791) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1036951) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1112081) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1157291) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1217571) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1277541) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1337721) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1397901) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1458061) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1518231) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1578411) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1638481) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1698651) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1758821) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1819101) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1879171) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1924301) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (1984571) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2029701) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2044641) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2089661) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2104721) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2172751) train_http: Serving train control page for /[0m
+[0;32mI (2177941) horn_button: Horn button pressed[0m
+[0;32mI (2177941) horn_button: POST /api/horn to cached endpoint[0m
+[0;32mI (2178051) horn_button: HTTP 202 accepted[0m
+[0;32mI (2206161) train_http: Serving train control page for /[0m
+[0;32mI (2210931) horn_button: Horn button pressed[0m
+[0;32mI (2210931) horn_button: POST /api/horn to cached endpoint[0m
+[1;31mE (2212941) esp-tls: [sock=60] select() timeout[0m
+[1;31mE (2212941) transport_base: Failed to open a new connection: 32774[0m
+[1;31mE (2212941) HTTP_CLIENT: Connection failed, sock < 0[0m
+[0;33mW (2212941) horn_button: Horn HTTP request failed: ESP_ERR_HTTP_CONNECT[0m
+[0;33mW (2212941) horn_button: Retaining cached Whistleblower endpoint[0m
+[0;32mI (2214221) horn_button: Horn button pressed[0m
+[0;32mI (2214221) horn_button: POST /api/horn to cached endpoint[0m
+[0;32mI (2214951) horn_button: HTTP 202 accepted[0m
+[0;32mI (2236441) train_http: Serving train control page for /[0m
+[0;32mI (2360451) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2380011) train_http: Serving train control page for /[0m
+[0;32mI (2465751) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2514321) train_http: Serving train control page for /[0m
+[0;32mI (2661221) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2706351) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2751471) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2766531) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2796611) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2811751) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2841731) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2886861) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2901901) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2947031) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (2992171) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3007221) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3052341) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3067391) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3112511) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3127451) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3172591) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3187621) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3232751) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3307971) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3353101) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3368141) wifi:[ADDBA]RX DELBA, reason:39, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (3413281) wifi:[ADD

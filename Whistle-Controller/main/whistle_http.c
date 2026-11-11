@@ -247,17 +247,23 @@ static esp_err_t post_only_get_handler(httpd_req_t *req)
 static esp_err_t health_get_handler(httpd_req_t *req)
 {
     wifi_status_t wifi = {0};
-    char body[160];
+    char body[256];
     bool wifi_connected = false;
+    bool audio_ready;
 
     if (wifi_get_status(&wifi) == ESP_OK) {
         wifi_connected = wifi.sta_connected;
     }
+    audio_ready = whistle_dfplayer_connected();
+
     snprintf(body, sizeof(body),
-             "{\n  \"service\": \"whistleblower\",\n  \"status\": \"ok\",\n"
+             "{\n  \"service\": \"whistleblower\",\n  \"status\": \"%s\",\n"
+             "  \"audio_ready\": %s,\n"
              "  \"wifi_connected\": %s,\n  \"dfplayer_connected\": %s\n}\n",
+             audio_ready ? "ok" : "starting",
+             audio_ready ? "true" : "false",
              wifi_connected ? "true" : "false",
-             whistle_dfplayer_connected() ? "true" : "false");
+             audio_ready ? "true" : "false");
     return send_json(req, NULL, body);
 }
 
@@ -552,6 +558,9 @@ static esp_err_t play_result(httpd_req_t *req, const char *name, esp_err_t err)
     if (err == ESP_ERR_INVALID_ARG) {
         return send_json(req, "400 Bad Request", "{\"error\":\"name is required\"}");
     }
+    if (!whistle_dfplayer_connected()) {
+        return send_json(req, "503 Service Unavailable", "{\"accepted\":false,\"error\":\"audio_not_ready\"}");
+    }
     return send_json(req, "503 Service Unavailable", "{\"accepted\":false,\"error\":\"dfplayer unavailable\"}");
 }
 
@@ -562,6 +571,10 @@ static esp_err_t horn_post_handler(httpd_req_t *req)
 
     if (req->content_len > 0) {
         drain_body(req);
+    }
+    if (!whistle_dfplayer_connected()) {
+        ESP_LOGW(TAG, "HTTP horn rejected: audio_not_ready");
+        return send_json(req, "503 Service Unavailable", "{\"accepted\":false,\"error\":\"audio_not_ready\"}");
     }
     if (sound_selection_get(name, sizeof(name)) != ESP_OK) {
         return send_json(req, "503 Service Unavailable", "{\"accepted\":false,\"error\":\"no selected sound\"}");
@@ -649,6 +662,10 @@ static esp_err_t sounds_play_post_handler(httpd_req_t *req)
     }
     if (!json_get_string(raw, "name", name, sizeof(name)) || name[0] == '\0') {
         return send_json(req, "400 Bad Request", "{\"error\":\"name is required\"}");
+    }
+    if (!whistle_dfplayer_connected()) {
+        ESP_LOGW(TAG, "HTTP play rejected: audio_not_ready");
+        return send_json(req, "503 Service Unavailable", "{\"accepted\":false,\"error\":\"audio_not_ready\"}");
     }
     ESP_LOGI(TAG, "HTTP play request name=\"%s\"", name);
     err = whistle_request_play(name);

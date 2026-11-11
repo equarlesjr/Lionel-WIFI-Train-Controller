@@ -16,7 +16,7 @@ Hardware communication and audible playback have to be checked on the bench. A s
 
 GPIO43 and GPIO44 are the ESP32-S3 UART0 default pins. This firmware moves the log console to the board's native USB Serial/JTAG port and uses UART1 for the DFPlayer, on those same pins. Do not attach a USB-to-UART adapter to GPIO43/GPIO44.
 
-The ROM may emit a short message on GPIO43 before the application starts. The firmware waits two seconds and retries `AT` so that burst does not have to be a clean command.
+The ROM may emit a short message on GPIO43 before the application starts. The firmware waits two seconds, then sends `AT` and requires `OK`. A timeout is retried with a wait that grows from 2 seconds to 15 seconds. It does not restart the ESP32 and it does not stop after a fixed number of attempts. Amplifier, volume 20, and single-play mode are sent only after that handshake, and Horn stays unavailable until those replies succeed.
 
 Copy the MP3s named in `sounds.json` onto the module with its own USB port before flashing. The names are case-sensitive. Disconnect the ESP 5V and UART while the module USB is plugged into the computer. Wire a normally open button from GPIO1 (D0) to GND. Nothing plays at boot.
 
@@ -30,16 +30,17 @@ On a fresh board the setup access point is `Whistleblower-` plus the last two by
 
 A short press still plays the horn when Wi-Fi is down. A 5 second hold opens the setup AP again and does not erase the saved network and does not play the horn. The setup page has a separate Forget button that erases only the saved network.
 
-The DHCP hostname is `whistleblower`. This ESP-IDF tree has no mDNS responder, and the train controller does not advertise one either, so `whistleblower.local` is logged as the intended name and is not actually advertised. After the station connects, the log prints the SSID and the assigned IP. The home Wi-Fi password is never logged.
+The DHCP hostname is `whistleblower`. After the station connects, the log prints the SSID and the assigned IP. The home Wi-Fi password is never logged. The Horn service is not advertised until the DFPlayer initialization sequence succeeds.
 
 Open `http://<station-ip>/` in a browser on the same network. That page calls health, sounds, horn, play, and status, and shows each response code. Wi-Fi setup stays at `/wifi`.
 
-`GET /api/health` returns the service state, including whether station Wi-Fi and the DFPlayer AT handshake succeeded:
+`GET /api/health` stays available while audio is starting. `audio_ready` and `dfplayer_connected` become true only after the DFPlayer handshake and configuration succeed. `status` is `starting` until then and `ok` after. `_whistleblower._tcp` is advertised only while audio is ready.
 
 ```json
 {
   "service": "whistleblower",
   "status": "ok",
+  "audio_ready": true,
   "wifi_connected": true,
   "dfplayer_connected": true
 }
@@ -51,11 +52,11 @@ Open `http://<station-ip>/` in a browser on the same network. That page calls he
 
 The selected horn is kept in RAM for the current session. `GET /api/selection` returns it, and `POST /api/selection` with `{"name":"Horn4.mp3"}` changes it without playing. A reboot selects the first catalog entry again. Reconnecting Wi-Fi does not.
 
-`POST /api/horn` and a short press on GPIO1 play the selected horn. `POST /api/sounds/play` plays a named catalog file and does not change the selection. `202` means the request was accepted. `409` means a sound is already active. `503` means the DFPlayer did not answer `AT` at boot, or `sounds.json` failed to load. An unknown name returns `404`.
+`POST /api/horn` and a short press on GPIO1 play the selected horn. `POST /api/sounds/play` plays a named catalog file and does not change the selection. `202` means the request was accepted. `409` means a sound is already active. `503` with `audio_not_ready` means the DFPlayer sequence has not succeeded; the request is not sent to the module. `503` also covers a catalog that failed to load. An unknown name returns `404`.
 
 `GET /api/sounds` returns the catalog in file order, plus `default_sound` and `module_file_count`. The file count comes from `AT+QUERY=2` at boot. It is not a file list.
 
-On the home network the board advertises `_whistleblower._tcp` and the hostname `whistleblower.local`. The train controller uses that advertisement, then checks `/api/health`, before it tells the train page where to send horn commands.
+On the home network the board advertises `_whistleblower._tcp` and the hostname `whistleblower.local` only after the DFPlayer is ready. The train controller uses that advertisement, then checks `/api/health`, before it tells the train page where to send horn commands. If the module later stops answering, the advertisement is withdrawn until the same startup sequence succeeds again.
 
 Browser calls from `WHISTLE_CORS_ORIGIN` (`http://localhost`) are allowed. Browser calls whose Origin is `http://` plus a loopback or private LAN address are also allowed, so the train page can call this board at whatever address DHCP assigned. Other origins are rejected. PowerShell does not send an Origin header. The diagnostic page at `/` remains available.
 
