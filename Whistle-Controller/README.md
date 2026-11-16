@@ -16,7 +16,7 @@ Hardware communication and audible playback have to be checked on the bench. A s
 
 GPIO43 and GPIO44 are the ESP32-S3 UART0 default pins. This firmware moves the log console to the board's native USB Serial/JTAG port and uses UART1 for the DFPlayer, on those same pins. Do not attach a USB-to-UART adapter to GPIO43/GPIO44.
 
-The ROM may emit a short message on GPIO43 before the application starts. The firmware waits two seconds, then sends `AT` and requires `OK`. A timeout is retried with a wait that grows from 2 seconds to 15 seconds. It does not restart the ESP32 and it does not stop after a fixed number of attempts. Amplifier, volume 20, and single-play mode are sent only after that handshake, and Horn stays unavailable until those replies succeed.
+The ROM may emit a short message on GPIO43 before the application starts. The firmware waits two seconds, then sends `AT` and requires `OK`. A timeout is retried with a wait that grows from 2 seconds to 15 seconds. It does not restart the ESP32 and it does not stop after a fixed number of attempts. Amplifier, idle volume 0, and single-play mode are sent only after that handshake, and Horn stays unavailable until those replies succeed. A horn request raises the volume to 20 for playback, then returns it to 0 five seconds after that request once the file has finished.
 
 Copy the MP3s named in `sounds.json` onto the module with its own USB port before flashing. The names are case-sensitive. Disconnect the ESP 5V and UART while the module USB is plugged into the computer. Wire a normally open button from GPIO1 (D0) to GND. Nothing plays at boot.
 

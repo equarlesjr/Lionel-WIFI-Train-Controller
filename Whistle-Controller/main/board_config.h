@@ -21,7 +21,10 @@
 /* Startup keeps retrying AT. This only caps the wait between full attempts. */
 #define BOARD_DFPLAYER_RETRY_MAX_MS     15000
 
+/* Playback level. Idle level is sent at startup and again after the horn has been quiet. */
 #define BOARD_DFPLAYER_VOLUME           20
+#define BOARD_DFPLAYER_IDLE_VOLUME      0
+#define BOARD_DFPLAYER_IDLE_TIMEOUT_MS  5000
 #define BOARD_DFPLAYER_SINGLE_PLAY_MODE 3
 
 #define BOARD_HORN_BUTTON_GPIO          1

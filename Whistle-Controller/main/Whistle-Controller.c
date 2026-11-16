@@ -50,6 +50,7 @@ static dfplayer_err_t setup_link(void)
 
 static bool command_ok(const char *what, dfplayer_err_t err);
 static int query_seconds(int query_code);
+static dfplayer_err_t set_player_volume(int volume, const char *success_log);
 
 static int longer_delay(int delay_ms)
 {
@@ -89,9 +90,13 @@ static bool initialize_audio(int attempt, int *file_count)
         return false;
     }
 
-    err = dfplayer_pro_set_volume(BOARD_DFPLAYER_VOLUME, s_response, sizeof(s_response),
-                                  BOARD_DFPLAYER_CMD_TIMEOUT_MS);
-    if (!command_ok("Volume 20", err)) {
+    {
+        char note[48];
+
+        snprintf(note, sizeof(note), "DFPlayer initialized at volume %d", BOARD_DFPLAYER_IDLE_VOLUME);
+        err = set_player_volume(BOARD_DFPLAYER_IDLE_VOLUME, note);
+    }
+    if (err != DFPLAYER_OK) {
         ESP_LOGE(TAG, "DFPlayer initialization failed: volume");
         return false;
     }
@@ -116,6 +121,22 @@ static bool command_ok(const char *what, dfplayer_err_t err)
 
     ESP_LOGE(TAG, "%s failed: %s. Response: %s", what, dfplayer_pro_err_str(err), s_response);
     return false;
+}
+
+static dfplayer_err_t set_player_volume(int volume, const char *success_log)
+{
+    dfplayer_err_t err = dfplayer_pro_set_volume(volume, s_response, sizeof(s_response),
+                                                 BOARD_DFPLAYER_CMD_TIMEOUT_MS);
+
+    if (err != DFPLAYER_OK) {
+        ESP_LOGE(TAG, "UART command failed: AT+VOL=%d (%s). Response: %s",
+                 volume, dfplayer_pro_err_str(err), s_response);
+        return err;
+    }
+    if (success_log != NULL && success_log[0] != '\0') {
+        ESP_LOGI(TAG, "%s", success_log);
+    }
+    return DFPLAYER_OK;
 }
 
 static int query_seconds(int query_code)
@@ -283,19 +304,96 @@ static bool run_playback(const sound_catalog_entry_t *sound)
     return false;
 }
 
+static bool horn_is_pending(void)
+{
+    bool pending = false;
+
+    if (s_state_lock == NULL) {
+        return false;
+    }
+    xSemaphoreTake(s_state_lock, portMAX_DELAY);
+    pending = s_playing || (s_play_queue != NULL && uxQueueMessagesWaiting(s_play_queue) > 0);
+    xSemaphoreGive(s_state_lock);
+    return pending;
+}
+
+static void leave_audio_ready(void)
+{
+    whistle_set_dfplayer_ready(false);
+    whistle_set_module_file_count(-1);
+    whistle_mdns_set_horn_ready(false);
+    ESP_LOGW(TAG, "DFPlayer communication lost");
+}
+
+static bool volume_link_lost(dfplayer_err_t err)
+{
+    return err == DFPLAYER_ERR_TIMEOUT || err == DFPLAYER_ERR_UART || err == DFPLAYER_ERR_NOT_READY;
+}
+
+/* Raise volume, play, and arm the idle silence deadline. True when the UART link was lost. */
+static bool play_horn(const sound_catalog_entry_t *sound, int64_t *silence_at_us)
+{
+    char note[48];
+    dfplayer_err_t err;
+
+    *silence_at_us = esp_timer_get_time() + ((int64_t)BOARD_DFPLAYER_IDLE_TIMEOUT_MS * 1000);
+    ESP_LOGI(TAG, "Horn requested");
+    snprintf(note, sizeof(note), "Volume restored to %d", BOARD_DFPLAYER_VOLUME);
+    err = set_player_volume(BOARD_DFPLAYER_VOLUME, note);
+    if (err != DFPLAYER_OK) {
+        *silence_at_us = 0;
+        set_idle(dfplayer_pro_err_str(err));
+        if (volume_link_lost(err)) {
+            leave_audio_ready();
+            return true;
+        }
+        return false;
+    }
+    ESP_LOGI(TAG, "Horn playback initiated");
+    if (run_playback(sound)) {
+        *silence_at_us = 0;
+        leave_audio_ready();
+        return true;
+    }
+    return false;
+}
+
+static TickType_t silence_wait(int64_t silence_at_us)
+{
+    int64_t remain_us;
+    int remain_ms;
+
+    if (silence_at_us == 0) {
+        return portMAX_DELAY;
+    }
+    remain_us = silence_at_us - esp_timer_get_time();
+    if (remain_us <= 0) {
+        return 0;
+    }
+    remain_ms = (int)((remain_us + 999) / 1000);
+    if (remain_ms < 1) {
+        remain_ms = 1;
+    }
+    return pdMS_TO_TICKS(remain_ms);
+}
+
 static void playback_task(void *arg)
 {
     int attempt = 0;
     int delay_ms = BOARD_DFPLAYER_BOOT_DELAY_MS;
     bool ever_ready = false;
+    int64_t silence_at_us = 0;
 
     (void)arg;
     while (true) {
+        const sound_catalog_entry_t *sound = NULL;
+
         if (!whistle_dfplayer_connected()) {
             const sound_catalog_entry_t *stale = NULL;
             int files = -1;
             dfplayer_err_t link_err = DFPLAYER_OK;
 
+            silence_at_us = 0;
             while (xQueueReceive(s_play_queue, &stale, 0) == pdTRUE) {
                 ESP_LOGW(TAG, "Dropped a queued horn; audio is not ready");
                 set_idle("audio_not_ready");
@@ -341,17 +439,38 @@ static void playback_task(void *arg)
             continue;
         }
 
-        const sound_catalog_entry_t *sound = NULL;
-        if (xQueueReceive(s_play_queue, &sound, portMAX_DELAY) != pdTRUE || sound == NULL) {
+        if (xQueueReceive(s_play_queue, &sound, silence_wait(silence_at_us)) == pdTRUE && sound != NULL) {
+            if (play_horn(sound, &silence_at_us)) {
+                attempt = 0;
+                delay_ms = BOARD_DFPLAYER_BOOT_DELAY_MS;
+            }
             continue;
         }
-        if (run_playback(sound)) {
-            whistle_set_dfplayer_ready(false);
-            whistle_set_module_file_count(-1);
-            whistle_mdns_set_horn_ready(false);
-            attempt = 0;
-            delay_ms = BOARD_DFPLAYER_BOOT_DELAY_MS;
-            ESP_LOGW(TAG, "DFPlayer communication lost");
+
+        if (silence_at_us == 0 || esp_timer_get_time() < silence_at_us || horn_is_pending()) {
+            if (horn_is_pending()) {
+                vTaskDelay(pdMS_TO_TICKS(10));
+            }
+            continue;
+        }
+
+        if (horn_is_pending()) {
+            vTaskDelay(pdMS_TO_TICKS(10));
+            continue;
+        }
+        ESP_LOGI(TAG, "Idle timeout reached");
+        {
+            char note[48];
+            dfplayer_err_t err;
+
+            snprintf(note, sizeof(note), "Volume returned to %d", BOARD_DFPLAYER_IDLE_VOLUME);
+            err = set_player_volume(BOARD_DFPLAYER_IDLE_VOLUME, note);
+            silence_at_us = 0;
+            if (volume_link_lost(err)) {
+                leave_audio_ready();
+                attempt = 0;
+                delay_ms = BOARD_DFPLAYER_BOOT_DELAY_MS;
+            }
         }
     }
 }
